@@ -41,7 +41,7 @@
 
         nav {
             background-color: #0a0a0a;
-            border-bottom: 1px solid #ef4444;
+            border-bottom: 0px solid #ef4444;
             padding: 24px 0;
         }
 
@@ -264,7 +264,7 @@
                         each playing a crucial role in sound perception and equilibrium.
                     </p>
                     <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
-                        <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="300" height="300">
+                        <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Luca Renier" height="250">
                     </a>
                     <p>
                         Void Dealer - September 21, 2022
