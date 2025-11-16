@@ -28,21 +28,20 @@
             top: 0;
             left: 0;
             right: 0;
-            background-color: #0a0a0a;
+            background-color: #eeeeee;
             z-index: 1000;
         }
 
         .header-image {
-            width: 100%;
-            max-height: 200px;
-            object-fit: cover;
-            object-position: center;
+            height: 200px;
+            width: auto;
             display: block;
+            object-fit: contain;
         }
 
         nav {
             background-color: #0a0a0a;
-            border-bottom: 0px solid #ef4444;
+            border-bottom: 1px solid #ef4444;
             padding: 24px 0;
         }
 
@@ -149,7 +148,7 @@
 
         @media (max-width: 768px) {
             .header-image {
-                max-height: 150px;
+                height: 150px;
             }
 
             nav {
@@ -204,7 +203,7 @@
 
         @media (max-width: 480px) {
             .header-image {
-                max-height: 120px;
+                height: 120px;
             }
 
             nav .nav-container {
@@ -243,7 +242,7 @@
 </head>
 <body>
     <header>
-        <img src="header-image.png" alt="Header Image" class="header-image" alt="A Square Sun Tym Frost" width="400" height="139">
+        <img src="header-image.jpg" alt="Header Image" class="header-image">
         <nav>
             <div class="nav-container">
                 <button onclick="scrollToSection('ear')">Ear</button>
@@ -253,7 +252,7 @@
             </div>
         </nav>
     </header>
-    
+
     <main>
         <section id="ear">
             <div class="section-content">
@@ -302,19 +301,6 @@
                         The mouth, or oral cavity, it plays essential roles in speaking, and breathing.
                         It contains the teeth, tongue, salivary glands, and various muscles that work
                         together to perform these functions.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="synapse">
-            <div class="section-content">
-                <h2>Synapse</h2>
-                <div class="text-content">
-                    <p>
-                        A synapse is the specialized junction between two neurons where information is 
-                        transmitted from one cell to another. "Talk to me, I will answer".
-                        brain functions, including thought, memory, movement, and sensation.
                     </p>
                 </div>
             </div>
