@@ -32,7 +32,7 @@
             z-index: 1000;
         }
 
-        .header-image {
+        header-image {
             height: 200px;
             width: auto;
             display: block;
