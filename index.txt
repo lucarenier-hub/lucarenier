@@ -203,7 +203,7 @@
 
         @media (max-width: 480px) {
             .header-image {
-                height: 120px;
+                height: 250px;
             }
 
             nav .nav-container {
@@ -242,7 +242,7 @@
 </head>
 <body>
     <header>
-        <img src="header-image.png" alt="Header Image" class="header-image" alt="Luca Renier" height="250">
+        <img src="header-image.png" alt="Header Image" class="header-image">
         <nav>
             <div class="nav-container">
                 <button onclick="scrollToSection('ear')">Ear</button>
@@ -262,16 +262,16 @@
                         The human ear is a remarkable organ responsible for both hearing and balance. 
                         It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, 
                         each playing a crucial role in sound perception and equilibrium.
-                    </p>
+                        </p>
                     <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
                         <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="300" height="300">
-                    </a>
+                        </a>
                     <p>
                         Void Dealer - September 21, 2022
-                    
+                        </p>
                     <a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank">
                         <img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="300" height="300">
-                    
+                        </a>
                     <p>
                         A Square Sun - February 23, 2022
                     </p>
