@@ -9,7 +9,14 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
-    
+
+    /* Container centrale */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
     /* Banner */
     header#banner {
         width: 100%;
@@ -22,6 +29,8 @@
         z-index: 1000;
         transition: transform 0.6s ease;
     }
+    .container header#banner { max-width: 1200px; margin: 0 auto; }
+
     .header-image {
         height: 200px;
         width: auto;
@@ -41,6 +50,8 @@
         z-index: 999;
         transition: top 0.6s ease;
     }
+    .container nav#main-nav { max-width: 1200px; margin: 0 auto; }
+
     nav .nav-container {
         display: flex;
         flex-wrap: wrap;
@@ -59,10 +70,14 @@
     }
     nav button:hover { color: #dc2626; transform: scale(1.05); }
 
-    main { padding-top: 440px; } /* spazio per banner + menu */
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 440px; /* spazio per banner + menu */
+    }
 
     section { min-height: 100vh; padding: 80px 32px; border-bottom: 1px solid rgba(239,68,68,0.2); }
-    .section-content { max-width: 1024px; width: 100%; text-align: left; } /* testo allineato a sinistra */
+    .section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; } /* testo allineato a sinistra, container centrato */
     h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 32px; }
     h3 { font-size: 24px; font-weight: 600; color: #ffffff; text-align: left; margin-bottom: 16px; }
     .text-content { font-size: 18px; line-height: 1.7; }
@@ -114,79 +129,81 @@
 </head>
 <body>
 
-<header id="banner">
-    <img src="header-image.png" alt="Header Image" class="header-image">
-</header>
+<div class="container">
+    <header id="banner">
+        <img src="header-image.png" alt="Header Image" class="header-image">
+    </header>
 
-<nav id="main-nav">
-    <div class="nav-container">
-        <button onclick="scrollToSection('ear')">Ear</button>
-        <button onclick="scrollToSection('eye')">Eye</button>
-        <button onclick="scrollToSection('mouth')">Mouth</button>
-        <button onclick="scrollToSection('synapse')">Synapse</button>
-    </div>
-</nav>
-
-<main>
-    <!-- Ear Section -->
-    <section id="ear">
-        <div class="section-content">
-            <h2>Ear</h2>
-            <div class="text-content">
-                <p>The human ear is a remarkable organ responsible for both hearing and balance. It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, each playing a crucial role in sound perception and equilibrium.</p>
-                
-                <h3>Tym Frost</h3>
-                <hr>
-                <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
-                    <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250">
-                </a>
-                <p>Void Dealer - September 21, 2022</p>
-                
-                <a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank">
-                    <img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250">
-                </a>
-                <p>A Square Sun - February 23, 2022 (Released by SAH043)</p>
-
-                <a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank">
-                    <img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250">
-                </a>
-                <p>There is no oxygen here - November 27, 2021</p>
-
-                <a href="https://tymfrost.bandcamp.com/album/toot" target="_blank">
-                    <img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250">
-                </a>
-                <p>Toot - February 25, 2021 (Released by Casetta Records)</p>
-            </div>
+    <nav id="main-nav">
+        <div class="nav-container">
+            <button onclick="scrollToSection('ear')">Ear</button>
+            <button onclick="scrollToSection('eye')">Eye</button>
+            <button onclick="scrollToSection('mouth')">Mouth</button>
+            <button onclick="scrollToSection('synapse')">Synapse</button>
         </div>
-    </section>
+    </nav>
 
-    <section id="eye">
-        <div class="section-content">
-            <h2>Eye</h2>
-            <div class="text-content">
-                <p>The human eye is a sophisticated optical instrument capable of detecting light and converting it into electrochemical signals that the brain processes into visual images.</p>
-            </div>
-        </div>
-    </section>
+    <main>
+        <!-- Ear Section -->
+        <section id="ear">
+            <div class="section-content">
+                <h2>Ear</h2>
+                <div class="text-content">
+                    <p>The human ear is a remarkable organ responsible for both hearing and balance. It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, each playing a crucial role in sound perception and equilibrium.</p>
 
-    <section id="mouth">
-        <div class="section-content">
-            <h2>Mouth</h2>
-            <div class="text-content">
-                <p>The mouth, or oral cavity, plays essential roles in speaking, and breathing. It contains the teeth, tongue, salivary glands, and various muscles that work together to perform these functions.</p>
-            </div>
-        </div>
-    </section>
+                    <h3>Tym Frost</h3>
+                    <hr>
+                    <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
+                        <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250">
+                    </a>
+                    <p>Void Dealer - September 21, 2022</p>
 
-    <section id="synapse">
-        <div class="section-content">
-            <h2>Synapse</h2>
-            <div class="text-content">
-                <p>Synapses are the junctions between neurons, allowing them to communicate via signals.</p>
+                    <a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank">
+                        <img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250">
+                    </a>
+                    <p>A Square Sun - February 23, 2022 (Released by SAH043)</p>
+
+                    <a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank">
+                        <img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250">
+                    </a>
+                    <p>There is no oxygen here - November 27, 2021</p>
+
+                    <a href="https://tymfrost.bandcamp.com/album/toot" target="_blank">
+                        <img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250">
+                    </a>
+                    <p>Toot - February 25, 2021 (Released by Casetta Records)</p>
+                </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+
+        <section id="eye">
+            <div class="section-content">
+                <h2>Eye</h2>
+                <div class="text-content">
+                    <p>The human eye is a sophisticated optical instrument capable of detecting light and converting it into electrochemical signals that the brain processes into visual images.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mouth">
+            <div class="section-content">
+                <h2>Mouth</h2>
+                <div class="text-content">
+                    <p>The mouth, or oral cavity, plays essential roles in speaking, and breathing. It contains the teeth, tongue, salivary glands, and various muscles that work together to perform these functions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="synapse">
+            <div class="section-content">
+                <h2>Synapse</h2>
+                <div class="text-content">
+                    <p>Synapses are the junctions between neurons, allowing them to communicate via signals.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
 
 <button id="back-to-top" onclick="scrollToTop()">
     <svg class="arrow-up" viewBox="0 0 24 24">
