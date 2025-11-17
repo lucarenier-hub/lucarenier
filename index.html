@@ -30,12 +30,6 @@
             right: 0;
             background-color: #eeeeee;
             z-index: 1000;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* Classe che useremo via JS */
-        header.hidden {
-            transform: translateY(-100%);
         }
 
         .header-image {
@@ -43,6 +37,7 @@
             width: auto;
             display: block;
             object-fit: contain;
+            transition: transform 0.3s ease-in-out;
         }
 
         nav {
@@ -248,7 +243,7 @@
 </head>
 <body>
     <header>
-        <img src="header-image.png" alt="Header Image" class="header-image">
+        <img src="header-image.png" alt="Header Image" class="header-image" id="header-img">
         <nav>
             <div class="nav-container">
                 <button onclick="scrollToSection('ear')">Ear</button>
@@ -264,27 +259,19 @@
             <div class="section-content">
                 <h2>Ear</h2>
                 <div class="text-content">
-                    <p>
-                        The human ear is a remarkable organ responsible for both hearing and balance.
-                        It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear,
-                        each playing a crucial role in sound perception and equilibrium.
-                    </p>
-
+                    <p>The human ear is a remarkable organ responsible for both hearing and balance. It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, each playing a crucial role in sound perception and equilibrium.</p>
                     <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
                         <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250">
                     </a>
                     <p>Void Dealer - September 21, 2022</p>
-
                     <a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank">
                         <img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250">
                     </a>
                     <p>A Square Sun - February 23, 2022 (Released by Sounds Against Humanity Records [SAH043])</p>
-
                     <a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank">
                         <img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250">
                     </a>
                     <p>There is no oxygen here - November 27, 2021</p>
-
                     <a href="https://tymfrost.bandcamp.com/album/toot" target="_blank">
                         <img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250">
                     </a>
@@ -297,12 +284,7 @@
             <div class="section-content">
                 <h2>Eye</h2>
                 <div class="text-content">
-                    <p>
-                        The human eye is a sophisticated optical instrument capable of detecting light
-                        and converting it into electrochemical signals that the brain processes into visual
-                        images. The eye works much like a camera, with various structures working together
-                        to focus light and create clear images.
-                    </p>
+                    <p>The human eye is a sophisticated optical instrument capable of detecting light and converting it into electrochemical signals that the brain processes into visual images. The eye works much like a camera, with various structures working together to focus light and create clear images.</p>
                 </div>
             </div>
         </section>
@@ -311,11 +293,7 @@
             <div class="section-content">
                 <h2>Mouth</h2>
                 <div class="text-content">
-                    <p>
-                        The mouth, or oral cavity, it plays essential roles in speaking, and breathing.
-                        It contains the teeth, tongue, salivary glands, and various muscles that work
-                        together to perform these functions.
-                    </p>
+                    <p>The mouth, or oral cavity, plays essential roles in speaking and breathing. It contains the teeth, tongue, salivary glands, and various muscles that work together to perform these functions.</p>
                 </div>
             </div>
         </section>
@@ -329,7 +307,16 @@
     </button>
 
     <script>
-        /* Scroll morbido verso le sezioni */
+        const headerImage = document.getElementById('header-img');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                headerImage.style.transform = 'translateY(-100%)';
+            } else {
+                headerImage.style.transform = 'translateY(0)';
+            }
+        });
+
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
@@ -340,22 +327,6 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        /* Nascondi header quando si scrolla in basso */
-        let lastScroll = 0;
-        const header = document.querySelector("header");
-
-        window.addEventListener("scroll", () => {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                header.classList.add("hidden");   // scroll down = nascondi
-            } else {
-                header.classList.remove("hidden"); // scroll up = mostra
-            }
-
-            lastScroll = currentScroll;
-        });
     </script>
 </body>
 </html>
