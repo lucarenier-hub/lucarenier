@@ -18,25 +18,25 @@
     }
 
     /* Banner */
-header#banner {
-    width: 100%;              /* occupa tutta la larghezza */
-    background-color: #eeeeee; /* colore di sfondo su tutto lo spazio */
-    display: flex;
-    align-items: flex-start;   /* allinea l'immagine in alto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding-left: 0;          /* immagine a sinistra */
-}
+    header#banner {
+        width: 100%;
+        background-color: #eeeeee;
+        display: flex;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        transition: transform 0.6s ease;
     .container header#banner { max-width: 1200px; margin: 0 auto; }
 
-.header-image {
-    height: 200px;             /* altezza desiderata */
-    width: auto;               /* mantiene proporzioni */
-    display: block;            /* evita spazi extra */
-    object-fit: contain;
-}
+    .header-image {
+        height: 200px;
+        width: auto;
+        object-fit: contain;
+        margin-left: 0;
+        display: block;
+    }
 
     /* Menu */
     nav#main-nav {
