@@ -23,6 +23,7 @@
             line-height: 1.6;
         }
 
+        /* Banner */
         header#banner {
             width: 100%;
             background-color: #eeeeee;
@@ -38,15 +39,22 @@
             object-fit: contain;
         }
 
-        nav {
+        /* Menu */
+        nav#main-nav {
+            width: 100%;
+            background-color: #0a0a0a;
+            border-bottom: 0px solid #ef4444;
+            padding: 24px 0;
+            position: relative; /* inizialmente sotto il banner */
+            z-index: 1000;
+            transition: top 0.3s ease-in-out;
+        }
+
+        nav.fixed {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background-color: #0a0a0a;
-            border-bottom: 0px solid #ef4444;
-            padding: 24px 0;
-            z-index: 1000;
         }
 
         nav .nav-container {
@@ -73,7 +81,7 @@
         }
 
         main {
-            padding-top: 300px;
+            padding-top: 30px;
         }
 
         section {
@@ -105,6 +113,14 @@
             text-align: center;
             margin-bottom: 48px;
         }
+        
+        h3 {
+            font-size: 24px;      /* Dimensione del sottotitolo */
+            font-weight: 600;     /* Spessore del carattere */
+            color: #ffffff;       /* Colore bianco per contrastare con lo sfondo scuro */
+            text-align: center;   /* Centrato nella sezione */
+            margin-bottom: 24px;  /* Spazio sotto l'h3 */
+        }
 
         .text-content {
             font-size: 18px;
@@ -113,6 +129,12 @@
 
         .text-content p {
             margin-bottom: 16px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ef4444;
+            margin: 24px 0;
         }
 
         #back-to-top {
@@ -151,39 +173,97 @@
         }
 
         @media (max-width: 768px) {
-            .header-image { height: 150px; }
-            nav { padding: 16px 0; }
-            nav .nav-container { gap: 16px; flex-wrap: wrap; padding: 0 16px; }
-            nav button { font-size: 14px; padding: 6px 12px; }
-            main { padding-top: 230px; }
-            section { min-height: auto; padding: 60px 20px; }
-            h2 { font-size: 32px; margin-bottom: 32px; }
-            .text-content { font-size: 16px; }
-            .text-content p { margin-bottom: 14px; }
-            #back-to-top { bottom: 20px; right: 20px; padding: 10px 16px; font-size: 14px; }
-            .arrow-up { width: 16px; height: 16px; }
+            .header-image {
+                height: 150px;
+            }
+
+            nav .nav-container {
+                gap: 16px;
+                flex-wrap: wrap;
+                padding: 0 16px;
+            }
+
+            nav button {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+
+            main {
+                padding-top: 20px;
+            }
+
+            section {
+                min-height: auto;
+                padding: 60px 20px;
+            }
+
+            h2 {
+                font-size: 32px;
+                margin-bottom: 32px;
+            }
+
+            .text-content {
+                font-size: 16px;
+            }
+
+            #back-to-top {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+
+            .arrow-up {
+                width: 16px;
+                height: 16px;
+            }
         }
 
         @media (max-width: 480px) {
-            .header-image { height: 120px; }
-            nav .nav-container { gap: 12px; }
-            nav button { font-size: 13px; padding: 5px 10px; }
-            main { padding-top: 200px; }
-            h2 { font-size: 28px; margin-bottom: 24px; }
-            .text-content { font-size: 15px; }
-            #back-to-top span { display: none; }
-            #back-to-top { padding: 12px; bottom: 16px; right: 16px; }
+            .header-image {
+                height: 120px;
+            }
+
+            nav .nav-container {
+                gap: 12px;
+            }
+
+            nav button {
+                font-size: 13px;
+                padding: 5px 10px;
+            }
+
+            main {
+                padding-top: 20px;
+            }
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: 24px;
+            }
+
+            .text-content {
+                font-size: 15px;
+            }
+
+            #back-to-top span {
+                display: none;
+            }
+
+            #back-to-top {
+                padding: 12px;
+                bottom: 16px;
+                right: 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Banner con immagine -->
     <header id="banner">
         <img src="header-image.png" alt="Header Image" class="header-image">
     </header>
 
-    <!-- Menu fisso -->
-    <nav>
+    <nav id="main-nav">
         <div class="nav-container">
             <button onclick="scrollToSection('ear')">Ear</button>
             <button onclick="scrollToSection('eye')">Eye</button>
@@ -193,58 +273,62 @@
     </nav>
 
     <main>
-        <!-- Ear Section -->
         <section id="ear">
             <div class="section-content">
                 <h2>Ear</h2>
                 <div class="text-content">
-                    <p>The human ear is a remarkable organ responsible for both hearing and balance...</p>
-
+                    <p>The human ear is a remarkable organ responsible for both hearing and balance. 
+                        It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, 
+                        each playing a crucial role in sound perception and equilibrium.</p>
+                <h3>Tym Frost</h3>
+                    <hr>
                     <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
                         <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250">
                     </a>
                     <p>Void Dealer - September 21, 2022</p>
-
+                    <hr>
                     <a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank">
                         <img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250">
                     </a>
-                    <p>A Square Sun - February 23, 2022</p>
-
+                    <p>A Square Sun - February 23, 2022 (Released by Sounds Against Humanity Records [SAH043])</p>
+                    <hr>
                     <a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank">
                         <img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250">
                     </a>
                     <p>There is no oxygen here - November 27, 2021</p>
-
+                    <hr>
                     <a href="https://tymfrost.bandcamp.com/album/toot" target="_blank">
                         <img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250">
                     </a>
-                    <p>Toot - February 25, 2021</p>
+                    <p>Toot - February 25, 2021 (Released by Casetta Records)</p>
                 </div>
             </div>
         </section>
 
-        <!-- Eye Section -->
         <section id="eye">
             <div class="section-content">
                 <h2>Eye</h2>
                 <div class="text-content">
-                    <p>The human eye is a sophisticated optical instrument capable of detecting light...</p>
+                    <p>The human eye is a sophisticated optical instrument capable of detecting light 
+                        and converting it into electrochemical signals that the brain processes into visual 
+                        images. The eye works much like a camera, with various structures working together 
+                        to focus light and create clear images.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Mouth Section -->
         <section id="mouth">
             <div class="section-content">
                 <h2>Mouth</h2>
                 <div class="text-content">
-                    <p>The mouth, or oral cavity, plays essential roles in speaking, and breathing...</p>
+                    <p>The mouth, or oral cavity, it plays essential roles in speaking, and breathing.
+                        It contains the teeth, tongue, salivary glands, and various muscles that work
+                        together to perform these functions.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Back to Top -->
     <button id="back-to-top" onclick="scrollToTop()">
         <svg class="arrow-up" viewBox="0 0 24 24">
             <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -253,12 +337,31 @@
     </button>
 
     <script>
-        // Scroll al top
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        const banner = document.getElementById('banner');
+        const nav = document.getElementById('main-nav');
+        let lastScroll = 0;
 
-        // Scroll alle sezioni
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll) {
+                // Scroll verso il basso, nascondi il banner
+                banner.style.transform = 'translateY(-100%)';
+            } else {
+                // Scroll verso l'alto, mostra il banner
+                banner.style.transform = 'translateY(0)';
+            }
+
+            // Se il banner è nascosto, fissa il menu
+            if (currentScroll > banner.offsetHeight) {
+                nav.classList.add('fixed');
+            } else {
+                nav.classList.remove('fixed');
+            }
+
+            lastScroll = currentScroll;
+        });
+
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
@@ -266,19 +369,9 @@
             }
         }
 
-        // Banner nascosto allo scroll
-        const banner = document.getElementById('banner');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > lastScroll) {
-                banner.style.transform = 'translateY(-100%)'; // nasconde il banner
-            } else {
-                banner.style.transform = 'translateY(0)'; // mostra il banner
-            }
-            lastScroll = currentScroll;
-        });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
