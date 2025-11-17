@@ -6,41 +6,27 @@
 <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
 <title>Luca Renier's hub</title>
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background-color: #0a0a0a;
-        color: #e0e0e0;
-        line-height: 1.6;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+    
     /* Banner */
     header#banner {
         width: 100%;
         background-color: #eeeeee;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         position: fixed;
         top: 0;
         left: 0;
         z-index: 1000;
         transition: transform 0.6s ease;
     }
-
     .header-image {
         height: 200px;
         width: auto;
         object-fit: contain;
-        margin-left: 0; /* immagine allineata a sinistra */
+        margin-left: 0;
         display: block;
     }
 
@@ -48,21 +34,19 @@
     nav#main-nav {
         width: 100%;
         background-color: #0a0a0a;
-        padding: 24px 0;
+        padding: 24px 16px;
         position: fixed;
         top: 200px; /* inizialmente sotto il banner */
         left: 0;
         z-index: 999;
         transition: top 0.6s ease;
     }
-
     nav .nav-container {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 48px;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center; /* menu centrato */
     }
-
     nav button {
         background: none;
         border: none;
@@ -73,69 +57,17 @@
         padding: 8px 16px;
         transition: all 0.3s ease;
     }
+    nav button:hover { color: #dc2626; transform: scale(1.05); }
 
-    nav button:hover {
-        color: #dc2626;
-        transform: scale(1.05);
-    }
+    main { padding-top: 440px; } /* spazio per banner + menu */
 
-    main {
-        padding-top: 440px; /* spazio per banner + menu */
-    }
-
-    section {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 1px solid rgba(239, 68, 68, 0.2);
-        padding: 80px 32px;
-    }
-
-    section:nth-child(odd) {
-        background-color: #0a0a0a;
-    }
-
-    section:nth-child(even) {
-        background-color: #1a1a1a;
-    }
-
-    .section-content {
-        max-width: 1024px;
-        width: 100%;
-    }
-
-    h2 {
-        font-size: 48px;
-        font-weight: 700;
-        color: #ef4444;
-        text-align: center;
-        margin-bottom: 48px;
-    }
-
-    h3 {
-        font-size: 24px;
-        font-weight: 600;
-        color: #ffffff;
-        text-align: center;
-        margin-bottom: 24px;
-    }
-
-    .text-content {
-        font-size: 18px;
-        line-height: 1.7;
-        text-align: center;
-    }
-
-    .text-content p {
-        margin-bottom: 16px;
-    }
-
-    hr {
-        border: none;
-        border-top: 1px solid #ef4444;
-        margin: 24px 0;
-    }
+    section { min-height: 100vh; padding: 80px 32px; border-bottom: 1px solid rgba(239,68,68,0.2); }
+    .section-content { max-width: 1024px; width: 100%; text-align: left; } /* testo allineato a sinistra */
+    h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 32px; }
+    h3 { font-size: 24px; font-weight: 600; color: #ffffff; text-align: left; margin-bottom: 16px; }
+    .text-content { font-size: 18px; line-height: 1.7; }
+    .text-content p { margin-bottom: 16px; }
+    hr { border: none; border-top: 1px solid #ef4444; margin: 16px 0; }
 
     #back-to-top {
         position: fixed;
@@ -154,31 +86,16 @@
         font-size: 16px;
         transition: all 0.3s ease;
         z-index: 9999;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
-
-    #back-to-top:hover {
-        background-color: #ef4444;
-        color: #ffffff;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    .arrow-up {
-        width: 20px;
-        height: 20px;
-        stroke: currentColor;
-        stroke-width: 2;
-        fill: none;
-    }
+    #back-to-top:hover { background-color: #ef4444; color: #ffffff; transform: translateY(-2px); }
+    .arrow-up { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 
     @media (max-width: 768px) {
         .header-image { height: 150px; }
-        nav .nav-container { gap: 16px; flex-wrap: wrap; padding: 0 16px; }
-        nav button { font-size: 14px; padding: 6px 12px; }
+        nav button { font-size: 16px; padding: 6px 12px; }
         main { padding-top: 350px; }
         section { min-height: auto; padding: 60px 20px; }
-        h2 { font-size: 32px; margin-bottom: 32px; }
+        h2 { font-size: 32px; margin-bottom: 24px; }
         .text-content { font-size: 16px; }
         #back-to-top { bottom: 20px; right: 20px; padding: 10px 16px; font-size: 14px; }
         .arrow-up { width: 16px; height: 16px; }
@@ -186,10 +103,9 @@
 
     @media (max-width: 480px) {
         .header-image { height: 120px; }
-        nav .nav-container { gap: 12px; }
-        nav button { font-size: 13px; padding: 5px 10px; }
+        nav button { font-size: 14px; padding: 5px 10px; }
         main { padding-top: 320px; }
-        h2 { font-size: 28px; margin-bottom: 24px; }
+        h2 { font-size: 28px; margin-bottom: 20px; }
         .text-content { font-size: 15px; }
         #back-to-top span { display: none; }
         #back-to-top { padding: 12px; bottom: 16px; right: 16px; }
@@ -212,23 +128,20 @@
 </nav>
 
 <main>
-    <!-- Ear Section with images restored -->
+    <!-- Ear Section -->
     <section id="ear">
         <div class="section-content">
             <h2>Ear</h2>
             <div class="text-content">
-                <p>The human ear is a remarkable organ responsible for both hearing and balance. 
-                It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, 
-                each playing a crucial role in sound perception and equilibrium.</p>
+                <p>The human ear is a remarkable organ responsible for both hearing and balance. It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, each playing a crucial role in sound perception and equilibrium.</p>
                 
                 <h3>Tym Frost</h3>
                 <hr>
-
                 <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
                     <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250">
                 </a>
                 <p>Void Dealer - September 21, 2022</p>
-
+                
                 <a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank">
                     <img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250">
                 </a>
@@ -251,10 +164,7 @@
         <div class="section-content">
             <h2>Eye</h2>
             <div class="text-content">
-                <p>The human eye is a sophisticated optical instrument capable of detecting light 
-                and converting it into electrochemical signals that the brain processes into visual 
-                images. The eye works much like a camera, with various structures working together 
-                to focus light and create clear images.</p>
+                <p>The human eye is a sophisticated optical instrument capable of detecting light and converting it into electrochemical signals that the brain processes into visual images.</p>
             </div>
         </div>
     </section>
@@ -263,9 +173,7 @@
         <div class="section-content">
             <h2>Mouth</h2>
             <div class="text-content">
-                <p>The mouth, or oral cavity, plays essential roles in speaking and breathing.
-                It contains the teeth, tongue, salivary glands, and various muscles that work
-                together to perform these functions.</p>
+                <p>The mouth, or oral cavity, plays essential roles in speaking, and breathing. It contains the teeth, tongue, salivary glands, and various muscles that work together to perform these functions.</p>
             </div>
         </div>
     </section>
@@ -274,8 +182,7 @@
         <div class="section-content">
             <h2>Synapse</h2>
             <div class="text-content">
-                <p>Synapses are the junctions between neurons, allowing them to communicate via electrical or chemical signals. 
-                This process is fundamental to all brain functions including memory, learning, and sensation.</p>
+                <p>Synapses are the junctions between neurons, allowing them to communicate via signals.</p>
             </div>
         </div>
     </section>
@@ -291,25 +198,33 @@
 <script>
 const banner = document.getElementById('banner');
 const nav = document.getElementById('main-nav');
-const bannerHeight = banner.offsetHeight;
+const main = document.querySelector('main');
+
+function updateMenuPosition() {
+    const bannerHeight = banner.offsetHeight;
+    nav.style.top = bannerHeight + 'px';
+    main.style.paddingTop = (bannerHeight + nav.offsetHeight) + 'px';
+}
+
+window.addEventListener('load', updateMenuPosition);
+window.addEventListener('resize', updateMenuPosition);
 
 window.addEventListener('scroll', () => {
     const scroll = window.pageYOffset;
+    const bannerHeight = banner.offsetHeight;
 
     if (scroll > 100) {
         banner.style.transform = `translateY(-${bannerHeight}px)`;
         nav.style.top = '0';
     } else {
         banner.style.transform = 'translateY(0)';
-        nav.style.top = `${bannerHeight}px`;
+        nav.style.top = bannerHeight + 'px';
     }
 });
 
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
 }
 
 function scrollToTop() {
