@@ -1,352 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
-    <title>Luca Renier's hub</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
+<title>Luca Renier's hub</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background-color: #0a0a0a;
+        color: #e0e0e0;
+        line-height: 1.6;
+    }
 
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: #eeeeee;
-            z-index: 1000;
-        }
+    /* Banner */
+    .banner {
+        display: flex;
+        align-items: center;
+        background-color: #eeeeee;
+        padding: 16px;
+        transition: transform 0.3s ease;
+    }
 
+    .banner.hidden {
+        transform: translateY(-100%);
+    }
+
+    .header-image {
+        height: 200px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* Navigation */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #0a0a0a;
+        z-index: 1000;
+        padding: 24px 0;
+    }
+
+    nav .nav-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+    }
+
+    nav button {
+        background: none;
+        border: none;
+        color: #ef4444;
+        font-size: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 8px 16px;
+        transition: all 0.3s ease;
+    }
+
+    nav button:hover {
+        color: #dc2626;
+        transform: scale(1.05);
+    }
+
+    main {
+        padding-top: 300px;
+    }
+
+    section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+        padding: 80px 32px;
+    }
+
+    section:nth-child(odd) {
+        background-color: #0a0a0a;
+    }
+
+    section:nth-child(even) {
+        background-color: #1a1a1a;
+    }
+
+    .section-content {
+        max-width: 1024px;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 48px;
+        font-weight: 700;
+        color: #ef4444;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    h3 {
+        font-size: 28px;
+        font-weight: 600;
+        color: #f87171;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        text-align: left;
+    }
+
+    hr {
+        border: none;
+        border-top: 2px solid #ef4444;
+        margin: 16px 0;
+        width: 100%;
+    }
+
+    .text-content {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .text-content p {
+        margin-bottom: 16px;
+    }
+
+    #back-to-top {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background-color: #0a0a0a;
+        border: 2px solid #ef4444;
+        color: #ef4444;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        z-index: 9999;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    #back-to-top:hover {
+        background-color: #ef4444;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .arrow-up {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+    }
+
+    @media (max-width: 768px) {
         .header-image {
-            height: 200px;
-            width: auto;
-            display: block;
-            object-fit: contain;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        nav {
-            background-color: #0a0a0a;
-            border-bottom: 0px solid #ef4444;
-            padding: 24px 0;
+            height: 150px;
         }
 
         nav .nav-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 48px;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 0 16px;
         }
 
         nav button {
-            background: none;
-            border: none;
-            color: #ef4444;
-            font-size: 20px;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 8px 16px;
-            transition: all 0.3s ease;
-        }
-
-        nav button:hover {
-            color: #dc2626;
-            transform: scale(1.05);
+            font-size: 14px;
+            padding: 6px 12px;
         }
 
         main {
-            padding-top: 300px;
+            padding-top: 230px;
         }
 
         section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid rgba(239, 68, 68, 0.2);
-            padding: 80px 32px;
-        }
-
-        section:nth-child(odd) {
-            background-color: #0a0a0a;
-        }
-
-        section:nth-child(even) {
-            background-color: #1a1a1a;
-        }
-
-        .section-content {
-            max-width: 1024px;
-            width: 100%;
+            min-height: auto;
+            padding: 60px 20px;
         }
 
         h2 {
-            font-size: 48px;
-            font-weight: 700;
-            color: #ef4444;
-            text-align: center;
-            margin-bottom: 48px;
+            font-size: 32px;
+            margin-bottom: 32px;
+        }
+
+        h3 {
+            font-size: 22px;
         }
 
         .text-content {
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .text-content p {
-            margin-bottom: 16px;
+            font-size: 16px;
         }
 
         #back-to-top {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background-color: #0a0a0a;
-            border: 2px solid #ef4444;
-            color: #ef4444;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            z-index: 9999;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        #back-to-top:hover {
-            background-color: #ef4444;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 16px;
+            font-size: 14px;
         }
 
         .arrow-up {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header-image {
+            height: 120px;
         }
 
-        @media (max-width: 768px) {
-            .header-image {
-                height: 150px;
-            }
-
-            nav {
-                padding: 16px 0;
-            }
-
-            nav .nav-container {
-                gap: 16px;
-                flex-wrap: wrap;
-                padding: 0 16px;
-            }
-
-            nav button {
-                font-size: 14px;
-                padding: 6px 12px;
-            }
-
-            main {
-                padding-top: 230px;
-            }
-
-            section {
-                min-height: auto;
-                padding: 60px 20px;
-            }
-
-            h2 {
-                font-size: 32px;
-                margin-bottom: 32px;
-            }
-
-            .text-content {
-                font-size: 16px;
-            }
-
-            .text-content p {
-                margin-bottom: 14px;
-            }
-
-            #back-to-top {
-                bottom: 20px;
-                right: 20px;
-                padding: 10px 16px;
-                font-size: 14px;
-            }
-
-            .arrow-up {
-                width: 16px;
-                height: 16px;
-            }
+        nav .nav-container {
+            gap: 12px;
         }
 
-        @media (max-width: 480px) {
-            .header-image {
-                height: 120px;
-            }
-
-            nav .nav-container {
-                gap: 12px;
-            }
-
-            nav button {
-                font-size: 13px;
-                padding: 5px 10px;
-            }
-
-            main {
-                padding-top: 200px;
-            }
-
-            h2 {
-                font-size: 28px;
-                margin-bottom: 24px;
-            }
-            
-            h3 {
-                font-size: 28px;
-                font-weight: 600;
-                color: #f87171; /* Rosso più chiaro per contrasto */
-                margin-bottom: 16px;
-                margin-top: 24px;
-                text-align: left;
-            }
-            
-            hr {
-                border: none;            /* rimuove il bordo di default */
-                border-top: 2px solid #ef4444;  /* linea rossa continua */
-                margin: 16px 0;          /* spazio sopra e sotto */
-                width: 100%;             /* linea piena */
-            }
-
-            .text-content {
-                font-size: 15px;
-            }
-
-            #back-to-top span {
-                display: none;
-            }
-
-            #back-to-top {
-                padding: 12px;
-                bottom: 16px;
-                right: 16px;
-            }
+        nav button {
+            font-size: 13px;
+            padding: 5px 10px;
         }
-    </style>
+
+        main {
+            padding-top: 200px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        .text-content {
+            font-size: 15px;
+        }
+
+        #back-to-top span {
+            display: none;
+        }
+
+        #back-to-top {
+            padding: 12px;
+            bottom: 16px;
+            right: 16px;
+        }
+    }
+</style>
 </head>
 <body>
-    <header>
-        <img src="header-image.png" alt="Header Image" class="header-image" id="header-img">
-        <nav>
-            <div class="nav-container">
-                <button onclick="scrollToSection('ear')">Ear</button>
-                <button onclick="scrollToSection('eye')">Eye</button>
-                <button onclick="scrollToSection('mouth')">Mouth</button>
-                <button onclick="scrollToSection('synapse')">Synapse</button>
+<header>
+    <div class="banner">
+        <img src="header-image.png" alt="Header Image" class="header-image">
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <button onclick="scrollToSection('ear')">Ear</button>
+            <button onclick="scrollToSection('eye')">Eye</button>
+            <button onclick="scrollToSection('mouth')">Mouth</button>
+            <button onclick="scrollToSection('synapse')">Synapse</button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="ear">
+        <div class="section-content">
+            <h2>Ear</h2>
+            <hr>
+            <div class="text-content">
+                <h3>Outer Ear</h3>
+                <p>The outer ear includes the pinna and the ear canal, which collect sound waves and funnel them toward the eardrum.</p>
+
+                <h3>Middle Ear</h3>
+                <p>The middle ear contains the ossicles, three tiny bones that amplify sound vibrations from the eardrum to the inner ear.</p>
+
+                <h3>Inner Ear</h3>
+                <p>The inner ear houses the cochlea, which converts vibrations into neural signals, and the vestibular system, which helps maintain balance.</p>
+
+                <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250">
+                </a>
+                <p>Void Dealer - September 21, 2022</p>
             </div>
-        </nav>
-    </header>
+        </div>
+    </section>
 
-    <main>
-        <section id="ear">
-            <div class="section-content">
-                <h2>Ear</h2>
-                <div class="text-content">
-                    <p>The human ear is a remarkable organ responsible for both hearing and balance. It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, each playing a crucial role in sound perception and equilibrium.</p>
-                <div class="text-content">
-                    <h3>Tym Frost</h3>
-                    <hr>
-                    <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
-                        <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250">
-                    </a>
-                    <p>Void Dealer - September 21, 2022</p>
-                    <a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank">
-                        <img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250">
-                    </a>
-                    <p>A Square Sun - February 23, 2022 (Released by Sounds Against Humanity Records [SAH043])</p>
-                    <a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank">
-                        <img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250">
-                    </a>
-                    <p>There is no oxygen here - November 27, 2021</p>
-                    <a href="https://tymfrost.bandcamp.com/album/toot" target="_blank">
-                        <img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250">
-                    </a>
-                    <p>Toot - February 25, 2021 (Released by Casetta Records)</p>
-                </div>
+    <section id="eye">
+        <div class="section-content">
+            <h2>Eye</h2>
+            <hr>
+            <div class="text-content">
+                <h3>Anatomy</h3>
+                <p>The human eye is a sophisticated optical instrument capable of detecting light and converting it into electrochemical signals.</p>
             </div>
+        </div>
+    </section>
+
+    <section id="mouth">
+        <div class="section-content">
+            <h2>Mouth</h2>
+            <hr>
+            <div class="text-content">
+                <h3>Functions</h3>
+                <p>The mouth, or oral cavity, plays essential roles in speaking, eating, and breathing. It contains teeth, tongue, salivary glands, and muscles for these functions.</p>
             </div>
-        </section>
+        </div>
+    </section>
+</main>
 
-        <section id="eye">
-            <div class="section-content">
-                <h2>Eye</h2>
-                <div class="text-content">
-                    <p>The human eye is a sophisticated optical instrument capable of detecting light and converting it into electrochemical signals that the brain processes into visual images. The eye works much like a camera, with various structures working together to focus light and create clear images.</p>
-                </div>
-            </div>
-        </section>
+<button id="back-to-top" onclick="scrollToTop()">
+    <svg class="arrow-up" viewBox="0 0 24 24">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Back to Top
+</button>
 
-        <section id="mouth">
-            <div class="section-content">
-                <h2>Mouth</h2>
-                <div class="text-content">
-                    <p>The mouth, or oral cavity, plays essential roles in speaking and breathing. It contains the teeth, tongue, salivary glands, and various muscles that work together to perform these functions.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+<script>
+    // Scroll banner effect
+    let lastScrollTop = 0;
+    const banner = document.querySelector('.banner');
 
-    <button id="back-to-top" onclick="scrollToTop()">
-        <svg class="arrow-up" viewBox="0 0 24 24">
-            <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Back to Top
-    </button>
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    <script>
-        const headerImage = document.getElementById('header-img');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                headerImage.style.transform = 'translateY(-100%)';
-            } else {
-                headerImage.style.transform = 'translateY(0)';
-            }
-        });
-
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
+        if (scrollTop > lastScrollTop && scrollTop > 50) {
+            // Scroll down → hide banner
+            banner.classList.add('hidden');
+        } else {
+            // Scroll up → show banner
+            banner.classList.remove('hidden');
         }
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Scroll to section
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
         }
-    </script>
+    }
+
+    // Back to top
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
 </body>
 </html>
