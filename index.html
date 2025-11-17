@@ -30,6 +30,11 @@
             right: 0;
             background-color: #eeeeee;
             z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
         }
 
         .header-image {
