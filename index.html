@@ -10,7 +10,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
 
-    /* Banner full-width */
+    /* Banner */
     header#banner {
         width: 100%;
         background-color: #eeeeee;
@@ -21,45 +21,29 @@
         left: 0;
         z-index: 1000;
         transition: transform 0.6s ease;
-       justify-content: flex-start; /* forza contenuto a sinistra */
     }
-
     .header-image {
         height: 200px;
         width: auto;
         object-fit: contain;
         display: block;
         margin-left: 0;
-        max-width: none;
     }
 
-    /* Container centrale */
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    /* Menu */
+    /* Menu centrato con sticky */
     nav#main-nav {
         width: 100%;
         background-color: #0a0a0a;
         padding: 10px 16px;
-        position: fixed;
-        left: 0;
+        position: sticky;
+        top: 0;
         z-index: 999;
-        transition: top 0.6s ease;
     }
-    .container nav#main-nav { max-width: 1200px; margin: 0 auto; }
-
     nav .nav-container {
         display: flex;
         flex-wrap: wrap;
         gap: 24px;
-        justify-content: center; /* menu centrato */
-        width: 100%; /* forza occupi tutta la larghezza del nav */
-        max-width: 1200px; /* opzionale: mantieni massimo */
-        margin: 0 auto; /* centraggio orizzontale */
+        justify-content: center;
     }
     nav button {
         background: none;
@@ -73,12 +57,12 @@
     }
     nav button:hover { color: #dc2626; transform: scale(1.05); }
 
+    /* Main content */
     main {
         max-width: 1200px;
         margin: 0 auto;
-        padding-top: 440px; /* spazio per banner + menu */
+        padding-top: 250px; /* spazio per banner */
     }
-
     section { min-height: 100vh; padding: 80px 32px; border-bottom: 1px solid rgba(239,68,68,0.2); }
     .section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; }
     h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 32px; }
@@ -87,6 +71,7 @@
     .text-content p { margin-bottom: 16px; }
     hr { border: none; border-top: 1px solid #ef4444; margin: 16px 0; }
 
+    /* Back to top */
     #back-to-top {
         position: fixed;
         bottom: 32px;
@@ -108,21 +93,21 @@
     #back-to-top:hover { background-color: #ef4444; color: #ffffff; transform: translateY(-2px); }
     .arrow-up { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 
+    /* Responsive */
     @media (max-width: 768px) {
         .header-image { height: 150px; }
         nav button { font-size: 16px; padding: 6px 12px; }
-        main { padding-top: 350px; }
+        main { padding-top: 220px; }
         section { min-height: auto; padding: 60px 20px; }
         h2 { font-size: 32px; margin-bottom: 24px; }
         .text-content { font-size: 16px; }
         #back-to-top { bottom: 20px; right: 20px; padding: 10px 16px; font-size: 14px; }
         .arrow-up { width: 16px; height: 16px; }
     }
-
     @media (max-width: 480px) {
         .header-image { height: 120px; }
         nav button { font-size: 14px; padding: 5px 10px; }
-        main { padding-top: 320px; }
+        main { padding-top: 180px; }
         h2 { font-size: 28px; margin-bottom: 20px; }
         .text-content { font-size: 15px; }
         #back-to-top span { display: none; }
@@ -179,6 +164,7 @@
             </div>
         </section>
 
+        <!-- Eye Section -->
         <section id="eye">
             <div class="section-content">
                 <h2>Eye</h2>
@@ -188,6 +174,7 @@
             </div>
         </section>
 
+        <!-- Mouth Section -->
         <section id="mouth">
             <div class="section-content">
                 <h2>Mouth</h2>
@@ -197,6 +184,7 @@
             </div>
         </section>
 
+        <!-- Synapse Section -->
         <section id="synapse">
             <div class="section-content">
                 <h2>Synapse</h2>
@@ -208,6 +196,7 @@
     </main>
 </div>
 
+<!-- Back to Top -->
 <button id="back-to-top" onclick="scrollToTop()">
     <svg class="arrow-up" viewBox="0 0 24 24">
         <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -216,32 +205,6 @@
 </button>
 
 <script>
-const banner = document.getElementById('banner');
-const nav = document.getElementById('main-nav');
-const main = document.querySelector('main');
-
-function updateMenuPosition() {
-    const bannerHeight = banner.offsetHeight;
-    nav.style.top = bannerHeight + 'px';
-    main.style.paddingTop = (bannerHeight + nav.offsetHeight) + 'px';
-}
-
-window.addEventListener('load', updateMenuPosition);
-window.addEventListener('resize', updateMenuPosition);
-
-window.addEventListener('scroll', () => {
-    const scroll = window.pageYOffset;
-    const bannerHeight = banner.offsetHeight;
-
-    if (scroll > 100) {
-        banner.style.transform = `translateY(-${bannerHeight}px)`;
-        nav.style.top = '0';
-    } else {
-        banner.style.transform = 'translateY(0)';
-        nav.style.top = bannerHeight + 'px';
-    }
-});
-
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -250,6 +213,19 @@ function scrollToSection(sectionId) {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Banner hide on scroll
+const banner = document.getElementById('banner');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        banner.style.transform = `translateY(-${banner.offsetHeight}px)`;
+    } else {
+        banner.style.transform = 'translateY(0)';
+    }
+    lastScroll = currentScroll;
+});
 </script>
 
 </body>
