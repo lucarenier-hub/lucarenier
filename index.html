@@ -4,19 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
-<meta name="theme-color" content="#0a0a0a">
 <title>Luca Renier's hub</title>
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         background-color: #0a0a0a;
@@ -31,17 +22,16 @@
         display: flex;
         align-items: center;
         transition: transform 0.6s ease;
-        will-change: transform;
-        position: fixed;
-        top: 0;
-        left: 0;
+        overflow: hidden;
+        position: relative;
         z-index: 999;
     }
 
     .header-image {
         height: 200px;
+        width: auto;
         object-fit: contain;
-        margin-left: 0; /* immagine allineata a sinistra */
+        margin: 0;
         display: block;
     }
 
@@ -51,11 +41,10 @@
         background-color: #0a0a0a;
         padding: 24px 0;
         position: fixed;
-        top: 200px; /* inizialmente sotto il banner */
+        top: 200px; /* sotto il banner inizialmente */
         left: 0;
         z-index: 1000;
         transition: top 0.6s ease;
-        will-change: top;
     }
 
     nav .nav-container {
@@ -63,7 +52,6 @@
         justify-content: center;
         align-items: center;
         gap: 48px;
-        flex-wrap: wrap;
     }
 
     nav button {
@@ -75,7 +63,6 @@
         cursor: pointer;
         padding: 8px 16px;
         transition: all 0.3s ease;
-        touch-action: manipulation;
     }
 
     nav button:hover {
@@ -83,9 +70,7 @@
         transform: scale(1.05);
     }
 
-    main {
-        padding-top: 230px; /* spazio per banner + menu */
-    }
+    main { padding-top: 30px; }
 
     section {
         min-height: 100vh;
@@ -96,18 +81,10 @@
         padding: 80px 32px;
     }
 
-    section:nth-child(odd) {
-        background-color: #0a0a0a;
-    }
+    section:nth-child(odd) { background-color: #0a0a0a; }
+    section:nth-child(even) { background-color: #1a1a1a; }
 
-    section:nth-child(even) {
-        background-color: #1a1a1a;
-    }
-
-    .section-content {
-        max-width: 1024px;
-        width: 100%;
-    }
+    .section-content { max-width: 1024px; width: 100%; }
 
     h2 {
         font-size: 48px;
@@ -125,27 +102,10 @@
         margin-bottom: 24px;
     }
 
-    .text-content {
-        font-size: 18px;
-        line-height: 1.7;
-    }
+    .text-content { font-size: 18px; line-height: 1.7; }
+    .text-content p { margin-bottom: 16px; }
 
-    .text-content p {
-        margin-bottom: 16px;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto 16px auto;
-    }
-
-    hr {
-        border: none;
-        border-top: 1px solid #ef4444;
-        margin: 24px 0;
-    }
+    hr { border: none; border-top: 1px solid #ef4444; margin: 24px 0; }
 
     #back-to-top {
         position: fixed;
@@ -165,7 +125,6 @@
         transition: all 0.3s ease;
         z-index: 9999;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        touch-action: manipulation;
     }
 
     #back-to-top:hover {
@@ -175,19 +134,14 @@
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
     }
 
-    .arrow-up {
-        width: 20px;
-        height: 20px;
-        stroke: currentColor;
-        stroke-width: 2;
-        fill: none;
-    }
+    .arrow-up { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 
+    /* Mobile */
     @media (max-width: 768px) {
         .header-image { height: 150px; }
-        nav .nav-container { gap: 16px; padding: 0 16px; }
+        nav .nav-container { gap: 16px; flex-wrap: wrap; padding: 0 16px; }
         nav button { font-size: 14px; padding: 6px 12px; }
-        main { padding-top: 190px; }
+        main { padding-top: 20px; }
         section { min-height: auto; padding: 60px 20px; }
         h2 { font-size: 32px; margin-bottom: 32px; }
         .text-content { font-size: 16px; }
@@ -199,7 +153,7 @@
         .header-image { height: 120px; }
         nav .nav-container { gap: 12px; }
         nav button { font-size: 13px; padding: 5px 10px; }
-        main { padding-top: 170px; }
+        main { padding-top: 20px; }
         h2 { font-size: 28px; margin-bottom: 24px; }
         .text-content { font-size: 15px; }
         #back-to-top span { display: none; }
@@ -208,7 +162,6 @@
 </style>
 </head>
 <body>
-
 <header id="banner">
     <img src="header-image.png" alt="Header Image" class="header-image">
 </header>
@@ -228,14 +181,8 @@
             <h2>Ear</h2>
             <div class="text-content">
                 <p>The human ear is a remarkable organ responsible for both hearing and balance. 
-                    It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, 
-                    each playing a crucial role in sound perception and equilibrium.</p>
-                <h3>Tym Frost</h3>
-                <hr>
-                <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank" rel="noopener noreferrer">
-                    <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250">
-                </a>
-                <p>Void Dealer - September 21, 2022</p>
+                It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, 
+                each playing a crucial role in sound perception and equilibrium.</p>
             </div>
         </div>
     </section>
@@ -245,9 +192,7 @@
             <h2>Eye</h2>
             <div class="text-content">
                 <p>The human eye is a sophisticated optical instrument capable of detecting light 
-                    and converting it into electrochemical signals that the brain processes into visual 
-                    images. The eye works much like a camera, with various structures working together 
-                    to focus light and create clear images.</p>
+                and converting it into electrochemical signals that the brain processes into visual images.</p>
             </div>
         </div>
     </section>
@@ -256,9 +201,8 @@
         <div class="section-content">
             <h2>Mouth</h2>
             <div class="text-content">
-                <p>The mouth, or oral cavity, it plays essential roles in speaking, and breathing.
-                    It contains the teeth, tongue, salivary glands, and various muscles that work
-                    together to perform these functions.</p>
+                <p>The mouth plays essential roles in speaking and breathing, containing teeth, tongue, salivary glands, 
+                and various muscles that work together to perform these functions.</p>
             </div>
         </div>
     </section>
@@ -276,32 +220,21 @@ const banner = document.getElementById('banner');
 const nav = document.getElementById('main-nav');
 const bannerHeight = banner.offsetHeight;
 
-let ticking = false;
-
 window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            const scroll = window.pageYOffset;
+    const scroll = window.pageYOffset;
 
-            if (scroll > 100) {
-                banner.style.transform = `translateY(-${bannerHeight}px)`;
-                nav.style.top = '0';
-            } else {
-                banner.style.transform = 'translateY(0)';
-                nav.style.top = `${bannerHeight}px`;
-            }
-
-            ticking = false;
-        });
-        ticking = true;
+    if (scroll > 100) {
+        banner.style.transform = `translateY(-${bannerHeight}px)`;
+        nav.style.top = '0'; // il menu sale in cima
+    } else {
+        banner.style.transform = 'translateY(0)';
+        nav.style.top = `${bannerHeight}px`; // menu torna sotto il banner
     }
 });
 
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
 }
 
 function scrollToTop() {
