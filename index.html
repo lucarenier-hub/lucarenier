@@ -49,14 +49,18 @@
         left: 0;
         z-index: 999;
         transition: top 0.6s ease;
+        text-align: center; /* centra il contenuto inline (i button) */
     }
     .container nav#main-nav { max-width: 1200px; margin: 0 auto; }
 
     nav .nav-container {
-        display: flex;
+        display: inline-flex;
         flex-wrap: wrap;
         gap: 24px;
         justify-content: center; /* menu centrato */
+        width: 100%; /* forza occupi tutta la larghezza del nav */
+        max-width: 1200px; /* opzionale: mantieni massimo */
+        margin: 0 auto; /* centraggio orizzontale */
     }
     nav button {
         background: none;
