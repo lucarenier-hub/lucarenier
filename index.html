@@ -10,14 +10,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
 
-    /* Container centrale */
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    /* Banner */
+    /* Banner full-width */
     header#banner {
         width: 100%;
         background-color: #eeeeee;
@@ -28,13 +21,21 @@
         left: 0;
         z-index: 1000;
         transition: transform 0.6s ease;
+    }
 
     .header-image {
         height: 200px;
         width: auto;
         object-fit: contain;
-        margin-left: 0;
         display: block;
+        margin-left: 0;
+    }
+
+    /* Container centrale */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
     }
 
     /* Menu */
@@ -75,7 +76,7 @@
     }
 
     section { min-height: 100vh; padding: 80px 32px; border-bottom: 1px solid rgba(239,68,68,0.2); }
-    .section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; } /* testo allineato a sinistra, container centrato */
+    .section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; }
     h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 32px; }
     h3 { font-size: 24px; font-weight: 600; color: #ffffff; text-align: left; margin-bottom: 16px; }
     .text-content { font-size: 18px; line-height: 1.7; }
@@ -127,11 +128,11 @@
 </head>
 <body>
 
-<div class="container">
-    <header id="banner">
-        <img src="header-image.png" alt="Header Image" class="header-image">
-    </header>
+<header id="banner">
+    <img src="header-image.png" alt="Header Image" class="header-image">
+</header>
 
+<div class="container">
     <nav id="main-nav">
         <div class="nav-container">
             <button onclick="scrollToSection('ear')">Ear</button>
