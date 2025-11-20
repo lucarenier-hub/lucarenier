@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
-  <title>Luca Renier's hub</title>
-  <style>
-  /* Reset e base */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
+<title>Luca Renier's hub</title>
+<style>
+/* Reset e base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
 
-  a {
+a {
     color: #ef4444; /* colore link */
     text-decoration: none; /* opzionale: rimuove la sottolineatura */
-  }
+}
 
-  a:hover {
+a:hover {
     color: #ffffff; /* colore al passaggio del mouse */
     text-decoration: none; /* opzionale */
-  }
+}
     
-  /* Banner */
-  header#banner {
+/* Banner */
+header#banner {
     width: 100%;
     background-color: #eeeeee;
     display: flex;
@@ -32,18 +32,18 @@
     left: 0;
     z-index: 1000;
     transition: transform 0.6s ease;
-  }
+}
 
-  .header-image {
+.header-image {
     height: 200px;
     width: auto;
     object-fit: contain;
     display: block;
     margin-left: 0;
-  }
+}
 
-  /* Menu */
-  nav#main-nav {
+/* Menu */
+nav#main-nav {
     width: 100%;
     background-color: #0a0a0a;
     padding: 10px 0;
@@ -54,15 +54,15 @@
     transition: top 0.6s ease;
     display: flex;
     justify-content: center; /* menu centrato */
-  }
+}
 
-  nav .nav-container {
+nav .nav-container {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-  }
+}
 
-  nav button {
+nav button {
     background: none;
     border: none;
     color: #ef4444;
@@ -71,26 +71,26 @@
     cursor: pointer;
     padding: 8px 16px;
     transition: all 0.3s ease;
-  }
-  nav button:hover { color: #dc2626; transform: scale(1.05); }
+}
+nav button:hover { color: #dc2626; transform: scale(1.05); }
 
-  /* Main e sezioni */
-  main {
+/* Main e sezioni */
+main {
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 440px; /* spazio per banner + menu */
-  }
+}
 
-  section { min-height: 100vh; padding: 80px 32px; border-bottom: 1px solid rgba(239,68,68,0.2); }
-  .section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; }
-  h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 32px; }
-  h3 { font-size: 24px; font-weight: 600; color: #ffffff; text-align: left; margin-bottom: 16px; }
-  .text-content { font-size: 18px; line-height: 1.7; }
-  .text-content p { margin-bottom: 16px; }
-  hr { border: none; border-top: 1px solid #ef4444; margin: 16px 0; }
+section { min-height: 100vh; padding: 80px 32px; border-bottom: 1px solid rgba(239,68,68,0.2); }
+.section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; }
+h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 32px; }
+h3 { font-size: 24px; font-weight: 600; color: #ffffff; text-align: left; margin-bottom: 16px; }
+.text-content { font-size: 18px; line-height: 1.7; }
+.text-content p { margin-bottom: 16px; }
+hr { border: none; border-top: 1px solid #ef4444; margin: 16px 0; }
 
-  /* Back to top */
-  #back-to-top {
+/* Back to top */
+#back-to-top {
     position: fixed;
     bottom: 32px;
     right: 32px;
@@ -107,12 +107,12 @@
     font-size: 16px;
     transition: all 0.3s ease;
     z-index: 9999;
-  }
-  #back-to-top:hover { background-color: #ef4444; color: #ffffff; transform: translateY(-2px); }
-  .arrow-up { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+}
+#back-to-top:hover { background-color: #ef4444; color: #ffffff; transform: translateY(-2px); }
+.arrow-up { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 
-  /* Responsive */
-  @media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 768px) {
     .header-image { height: 150px; }
     nav button { font-size: 16px; padding: 6px 12px; }
     main { padding-top: 350px; }
@@ -121,9 +121,9 @@
     .text-content { font-size: 16px; }
     #back-to-top { bottom: 20px; right: 20px; padding: 10px 16px; font-size: 14px; }
     .arrow-up { width: 16px; height: 16px; }
-  }
+}
 
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .header-image { height: 120px; }
     nav button { font-size: 14px; padding: 5px 10px; }
     main { padding-top: 320px; }
@@ -131,189 +131,287 @@
     .text-content { font-size: 15px; }
     #back-to-top span { display: none; }
     #back-to-top { padding: 12px; bottom: 16px; right: 16px; }
-  }
-  </style>
+}
+</style>
 </head>
 <body>
-  <header id="banner">
+
+<header id="banner">
     <img src="header-image.png" alt="Header Image" class="header-image">
-  </header>
-  <nav id="main-nav">
+</header>
+
+<nav id="main-nav">
     <div class="nav-container">
-      <button onclick="scrollToSection('ear')">Ear</button> <button onclick="scrollToSection('eye')">Eye</button> <button onclick="scrollToSection('mouth')">Mouth</button> <button onclick="scrollToSection('synapse')">Synapse</button>
+        <button onclick="scrollToSection('ear')">Ear</button>
+        <button onclick="scrollToSection('eye')">Eye</button>
+        <button onclick="scrollToSection('mouth')">Mouth</button>
+        <button onclick="scrollToSection('synapse')">Synapse</button>
     </div>
-  </nav>
-  <main>
+</nav>
+
+<main>
+    <!-- Ear Section -->
     <section id="ear">
-      <div class="section-content">
-        <h2>Ear</h2>
-        <div class="text-content">
-          <p>The human ear is a remarkable organ responsible for both hearing and balance. It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, each playing a crucial role in sound perception and equilibrium.</p>
-          <div style="height: 50px;"></div>
-          <h3>Tym Frost</h3>
-          <hr>
-          <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank"><img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250"></a>
-          <p>Void Dealer - September 21, 2022</p><a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank"><img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250"></a>
-          <p>A Square Sun - February 23, 2022 (Released by SAH043)</p><a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank"><img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250"></a>
-          <p>There is no oxygen here - November 27, 2021</p><a href="https://tymfrost.bandcamp.com/album/toot" target="_blank"><img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250"></a>
-          <p>Toot - February 25, 2021 (Released by Casetta Records)</p>
-          <div style="height: 50px;"></div>
-          <h3>w/ Megasole</h3>
-          <hr>
-          <a href="https://megasole.bandcamp.com/track/elementa-feat-tym-frost" target="_blank"><img src="https://f4.bcbits.com/img/a1516571521_16.jpg" alt="Elementa Feat. Tym Frost" width="250" height="250"></a>
-          <p>Elementa (Feat. Tym Frost) - December 28, 2022</p>
-          <div style="height: 50px;"></div>
-          <h3>Caustica</h3>
-          <hr>
-          <a href="https://atthemountainsofmadnessproduction.bandcamp.com/album/caustica-desert-procession" target="_blank"><img src="https://f4.bcbits.com/img/a2106256468_16.jpg" alt="Desert Procession CAUSTICA" width="250" height="250"></a>
-          <p>Desert Procession - May 6, 2022</p><a href="https://soundcloud.com/causticaband/event-case?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Event Case (2019)</a><br>
-          <a href="https://soundcloud.com/causticaband/low-oxygen-level?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Low Oxygen Level (2018)</a><br>
-          <a href="https://soundcloud.com/causticaband/dark-tale?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Dark Tale (2017)</a><br>
-          <a href="https://soundcloud.com/causticaband/snakes?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Snakes (2017)</a><br>
-          <a href="https://soundcloud.com/causticaband/uranus-equinox-hike?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Uranus Equinox Hike (2016)</a><br>
-          <a href="https://soundcloud.com/causticaband/skeletal-omen?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Skeletal Omen (2016)</a><br>
-          <a href="https://soundcloud.com/causticaband/transindustrial-hungher?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Transindustrial Hungher (2016)</a><br>
-          <a href="https://soundcloud.com/causticaband/approaching-dusk?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Approaching Dusk (2015)</a><br>
-          <a href="https://soundcloud.com/causticaband/notturno?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Notturno (2015)</a><br>
-          <a href="https://soundcloud.com/causticaband/artificial-constellation?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Artificial Constellation (2015)</a>
-          <div style="height: 50px;"></div>
-          <h3>NeroBOT</h3>
-          <hr>
-          <a href="https://nerobot.bandcamp.com/album/psychic-rehab" target="_blank"><img src="https://f4.bcbits.com/img/a0369965722_16.jpg" alt="Psychic Rehab NeroBOT" width="250" height="250"></a>
-          <p>Psychic Rehab - November 27, 2017</p><a href="https://nerobot.bandcamp.com/album/electricks" target="_blank"><img src="https://f4.bcbits.com/img/a0392164183_10.jpg" alt="Electricks NeroBOT" width="250" height="250"></a>
-          <p>Electricks - September 23, 2014</p><a href="https://nerobot.bandcamp.com/album/apparatus-early-tracks-2005-2008" target="_blank"><img src="https://f4.bcbits.com/img/a2057250344_10.jpg" alt="Apparatus (early tracks 2005-2008) NeroBOT" width="250" height="250"></a>
-          <p>Apparatus (early tracks 2005-2008) - December 17, 2013</p>
-          <div style="height: 50px;"></div>
-          <h3>Remix</h3>
-          <hr>
-          <a href="https://erikstrauss.bandcamp.com/track/empty-feeling-erik-strauss-empty-space-remix" target="_blank"><img src="https://f4.bcbits.com/img/a4260171460_16.jpg" alt="Erik Strauss Empty Space NeroBOT Remix" width="250" height="250"></a>
-          <p>Erik Strauss Empty Space Remix - October 7, 2019</p>
-          <div style="height: 50px;"></div>
-          <h3>One Step In The Pit</h3>
-          <hr>
-          <a href="https://onestepinthepit.bandcamp.com/album/daemonds" target="_blank"><img src="https://f4.bcbits.com/img/a1914624224_16.jpg" alt="Daemonds One Step In The Pit " width="250" height="250"></a>
-          <p>Daemonds - November 2, 2012</p>
-          <div style="height: 50px;"></div>
-          <h3>Maelstrom</h3>
-          <hr>
+        <div class="section-content">
+            <h2>Ear</h2>
+            <div class="text-content">
+                <p>The human ear is a remarkable organ responsible for both hearing and balance. It consists of three main anatomical divisions: the outer ear, middle ear, and inner ear, each playing a crucial role in sound perception and equilibrium.</p>
+            <div style="height: 50px;">
+                </div>
+                <h3>Tym Frost</h3>
+                <hr>
+                <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250">
+                </a>
+                <p>Void Dealer - September 21, 2022</p>
+
+                <a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250">
+                </a>
+                <p>A Square Sun - February 23, 2022 (Released by SAH043)</p>
+
+                <a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250">
+                </a>
+                <p>There is no oxygen here - November 27, 2021</p>
+
+                <a href="https://tymfrost.bandcamp.com/album/toot" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250">
+                </a>
+                <p>Toot - February 25, 2021 (Released by Casetta Records)</p>
+             <div style="height: 50px;">
+                </div>
+                <h3>w/ Megasole</h3>
+                <hr>
+               <a href="https://megasole.bandcamp.com/track/elementa-feat-tym-frost" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a1516571521_16.jpg" alt="Elementa Feat. Tym Frost" width="250" height="250">
+                </a>
+                <p>Elementa (Feat. Tym Frost) - December 28, 2022</p>
+            <div style="height: 50px;">           
+                </div>
+                <h3>Caustica</h3>
+                <hr>
+                <a href="https://atthemountainsofmadnessproduction.bandcamp.com/album/caustica-desert-procession" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a2106256468_16.jpg" alt="Desert Procession CAUSTICA" width="250" height="250">
+                </a>
+                <p>Desert Procession - May 6, 2022</p>                
+                <a href="https://soundcloud.com/causticaband/event-case?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Event Case (2019)
+                </a><br>
+                <a href="https://soundcloud.com/causticaband/low-oxygen-level?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Low Oxygen Level (2018)
+                </a><br>
+                <a href="https://soundcloud.com/causticaband/dark-tale?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Dark Tale (2017)
+                </a><br>
+                <a href="https://soundcloud.com/causticaband/snakes?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Snakes (2017)
+                </a><br>
+                <a href="https://soundcloud.com/causticaband/uranus-equinox-hike?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Uranus Equinox Hike (2016)
+                </a><br>
+                <a href="https://soundcloud.com/causticaband/skeletal-omen?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Skeletal Omen (2016)
+                </a><br>
+                <a href="https://soundcloud.com/causticaband/transindustrial-hungher?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Transindustrial Hungher (2016)
+                </a><br>
+                <a href="https://soundcloud.com/causticaband/approaching-dusk?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Approaching Dusk (2015)
+                </a><br>
+                <a href="https://soundcloud.com/causticaband/notturno?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Notturno (2015)
+                </a><br>
+                <a href="https://soundcloud.com/causticaband/artificial-constellation?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Artificial Constellation (2015)
+                </a>
+            <div style="height: 50px;">
+                </div>
+                <h3>NeroBOT</h3>
+                <hr>
+                <a href="https://nerobot.bandcamp.com/album/psychic-rehab" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a0369965722_16.jpg" alt="Psychic Rehab NeroBOT" width="250" height="250">
+                </a>
+                <p>Psychic Rehab - November 27, 2017</p>
+                
+                <a href="https://nerobot.bandcamp.com/album/electricks" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a0392164183_10.jpg" alt="Electricks NeroBOT" width="250" height="250">
+                </a>
+                <p>Electricks - September 23, 2014</p>
+                
+                <a href="https://nerobot.bandcamp.com/album/apparatus-early-tracks-2005-2008" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a2057250344_10.jpg" alt="Apparatus (early tracks 2005-2008) NeroBOT" width="250" height="250">
+                </a>
+                <p>Apparatus (early tracks 2005-2008) - December 17, 2013</p>
+            <div style="height: 50px;">
+                </div>
+                <h3>Remix</h3>
+                <hr>
+                 <a href="https://erikstrauss.bandcamp.com/track/empty-feeling-erik-strauss-empty-space-remix" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a4260171460_16.jpg" alt="Erik Strauss Empty Space NeroBOT Remix" width="250" height="250">
+                </a>
+                <p>Erik Strauss Empty Space Remix - October 7, 2019</p>
+                <div style="height: 50px;">           
+                </div>
+                <h3>One Step In The Pit</h3>
+                <hr>
+                <a href="https://onestepinthepit.bandcamp.com/album/daemonds" target="_blank">
+                    <img src="https://f4.bcbits.com/img/a1914624224_16.jpg" alt="Daemonds One Step In The Pit " width="250" height="250">
+                </a>
+                <p>Daemonds - November 2, 2012</p>
+            <div style="height: 50px;">           
+                </div>
+                <h3>Maelstrom</h3>
+                <hr>
+            </div>
         </div>
-      </div>
     </section>
+
+    <!-- Eye Section -->
     <section id="eye">
-      <div class="section-content">
-        <h2>Eye</h2>
-        <div class="text-content">
-          <p>The human eye is a sophisticated optical instrument capable of detecting light and converting it into electrochemical signals that the brain processes into visual images.</p>
-          <div style="height: 50px;"></div>
-          <h3>Audiovisuals</h3>
-          <hr>
-          <a href="https://youtu.be/62T3d49F_uo?si=Zzvs221F-TZGeOVr" target="_blank"><img src="https://i.ytimg.com/an_webp/62T3d49F_uo/mqdefault_6s.webp?du=3000&amp;sqp=CMrU9sgG&amp;rs=AOn4CLBgM9pz0YyV-y-dgfAhuUGxTWIMIw" alt="Al Azif urban view Tym Frost" width="250" height="250"></a>
-          <p>Al Azif [urban view] - July 27, 2022</p><a href="https://youtu.be/lyskbyT3ltM?si=4io9dJ2eXHRQN47o" target="_blank"><img src="https://i.ytimg.com/an_webp/lyskbyT3ltM/mqdefault_6s.webp?du=3000&amp;sqp=CPrL9sgG&amp;rs=AOn4CLB4_e-WqiQIvTgBCAew_5V8DqUYsA" alt="Aitheria v.ext Tym Frost" width="250" height="250"></a>
-          <p>Aitheria [v.ext] - July 22, 2022</p><a href="https://youtu.be/KsZgxqCB5_A?si=dgvHiBq1Mx_xsRAV" target="_blank"><img src="https://i.ytimg.com/an_webp/KsZgxqCB5_A/mqdefault_6s.webp?du=3000&amp;sqp=CMDH9sgG&amp;rs=AOn4CLDwPbjuGY8_ZtHQJx_K6iWSjZ3sKQ" alt="A Square Sun Tym Frost" width="250" height="250"></a>
-          <p>A Square Sun - April 20, 2022</p><a href="https://youtu.be/zf9YXZ62xCQ?si=HA6hzR4MZ3uwLmne" target="_blank"><img src="https://i.ytimg.com/an_webp/zf9YXZ62xCQ/mqdefault_6s.webp?du=3000&amp;sqp=CKTC9sgG&amp;rs=AOn4CLANTRCOrfcfGsrknf7iXXlRc_2jQA" alt="Complex Tym Frost" width="250" height="250"></a>
-          <p>Complex (glitches by Massimiliano Crosera) - March 23, 2022</p><a href="https://youtu.be/qNWpcoYswUk?si=FpgFjzZJWhrJvZ2i" target="_blank"><img src="https://i.ytimg.com/an_webp/qNWpcoYswUk/mqdefault_6s.webp?du=3000&amp;sqp=CJm39sgG&amp;rs=AOn4CLDB-32Ju-JZzRGLA3Hn04RbUq00Yg" alt="Talking Box NeroBOT" width="250" height="250"></a>
-          <p>Talking Box - November 27, 2017</p>
+        <div class="section-content">
+            <h2>Eye</h2>
+            <div class="text-content">
+                <p>The human eye is a sophisticated optical instrument capable of detecting light and converting it into electrochemical signals that the brain processes into visual images.</p>
+            <div style="height: 50px;">
+            </div>
+                <h3>Audiovisuals</h3>
+                <hr>
+                <a href="https://youtu.be/62T3d49F_uo?si=Zzvs221F-TZGeOVr" target="_blank">
+                    <img src="https://i.ytimg.com/an_webp/62T3d49F_uo/mqdefault_6s.webp?du=3000&sqp=CMrU9sgG&rs=AOn4CLBgM9pz0YyV-y-dgfAhuUGxTWIMIw" alt="Al Azif urban view Tym Frost" width="250" height="250">
+                </a>
+                <p>Al Azif [urban view] - July 27, 2022</p>
+
+                 <a href="https://youtu.be/lyskbyT3ltM?si=4io9dJ2eXHRQN47o" target="_blank">
+                    <img src="https://i.ytimg.com/an_webp/lyskbyT3ltM/mqdefault_6s.webp?du=3000&sqp=CPrL9sgG&rs=AOn4CLB4_e-WqiQIvTgBCAew_5V8DqUYsA" alt="Aitheria v.ext Tym Frost" width="250" height="250">
+                </a>
+                <p>Aitheria [v.ext] - July 22, 2022</p>
+
+                <a href="https://youtu.be/KsZgxqCB5_A?si=dgvHiBq1Mx_xsRAV" target="_blank">
+                    <img src="https://i.ytimg.com/an_webp/KsZgxqCB5_A/mqdefault_6s.webp?du=3000&sqp=CMDH9sgG&rs=AOn4CLDwPbjuGY8_ZtHQJx_K6iWSjZ3sKQ" alt="A Square Sun Tym Frost" width="250" height="250">
+                </a>
+                <p>A Square Sun - April 20, 2022</p>
+
+                <a href="https://youtu.be/zf9YXZ62xCQ?si=HA6hzR4MZ3uwLmne" target="_blank">
+                    <img src="https://i.ytimg.com/an_webp/zf9YXZ62xCQ/mqdefault_6s.webp?du=3000&sqp=CKTC9sgG&rs=AOn4CLANTRCOrfcfGsrknf7iXXlRc_2jQA" alt="Complex Tym Frost" width="250" height="250">
+                </a>
+                <p>Complex (glitches by Massimiliano Crosera) - March 23, 2022</p>
+
+                <a href="https://youtu.be/qNWpcoYswUk?si=FpgFjzZJWhrJvZ2i" target="_blank">
+                    <img src="https://i.ytimg.com/an_webp/qNWpcoYswUk/mqdefault_6s.webp?du=3000&sqp=CJm39sgG&rs=AOn4CLDB-32Ju-JZzRGLA3Hn04RbUq00Yg" alt="Talking Box NeroBOT" width="250" height="250">
+                </a>
+                <p>Talking Box - November 27, 2017</p>
+
+            </div>
         </div>
-      </div>
     </section>
+
+    <!-- Mouth Section -->
     <section id="mouth">
-      <div class="section-content">
-        <h2>Mouth</h2>
-        <div class="text-content">
-          <p>The mouth, or oral cavity, plays essential roles in speaking, and breathing. It contains the teeth, tongue, salivary glands, and various muscles that work together to perform these functions.</p>
-          <div style="height: 50px;"></div>
-          <h3>Fuorilegge (16 marzo 2015)</h3>
-          <hr>
-          <p>Prendetelo, fermatelo, arrestatelo! Mossa intelligente venire alla festa con i colori dell’altra fazione.<br>
-          Quali colori? Quale fazione?<br>
-          Non capiva cosa stesse accadendo<br>
-          e per questo non si stava arrendendo.<br>
-          <br>
-          I colori che porti, i vestiti che indossi<br>
-          vedrai che del cranio ti romperem gli ossi,<br>
-          amici, fratelli, non comprendo l’offesa<br>
-          politica o sport su di me non fan presa<br>
-          <br>
-          Non comprendo per niente di quel che parlate,<br>
-          tra aule e spalti v'affannate e gridate,<br>
-          perché della vita credete far parte<br>
-          parlando di passione, d’amore e poi d’arte<br>
-          <br>
-          Non state mai zitti e volete ordinare<br>
-          e invece siete schiavi del vostro ciarlare.<br>
-          Parli di silenzio, lurido verme?!?!<br>
-          Ragazzi tenetelo! Le braccia ben ferme!<br>
-          <br>
-          In ginocchio e in un angolo si sentiva il ragazzo,<br>
-          ma dopo le botte capì chi era il pazzo,<br>
-          lo schiavo del Caos disciolto nel Vuoto<br>
-          inerte alla luce, in fondo al suo porto.<br>
-          <br>
-          Ragazzi siete morti, perché credete in qualcosa.<br>
-          Il suono del ferro e la canna si posa.<br>
-          Nel negozio credete di vivere in pace<br>
-          Invece io lotto e mi faccio tenace.<br>
-          <br>
-          Se voi combattete per ciò che credete<br>
-          io invece passeggio e soddisfo la sete.<br>
-          non penso, non vivo, io sono un’essenza<br>
-          controllate sul fondo la vostra scadenza.<br>
-          <br>
-          Se credete nel tempo<br>
-          vi sembrerà prematuro,<br>
-          ma il momento è arrivato<br>
-          per il graffito sul muro.<br>
-          <br>
-          L’angelo di piombo<br>
-          attraversò le cervella<br>
-          ed il ragazzo si volse<br>
-          all’ultima stella.<br></p>
-          <div style="height: 50px;"></div>
-          <h3>Io non sono (21 maggio 2019)</h3>
-          <hr>
-          <p>"Tutto quello che vi ho detto è stata una menzogna. non sono chi credete io sia, non conoscete il mio nome, le mie inclinazioni sono completamente diverse."<br>
-          <br>
-          "Non riusciamo a capire. Ci hai mentito per cinquant'anni su tutto?"<br>
-          <br>
-          "Si, esattamente. E vi dirò di più: tutto ciò che ora vi sto dicendo potrebbe essere vero."<br>
-          <br>
-          "Ma ti rendi conto della gravità di ciò che ci stai dicendo?"<br>
-          <br>
-          "Si, assolutamente, ma io vi chiedo: non siete felici per ciò che avete compreso?"<br>
-          <br>
-          "Come puoi anche solo pensare una cosa del genere? Certo che no! Sinceramente (e penso di parlare a nome di tutti) siamo abbastanza incazzati, increduli, sconvolti."<br>
-          <br>
-          "Ma io invece vi dico: io vi ho appena liberati. Vi ho liberati dalle vostre idee nei miei confronti, vi ho liberati dall'amore che alcuni di voi nutrivano nei miei confronti, chi mi odiava può finalmente liberarsi da questo peso, chi non mi trovava interessante potrà finalmente conoscermi e potrò forse regalare loro nuovi piacevoli ricordi in mia compagnia. Domani, potrete conoscere una nuova persona, se mi incontrerete, ma oggi io vi dico: io non sono qui, io non sono, ma sopratutto io non ero, e con me se ne va una parte della vostra vita che potrà essere nuovamente vissuta."<br>
-          <br>
-          Il giorno dopo qualcuno lo uccise per strada, e le loro vite cambiarono ancora, per la seconda volta in due giorni.</p>
-          <div style="height: 50px;"></div>
-          <h3>L'ultimo (31 marzo 2017)</h3>
-          <hr>
-          <p>Si girò e non vide più nessuno dietro di lui.<br>
-          <br>
-          Da quel giorno non vide più nessuna macchina dietro di lui nelle strade, nessuna persona dietro di lui a passeggio nelle città, nessun cliente seduto ai tavoli dietro di lui nei locali, nessuno dietro di lui nelle file alle tavole calde, negli uffici o a teatro.<br>
-          Si rese conto di essere l'ultimo, e quel momento di sollievo lo accompagnò per tutto il resto della vita.<br></p>
+        <div class="section-content">
+            <h2>Mouth</h2>
+            <div class="text-content">
+                <p>The mouth, or oral cavity, plays essential roles in speaking, and breathing. It contains the teeth, tongue, salivary glands, and various muscles that work together to perform these functions.</p>
+            <div style="height: 50px;">
+            </div>
+                <h3>Fuorilegge (16 marzo 2015)</h3>
+                <hr>
+            <p>Prendetelo, fermatelo, arrestatelo!
+Mossa intelligente venire alla festa con i colori dell’altra fazione.<br>
+Quali colori? Quale fazione?<br>
+Non capiva cosa stesse accadendo<br>
+e per questo non si stava arrendendo.<br>
+<br>
+I colori che porti, i vestiti che indossi<br>
+vedrai che del cranio ti romperem gli ossi,<br>
+amici, fratelli, non comprendo l’offesa<br>
+politica o sport su di me non fan presa<br>
+<br>
+Non comprendo per niente di quel che parlate,<br>
+tra aule e spalti v'affannate e gridate,<br>
+perché della vita credete far parte<br>
+parlando di passione, d’amore e poi d’arte<br>
+<br>
+Non state mai zitti e volete ordinare<br>
+e invece siete schiavi del vostro ciarlare.<br>
+Parli di silenzio, lurido verme?!?!<br>
+Ragazzi tenetelo! Le braccia ben ferme!<br>
+<br>
+In ginocchio e in un angolo si sentiva il ragazzo,<br>
+ma dopo le botte capì chi era il pazzo,<br>
+lo schiavo del Caos disciolto nel Vuoto<br>
+inerte alla luce, in fondo al suo porto.<br>
+<br>
+Ragazzi siete morti, perché credete in qualcosa.<br>
+Il suono del ferro e la canna si posa.<br>
+Nel negozio credete di vivere in pace<br>
+Invece io lotto e mi faccio tenace.<br>
+<br>
+Se voi combattete per ciò che credete<br>
+io invece passeggio e soddisfo la sete.<br>
+non penso, non vivo, io sono un’essenza<br>
+controllate sul fondo la vostra scadenza.<br>
+<br>
+Se credete nel tempo<br>
+vi sembrerà prematuro,<br>
+ma il momento è arrivato<br>
+per il graffito sul muro.<br>
+<br>
+L’angelo di piombo<br>
+attraversò le cervella<br>
+ed il ragazzo si volse<br>
+all’ultima stella.<br>
+</p>
+            <div style="height: 50px;">
+            </div>
+                <h3>Io non sono (21 maggio 2019)</h3>
+                <hr>                
+            <p>"Tutto quello che vi ho detto è stata una menzogna. non sono chi credete io sia, non conoscete il mio nome, le mie inclinazioni sono completamente diverse."<br>
+<br>
+"Non riusciamo a capire. Ci hai mentito per cinquant'anni su tutto?"<br>
+<br>
+"Si, esattamente. E vi dirò di più: tutto ciò che ora vi sto dicendo potrebbe essere vero."<br>
+<br>
+"Ma ti rendi conto della gravità di ciò che ci stai dicendo?"<br>
+<br>
+"Si, assolutamente, ma io vi chiedo: non siete felici per ciò che avete compreso?"<br>
+<br>
+"Come puoi anche solo pensare una cosa del genere? Certo che no! Sinceramente (e penso di parlare a nome di tutti) siamo abbastanza incazzati, increduli, sconvolti."<br>
+<br>
+"Ma io invece vi dico: io vi ho appena liberati. Vi ho liberati dalle vostre idee nei miei confronti, vi ho liberati dall'amore che alcuni di voi nutrivano nei miei confronti, chi mi odiava può finalmente liberarsi da questo peso, chi non mi trovava interessante potrà finalmente conoscermi e potrò forse regalare loro nuovi piacevoli ricordi in mia compagnia.
+Domani, potrete conoscere una nuova persona, se mi incontrerete, ma oggi io vi dico: io non sono qui, io non sono, ma sopratutto io non ero, e con me se ne va una parte della vostra vita che potrà essere nuovamente vissuta."<br>
+<br>
+Il giorno dopo qualcuno lo uccise per strada, e le loro vite cambiarono ancora, per la seconda volta in due giorni.
+            </p>
+            <div style="height: 50px;">
+            </div>
+                <h3>L'ultimo (31 marzo 2017)</h3>
+                <hr>                
+            <p>Si girò e non vide più nessuno dietro di lui.<br>
+<br>
+Da quel giorno non vide più nessuna macchina dietro di lui nelle strade, nessuna persona dietro di lui a passeggio nelle città, nessun cliente seduto ai tavoli dietro di lui nei locali, nessuno dietro di lui nelle file alle tavole calde, negli uffici o a teatro.<br>
+
+Si rese conto di essere l'ultimo, e quel momento di sollievo lo accompagnò per tutto il resto della vita.<br>
+            </p>
+                
+            </div>
         </div>
-      </div>
     </section>
+
+    <!-- Synapse Section -->
     <section id="synapse">
-      <div class="section-content">
-        <h2>Synapse</h2>
-        <div class="text-content">
-          <p>Synapses are the junctions between neurons, allowing them to communicate via signals.</p>
+        <div class="section-content">
+            <h2>Synapse</h2>
+            <div class="text-content">
+                <p>Synapses are the junctions between neurons, allowing them to communicate via signals.</p>
+            </div>
         </div>
-      </div>
     </section>
-  </main><button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
-  <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Back to Top</button> 
-  <script>
+</main>
 
+<button id="back-to-top" onclick="scrollToTop()">
+    <svg class="arrow-up" viewBox="0 0 24 24">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Back to Top
+</button>
 
-  const banner = document.getElementById('banner');
-  const nav = document.getElementById('main-nav');
-  const main = document.querySelector('main');
+<script>
+const banner = document.getElementById('banner');
+const nav = document.getElementById('main-nav');
+const main = document.querySelector('main');
 
-  function updateMenuPosition() {
+function updateMenuPosition() {
     const bannerHeight = banner.offsetHeight;
     const scroll = window.pageYOffset;
 
@@ -329,20 +427,21 @@
 
     // Aggiorna padding-top del main per evitare sovrapposizioni
     main.style.paddingTop = (banner.offsetHeight + nav.offsetHeight) + 'px';
-  }
+}
 
-  window.addEventListener('load', updateMenuPosition);
-  window.addEventListener('resize', updateMenuPosition);
-  window.addEventListener('scroll', updateMenuPosition);
+window.addEventListener('load', updateMenuPosition);
+window.addEventListener('resize', updateMenuPosition);
+window.addEventListener('scroll', updateMenuPosition);
 
-  function scrollToSection(sectionId) {
+function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
-  }
+}
 
-  function scrollToTop() {
+function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-  </script>
+}
+</script>
+
 </body>
 </html>
