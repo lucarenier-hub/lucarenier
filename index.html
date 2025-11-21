@@ -422,17 +422,15 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-    const contatoreKey = "lucarenierhub";
-    let visite = localStorage.getItem(contatoreKey);
+  const url = "https://api.countapi.xyz/hit/lucarenierhub/visite";
 
-    if (!visite) {
-      visite = 1;
-    } else {
-      visite = parseInt(visite) + 1;
-    }
-
-    localStorage.setItem(contatoreKey, visite);
-    document.getElementById("contatore").textContent = visite;
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      // data.value contiene il contatore aggiornato
+      document.getElementById("contatore").textContent = data.value;
+    })
+    .catch(err => console.error("Errore nel contatore:", err));
     
   </script>
 
