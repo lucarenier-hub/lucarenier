@@ -349,7 +349,7 @@
       <p>Visite: <span id="contatore"></span></p>
 
 <script>
-fetch("https://api.countapi.xyz/hit/lucarenier-hub.github.io/visite")
+fetch("https://api.countapi.xyz/hit/lucarenier-hub/visite")
   .then(res => res.json())
   .then(res => {
     document.getElementById("contatore").innerText = res.value;
