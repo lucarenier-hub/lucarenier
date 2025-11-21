@@ -212,22 +212,22 @@
           <audio controls controlsList="nodownload noplaybackrate">
             <source src="maelstrom_november-lodge/03 - No More Tears.mp3" type="audio/mpeg">
             </audio>
-          <p>Unrest</p>
+          <p>No More Tears</p>
           
           <audio controls controlsList="nodownload noplaybackrate">
             <source src="maelstrom_november-lodge/04 - Asteroids.mp3" type="audio/mpeg">
             </audio>
-          <p>Unrest</p>
+          <p>Asteroids</p>
           
           <audio controls controlsList="nodownload noplaybackrate">
             <source src="maelstrom_november-lodge/05 - Last Lustful Vow.mp3" type="audio/mpeg">
             </audio>
-          <p>Unrest</p>
+          <p>Last Lustful Vow</p>
           
           <audio controls controlsList="nodownload noplaybackrate">
             <source src="maelstrom_november-lodge/06 - The Whirled n-trance.mp3" type="audio/mpeg">
             </audio>
-          <p>Unrest</p>
+          <p>The Whirled n-trance</p>
 
         </div>
       </div>
@@ -346,6 +346,16 @@
     </section>
     <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
       © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation.
+      <p>Visite: <span id="contatore"></span></p>
+
+<script>
+fetch("https://api.countapi.xyz/hit/lucarenier-hub.github.io/visite")
+  .then(res => res.json())
+  .then(res => {
+    document.getElementById("contatore").innerText = res.value;
+  });
+</script>
+
     </footer>
   </main>
   <button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
