@@ -351,17 +351,6 @@
     </section>
     <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
       © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation.
-     <p>Visite: <span id="contatore"></span></p>
-
-<script>
-fetch("https://api.countapi.xyz/hit/lucarenierhub/visite")
-  .then(res => res.json())
-  .then(res => {
-    document.getElementById("contatore").innerText = res.value;
-  })
-  .catch(err => console.log("Errore:", err));
-</script>
-
     </footer>
   </main>
   <button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
@@ -406,5 +395,17 @@ fetch("https://api.countapi.xyz/hit/lucarenierhub/visite")
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   </script>
+    <p>Visite: <span id="contatore"></span></p>
+
+  <!-- Script del contatore: va qui, appena prima della chiusura di </body> -->
+  <script>
+    fetch("https://api.countapi.xyz/update/lucarenierhub/visite/?amount=1")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("contatore").innerText = data.value;
+      })
+      .catch(err => console.error("Errore nel contatore:", err));
+  </script>
+  
 </body>
 </html>
