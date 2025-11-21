@@ -426,6 +426,20 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  // Prende tutti gli elementi audio
+  const audios = document.querySelectorAll('audio');
+
+  audios.forEach(audio => {
+    audio.addEventListener('play', () => {
+      // Metti in pausa tutti gli altri
+      audios.forEach(other => {
+        if (other !== audio) {
+          other.pause();
+        }
+      });
+    });
+  });
     
   </script>
 
