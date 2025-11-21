@@ -376,7 +376,7 @@
     </section>
     <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
       © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation.
-      <p>20251121: <span id="contatore">—</span></p>
+      <p>20251121: <img src="https://hits.sh/lucarenierhub.svg?style=flat-square&label=visite&color=red" alt="visite"></p>
     </footer>
     
   </main>
@@ -421,17 +421,6 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  // Contatore globale tramite CountAPI
-  fetch("https://api.countapi.xyz/hit/lucarenierhub/visite")
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("contatore").textContent = data.value;
-    })
-    .catch(err => {
-      console.error("Errore nel contatore:", err);
-      document.getElementById("contatore").textContent = "Errore";
-    });
     
   </script>
 
