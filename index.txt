@@ -72,7 +72,7 @@
     padding: 8px 16px;
     transition: all 0.3s ease;
   }
-  nav button:hover { color: #dc2626; transform: scale(1.05); }
+  nav button:hover { color: #ffffff; transform: scale(1.05); }
 
   /* Main e sezioni */
   main {
@@ -81,13 +81,13 @@
     padding-top: 440px; /* spazio per banner + menu */
   }
 
-  section { min-height: 100vh; padding: 80px 32px; border-bottom: 1px solid rgba(239,68,68,0.2); }
+  section { padding: 20px 32px; border-bottom: 0px solid rgba(207,207,207,1); }
   .section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; }
-  h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 32px; }
+  h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 16px; }
   h3 { font-size: 24px; font-weight: 600; color: #ffffff; text-align: left; margin-bottom: 16px; }
   .text-content { font-size: 18px; line-height: 1.7; }
   .text-content p { margin-bottom: 16px; }
-  hr { border: none; border-top: 1px solid #ef4444; margin: 16px 0; }
+  hr { border: none; border-top: 1px solid #dc2626; margin: 18px 0; }
 
   /* Back to top */
   #back-to-top {
@@ -144,11 +144,14 @@
     </div>
   </nav>
   <main>
+<section id="intro" style="display:table; width:100%">
+  <div style="display:table-cell; vertical-align:middle; text-align:center; min-height:10vh;">
+    Almost everything that has been created in recent years.<br>The rest turned to dust in the past lives during this life.</div>
+    </section>
     <section id="ear">
       <div class="section-content">
         <h2>Ear</h2>
         <div class="text-content">
-          <div style="height: 50px;"></div>
           <h3>Tym Frost</h3>
           <hr>
           <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank"><img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250"></a>
@@ -190,11 +193,44 @@
           <div style="height: 50px;"></div>
           <h3>One Step In The Pit</h3>
           <hr>
-          <a href="https://onestepinthepit.bandcamp.com/album/daemonds" target="_blank"><img src="https://f4.bcbits.com/img/a1914624224_16.jpg" alt="Daemonds One Step In The Pit " width="250" height="250"></a>
+          <a href="https://onestepinthepit.bandcamp.com/album/daemonds" target="_blank"><img src="https://f4.bcbits.com/img/a1914624224_16.jpg" alt="Daemonds One Step In The Pit" width="250" height="250"></a>
           <p>Daemonds - November 2, 2012</p>
           <div style="height: 50px;"></div>
           <h3>Maelstrom</h3>
           <hr>
+          <a href="maelstrom_november-lodge/Maelstrom - November Lodge.jpg" target="_blank">
+  <img src="maelstrom_november-lodge/Maelstrom - November Lodge_front.jpg" alt="Maelstrom November Lodge" width="250" height="250"></a>
+          <p>November Lodge - 2002</p>
+          <audio controls controlsList="nodownload noplaybackrate">
+            <source src="maelstrom_november-lodge/01 - Dancing Thy Silence.mp3" type="audio/mpeg">
+            </audio>
+          <p>Dancing Thy Silence</p>
+          
+          <audio controls controlsList="nodownload noplaybackrate">
+            <source src="maelstrom_november-lodge/02 - Unrest.mp3" type="audio/mpeg">
+            </audio>
+          <p>Unrest</p>
+          
+          <audio controls controlsList="nodownload noplaybackrate">
+            <source src="maelstrom_november-lodge/03 - No More Tears.mp3" type="audio/mpeg">
+            </audio>
+          <p>No More Tears</p>
+          
+          <audio controls controlsList="nodownload noplaybackrate">
+            <source src="maelstrom_november-lodge/04 - Asteroids.mp3" type="audio/mpeg">
+            </audio>
+          <p>Asteroids</p>
+          
+          <audio controls controlsList="nodownload noplaybackrate">
+            <source src="maelstrom_november-lodge/05 - Last Lustful Vow.mp3" type="audio/mpeg">
+            </audio>
+          <p>Last Lustful Vow</p>
+          
+          <audio controls controlsList="nodownload noplaybackrate">
+            <source src="maelstrom_november-lodge/06 - The Whirled n-trance.mp3" type="audio/mpeg">
+            </audio>
+          <p>The Whirled n-trance</p>
+
         </div>
       </div>
     </section>
@@ -202,7 +238,6 @@
       <div class="section-content">
         <h2>Eye</h2>
         <div class="text-content">
-          <div style="height: 50px;"></div>
           <h3>Audiovisuals</h3>
           <hr>
           <a href="https://youtu.be/62T3d49F_uo?si=Zzvs221F-TZGeOVr" target="_blank"><img src="https://img.youtube.com/vi/62T3d49F_uo/maxresdefault.jpg" alt="Al Azif urban view Tym Frost" width="250" height="141"></a>
@@ -211,6 +246,32 @@
           <p>A Square Sun - April 20, 2022</p><a href="https://youtu.be/zf9YXZ62xCQ?si=HA6hzR4MZ3uwLmne" target="_blank"><img src="https://img.youtube.com/vi/zf9YXZ62xCQ/maxresdefault.jpg" alt="Complex Tym Frost" width="250" height="141"></a>
           <p>Complex (glitches by Massimiliano Crosera) - March 23, 2022</p><a href="https://youtu.be/qNWpcoYswUk?si=FpgFjzZJWhrJvZ2i" target="_blank"><img src="https://img.youtube.com/vi/qNWpcoYswUk/maxresdefault.jpg" alt="Talking Box NeroBOT" width="250" height="141"></a>
           <p>Talking Box - November 27, 2017</p>
+                    <div style="height: 50px;"></div>
+          <h3>Paintings</h3>
+          <hr>
+                    <a href="images/2017_fabio.png" target="_blank">
+  <img src="images/2017_fabio.png" alt="Fabio Todeschini" height="250"></a>
+                   <p>Fabio Todeschini - 2017</p>
+          <br>
+                    <a href="images/170309_erik.png" target="_blank">
+  <img src="images/170309_erik.png" alt="Erik Carnio" height="250"></a>
+                   <p>Erik Carnio - March 09, 2017</p>
+          <br>
+                    <a href="images/170416_dal-passato.jpg" target="_blank">
+  <img src="images/170416_dal-passato.jpg" alt="From the past self-portrait" height="250"></a>
+                   <p>From the past (self-portrait) - April 16, 2017</p>
+          <br>
+                    <a href="images/170416_il-pensiero.jpg" target="_blank">
+  <img src="images/170416_il-pensiero.jpg" alt="The thought self-portrait" height="250"></a>
+                   <p>The Thought (self-portrait) - April 16, 2017</p>
+          <br>
+                    <a href="images/170312_la-soglia.jpg" target="_blank">
+  <img src="images/170312_la-soglia.jpg" alt="The Threshold (Fumegai)" height="250"></a>
+                   <p>The Threshold (Fumegai) - March 12, 2017</p>
+          <br>
+                    <a href="images/1998_silentium.jpg" target="_blank">
+  <img src="images/1998_silentium.jpg" alt="Silentium self-portrait" height="250"></a>
+                   <p>Silentium (self-portrait) - 1998?</p>
         </div>
       </div>
     </section>
@@ -218,6 +279,41 @@
       <div class="section-content">
         <h2>Mouth</h2>
         <div class="text-content">
+          <h3>La Mente (2021?)</h3>
+          <hr>
+          <p>E' la folle Mente<br>
+          che, decisa, mente<br>
+          dicendomi che è la lente<br>
+          che mi fa sembrar dormiente,<br>
+          ma io non ho più sonno<br>
+          e finalmkente sento splendente<br>
+          la raffinata Mente.</p>
+          <div style="height: 50px;"></div>
+          <h3>Io non sono (21 maggio 2019)</h3>
+          <hr>
+          <p>"Tutto quello che vi ho detto è stata una menzogna. non sono chi credete io sia, non conoscete il mio nome, le mie inclinazioni sono completamente diverse."<br>
+          <br>
+          "Non riusciamo a capire. Ci hai mentito per cinquant'anni su tutto?"<br>
+          <br>
+          "Si, esattamente. E vi dirò di più: tutto ciò che ora vi sto dicendo potrebbe essere vero."<br>
+          <br>
+          "Ma ti rendi conto della gravità di ciò che ci stai dicendo?"<br>
+          <br>
+          "Si, assolutamente, ma io vi chiedo: non siete felici per ciò che avete compreso?"<br>
+          <br>
+          "Come puoi anche solo pensare una cosa del genere? Certo che no! Sinceramente (e penso di parlare a nome di tutti) siamo abbastanza incazzati, increduli, sconvolti."<br>
+          <br>
+          "Ma io invece vi dico: io vi ho appena liberati. Vi ho liberati dalle vostre idee nei miei confronti, vi ho liberati dall'amore che alcuni di voi nutrivano nei miei confronti, chi mi odiava può finalmente liberarsi da questo peso, chi non mi trovava interessante potrà finalmente conoscermi e potrò forse regalare loro nuovi ricordi in mia compagnia. Domani, potrete conoscere una nuova persona, se mi incontrerete, ma oggi io vi dico: io non sono qui, io non sono, ma sopratutto io non ero, e con me se ne va una parte della vostra vita che potrà essere nuovamente vissuta."<br>
+          <br>
+          Il giorno dopo qualcuno lo uccise per strada, e le loro vite cambiarono ancora, per la seconda volta in due giorni.</p>
+          <div style="height: 50px;"></div>
+          <h3>L'ultimo (31 marzo 2017)</h3>
+          <hr>
+          <p>Si girò e non vide più nessuno dietro di lui.<br>
+          <br>
+          Da quel giorno non vide più nessuna macchina dietro di lui nelle strade, nessuna persona dietro di lui a passeggio nelle città, nessun cliente seduto ai tavoli dietro di lui nei locali, nessuno dietro di lui nelle file alle tavole calde, negli uffici o a teatro.<br>
+          <br>
+          Si rese conto di essere l'ultimo, e quel momento di sollievo lo accompagnò per tutto il resto della vita.<br></p>
           <div style="height: 50px;"></div>
           <h3>Fuorilegge (16 marzo 2015)</h3>
           <hr>
@@ -265,43 +361,29 @@
           attraversò le cervella<br>
           ed il ragazzo si volse<br>
           all’ultima stella.<br></p>
-          <div style="height: 50px;"></div>
-          <h3>Io non sono (21 maggio 2019)</h3>
-          <hr>
-          <p>"Tutto quello che vi ho detto è stata una menzogna. non sono chi credete io sia, non conoscete il mio nome, le mie inclinazioni sono completamente diverse."<br>
-          <br>
-          "Non riusciamo a capire. Ci hai mentito per cinquant'anni su tutto?"<br>
-          <br>
-          "Si, esattamente. E vi dirò di più: tutto ciò che ora vi sto dicendo potrebbe essere vero."<br>
-          <br>
-          "Ma ti rendi conto della gravità di ciò che ci stai dicendo?"<br>
-          <br>
-          "Si, assolutamente, ma io vi chiedo: non siete felici per ciò che avete compreso?"<br>
-          <br>
-          "Come puoi anche solo pensare una cosa del genere? Certo che no! Sinceramente (e penso di parlare a nome di tutti) siamo abbastanza incazzati, increduli, sconvolti."<br>
-          <br>
-          "Ma io invece vi dico: io vi ho appena liberati. Vi ho liberati dalle vostre idee nei miei confronti, vi ho liberati dall'amore che alcuni di voi nutrivano nei miei confronti, chi mi odiava può finalmente liberarsi da questo peso, chi non mi trovava interessante potrà finalmente conoscermi e potrò forse regalare loro nuovi piacevoli ricordi in mia compagnia. Domani, potrete conoscere una nuova persona, se mi incontrerete, ma oggi io vi dico: io non sono qui, io non sono, ma sopratutto io non ero, e con me se ne va una parte della vostra vita che potrà essere nuovamente vissuta."<br>
-          <br>
-          Il giorno dopo qualcuno lo uccise per strada, e le loro vite cambiarono ancora, per la seconda volta in due giorni.</p>
-          <div style="height: 50px;"></div>
-          <h3>L'ultimo (31 marzo 2017)</h3>
-          <hr>
-          <p>Si girò e non vide più nessuno dietro di lui.<br>
-          <br>
-          Da quel giorno non vide più nessuna macchina dietro di lui nelle strade, nessuna persona dietro di lui a passeggio nelle città, nessun cliente seduto ai tavoli dietro di lui nei locali, nessuno dietro di lui nelle file alle tavole calde, negli uffici o a teatro.<br>
-          Si rese conto di essere l'ultimo, e quel momento di sollievo lo accompagnò per tutto il resto della vita.<br></p>
         </div>
       </div>
     </section>
     <section id="synapse">
       <div class="section-content">
         <h2>Synapse</h2>
-        <div class="text-content"></div>
+        <div class="text-content">
+        <a href="mailto:lucarenier@gmail.com">lucarenier@gmail.com</a><br>
+        <a href="https://tymfrost.bandcamp.com/" target="_blank">bandcamp</a><br>
+        <a href="https://www.instagram.com/tymfrost.music?utm_source=qr&igsh=MXF4YzgyajlkdHNuMg==" target="_blank">instagram</a><br>
+        <a href="https://www.youtube.com/@tymfrost" target="_blank">youtube</a><br>
       </div>
     </section>
     <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
       © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation.
+<p style="text-align:center; font-size:0.9em;">
+  20251121: 
+  <span style="display:inline-block; vertical-align:middle;">
+    <img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&color=666666&background=00000000&style=flat" alt="">
+  </span>
+</p>
     </footer>
+    
   </main>
   <button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
   <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Back to Top</button> 
@@ -344,6 +426,23 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  // Prende tutti gli elementi audio
+  const audios = document.querySelectorAll('audio');
+
+  audios.forEach(audio => {
+    audio.addEventListener('play', () => {
+      // Metti in pausa tutti gli altri
+      audios.forEach(other => {
+        if (other !== audio) {
+          other.pause();
+        }
+      });
+    });
+  });
+    
   </script>
+
+  
 </body>
 </html>
