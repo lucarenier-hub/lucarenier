@@ -133,24 +133,24 @@
     #back-to-top { padding: 12px; bottom: 16px; right: 16px; }
   }
 
-.contact-form {
+  .contact-form {
   max-width: 400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
+  }
 
-.contact-form input,
-.contact-form textarea {
+  .contact-form input,
+  .contact-form textarea {
   width: 100%;
   padding: 8px;
-}
+  }
 
-.contact-form button {
+  .contact-form button {
   padding: 10px;
   cursor: pointer;
-}
+  }
 
   </style>
 </head>
@@ -164,9 +164,10 @@
     </div>
   </nav>
   <main>
-<section id="intro" style="display:table; width:100%">
-  <div style="display:table-cell; vertical-align:middle; text-align:center; min-height:10vh;">
-    Almost everything that has been created in recent years. The rest turned to dust in the past lives during this life.</div>
+    <section id="intro" style="display:table; width:100%">
+      <div style="display:table-cell; vertical-align:middle; text-align:center; min-height:10vh;">
+        Almost everything that has been created in recent years. The rest turned to dust in the past lives during this life.
+      </div>
     </section>
     <section id="ear">
       <div class="section-content">
@@ -218,39 +219,14 @@
           <div style="height: 50px;"></div>
           <h3>Maelstrom</h3>
           <hr>
-          <a href="maelstrom_november-lodge/Maelstrom - November Lodge.jpg" target="_blank">
-  <img src="maelstrom_november-lodge/Maelstrom - November Lodge_front.jpg" alt="Maelstrom November Lodge" width="250" height="250"></a>
-          <p>November Lodge - 2002</p>
-          <audio controls controlsList="nodownload noplaybackrate">
-            <source src="maelstrom_november-lodge/01 - Dancing Thy Silence.mp3" type="audio/mpeg">
-            </audio>
-          <p>Dancing Thy Silence</p>
-          
-          <audio controls controlsList="nodownload noplaybackrate">
-            <source src="maelstrom_november-lodge/02 - Unrest.mp3" type="audio/mpeg">
-            </audio>
-          <p>Unrest</p>
-          
-          <audio controls controlsList="nodownload noplaybackrate">
-            <source src="maelstrom_november-lodge/03 - No More Tears.mp3" type="audio/mpeg">
-            </audio>
-          <p>No More Tears</p>
-          
-          <audio controls controlsList="nodownload noplaybackrate">
-            <source src="maelstrom_november-lodge/04 - Asteroids.mp3" type="audio/mpeg">
-            </audio>
-          <p>Asteroids</p>
-          
-          <audio controls controlsList="nodownload noplaybackrate">
-            <source src="maelstrom_november-lodge/05 - Last Lustful Vow.mp3" type="audio/mpeg">
-            </audio>
-          <p>Last Lustful Vow</p>
-          
-          <audio controls controlsList="nodownload noplaybackrate">
-            <source src="maelstrom_november-lodge/06 - The Whirled n-trance.mp3" type="audio/mpeg">
-            </audio>
+          <a href="maelstrom_november-lodge/Maelstrom%20-%20November%20Lodge.jpg" target="_blank"><img src="maelstrom_november-lodge/Maelstrom%20-%20November%20Lodge_front.jpg" alt="Maelstrom November Lodge" width="250" height="250"></a>
+          <p>November Lodge - 2002</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/01%20-%20Dancing%20Thy%20Silence.mp3" type="audio/mpeg"></audio>
+          <p>Dancing Thy Silence</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/02%20-%20Unrest.mp3" type="audio/mpeg"></audio>
+          <p>Unrest</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/03%20-%20No%20More%20Tears.mp3" type="audio/mpeg"></audio>
+          <p>No More Tears</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/04%20-%20Asteroids.mp3" type="audio/mpeg"></audio>
+          <p>Asteroids</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/05%20-%20Last%20Lustful%20Vow.mp3" type="audio/mpeg"></audio>
+          <p>Last Lustful Vow</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/06%20-%20The%20Whirled%20n-trance.mp3" type="audio/mpeg"></audio>
           <p>The Whirled n-trance</p>
-
         </div>
       </div>
     </section>
@@ -266,32 +242,21 @@
           <p>A Square Sun - April 20, 2022</p><a href="https://youtu.be/zf9YXZ62xCQ?si=HA6hzR4MZ3uwLmne" target="_blank"><img src="https://img.youtube.com/vi/zf9YXZ62xCQ/maxresdefault.jpg" alt="Complex Tym Frost" width="250" height="141"></a>
           <p>Complex (glitches by Massimiliano Crosera) - March 23, 2022</p><a href="https://youtu.be/qNWpcoYswUk?si=FpgFjzZJWhrJvZ2i" target="_blank"><img src="https://img.youtube.com/vi/qNWpcoYswUk/maxresdefault.jpg" alt="Talking Box NeroBOT" width="250" height="141"></a>
           <p>Talking Box - November 27, 2017</p>
-                    <div style="height: 50px;"></div>
+          <div style="height: 50px;"></div>
           <h3>Paintings</h3>
           <hr>
-                    <a href="images/2017_fabio.png" target="_blank">
-  <img src="images/2017_fabio.png" alt="Fabio Todeschini" height="250"></a>
-                   <p>Fabio Todeschini - 2017</p>
-          <br>
-                    <a href="images/170309_erik.png" target="_blank">
-  <img src="images/170309_erik.png" alt="Erik Strauss" height="250"></a>
-                   <p>Erik Carnio - March 09, 2017</p>
-          <br>
-                    <a href="images/170416_dal-passato.jpg" target="_blank">
-  <img src="images/170416_dal-passato.jpg" alt="From the past self-portrait" height="250"></a>
-                   <p>From the past (self-portrait) - April 16, 2017</p>
-          <br>
-                    <a href="images/170416_il-pensiero.jpg" target="_blank">
-  <img src="images/170416_il-pensiero.jpg" alt="The thought self-portrait" height="250"></a>
-                   <p>The Thought (self-portrait) - April 16, 2017</p>
-          <br>
-                    <a href="images/170312_la-soglia.jpg" target="_blank">
-  <img src="images/170312_la-soglia.jpg" alt="The Threshold (Fumegai)" height="250"></a>
-                   <p>The Threshold (Fumegai) - March 12, 2017</p>
-          <br>
-                    <a href="images/1998_silentium.jpg" target="_blank">
-  <img src="images/1998_silentium.jpg" alt="Silentium self-portrait" height="250"></a>
-                   <p>Silentium (self-portrait) - 1998?</p>
+          <a href="images/2017_fabio.png" target="_blank"><img src="images/2017_fabio.png" alt="Fabio Todeschini" height="250"></a>
+          <p>Fabio Todeschini - 2017</p><br>
+          <a href="images/170309_erik.png" target="_blank"><img src="images/170309_erik.png" alt="Erik Strauss" height="250"></a>
+          <p>Erik Strauss - March 09, 2017</p><br>
+          <a href="images/170416_dal-passato.jpg" target="_blank"><img src="images/170416_dal-passato.jpg" alt="From the past self-portrait" height="250"></a>
+          <p>From the past (self-portrait) - April 16, 2017</p><br>
+          <a href="images/170416_il-pensiero.jpg" target="_blank"><img src="images/170416_il-pensiero.jpg" alt="The thought self-portrait" height="250"></a>
+          <p>The Thought (self-portrait) - April 16, 2017</p><br>
+          <a href="images/170312_la-soglia.jpg" target="_blank"><img src="images/170312_la-soglia.jpg" alt="The Threshold (Fumegai)" height="250"></a>
+          <p>The Threshold (Fumegai) - March 12, 2017</p><br>
+          <a href="images/1998_silentium.jpg" target="_blank"><img src="images/1998_silentium.jpg" alt="Silentium self-portrait" height="250"></a>
+          <p>Silentium (self-portrait) - 1998?</p>
         </div>
       </div>
     </section>
@@ -388,40 +353,28 @@
       <div class="section-content">
         <h2>Synapse</h2>
         <div class="text-content">
-          <!-- modify this form HTML and place wherever you want your form -->
-<form action="https://formspree.io/f/xangodzz" method="POST" class="contact-form">
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+          <form action="https://formspree.io/f/xangodzz" method="post" class="contact-form">
+             <label>Your message: <label>Your email: <input type="email" name="email"></label> 
+            <textarea name="message"></textarea></label> <button type="submit">Send</button>
+          </form>
+          <br>
           <div style="text-align:center;">
-        <a href="https://tymfrost.bandcamp.com/" target="_blank">bandcamp</a><br>
-        <a href="https://www.instagram.com/tymfrost.music?utm_source=qr&igsh=MXF4YzgyajlkdHNuMg==" target="_blank">instagram</a><br>
-        <a href="https://www.youtube.com/@tymfrost" target="_blank">youtube</a><br>
-            </div>
+            <a href="https://tymfrost.bandcamp.com/" target="_blank">bandcamp</a><br>
+            <a href="https://www.instagram.com/tymfrost.music?utm_source=qr&amp;igsh=MXF4YzgyajlkdHNuMg==" target="_blank">instagram</a><br>
+            <a href="https://www.youtube.com/@tymfrost" target="_blank">youtube</a><br>
+          </div>
+        </div>
       </div>
     </section>
     <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
       © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation.
-<p style="text-align:center; font-size:0.9em;">
-  20251121: 
-  <span style="display:inline-block; vertical-align:middle;">
-    <img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&color=666666&background=00000000&style=flat" alt="">
-  </span>
-</p>
+      <p style="text-align:center; font-size:0.9em;">20251121: <span style="display:inline-block; vertical-align:middle;"><img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&amp;color=666666&amp;background=00000000&amp;style=flat" alt="index"></span></p>
     </footer>
-    
-  </main>
-  <button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
+  </main><button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
   <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Back to Top</button> 
   <script>
+
+
 
 
 
@@ -476,7 +429,5 @@
   });
     
   </script>
-
-  
 </body>
 </html>
