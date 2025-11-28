@@ -132,6 +132,26 @@
     #back-to-top span { display: none; }
     #back-to-top { padding: 12px; bottom: 16px; right: 16px; }
   }
+
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+}
+
+.contact-form button {
+  padding: 10px;
+  cursor: pointer;
+}
+
   </style>
 </head>
 <body>
@@ -254,7 +274,7 @@
                    <p>Fabio Todeschini - 2017</p>
           <br>
                     <a href="images/170309_erik.png" target="_blank">
-  <img src="images/170309_erik.png" alt="Erik Carnio" height="250"></a>
+  <img src="images/170309_erik.png" alt="Erik Strauss" height="250"></a>
                    <p>Erik Carnio - March 09, 2017</p>
           <br>
                     <a href="images/170416_dal-passato.jpg" target="_blank">
@@ -368,10 +388,24 @@
       <div class="section-content">
         <h2>Synapse</h2>
         <div class="text-content">
-        <a href="mailto:lucarenier@gmail.com">lucarenier@gmail.com</a><br>
+          <!-- modify this form HTML and place wherever you want your form -->
+<form action="https://formspree.io/f/xangodzz" method="POST" class="contact-form">
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+          <div style="text-align:center;">
         <a href="https://tymfrost.bandcamp.com/" target="_blank">bandcamp</a><br>
         <a href="https://www.instagram.com/tymfrost.music?utm_source=qr&igsh=MXF4YzgyajlkdHNuMg==" target="_blank">instagram</a><br>
         <a href="https://www.youtube.com/@tymfrost" target="_blank">youtube</a><br>
+            </div>
       </div>
     </section>
     <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
