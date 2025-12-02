@@ -24,22 +24,20 @@
     z-index: 9999;
   }
 
-  /* Finestra centrale */
-  #splashContent {
-    background: #111; /* sfondo finestra */
-    padding: 30px 40px;
-    border-radius: 12px;
-    text-align: center;
-    color: white;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  }
+#splashContent input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ef4444; /* colore pulsante */
+  color: black; /* testo bianco */
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  #splashContent h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
+#splashContent input[type="submit"]:hover {
+  background-color: #ffffff; /* colore al passaggio del mouse */
+}
 
   #splashContent p {
     font-size: 1.1rem;
@@ -243,7 +241,6 @@
       <input type="submit" value="Iscriviti" />
       <p>
         <a href="https://buttondown.com/refer/ellerre" target="_blank">
-          Powered by Buttondown
         </a>
       </p>
     </form>
