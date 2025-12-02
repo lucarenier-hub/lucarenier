@@ -227,14 +227,22 @@
 
 <div id="splash">
   <div id="splashContent">
-    <h1>Iscriviti alla Newsletter</h1>
-    <p>Ricevi un avviso quando pubblico nuovi contenuti.</p>
+    <h1>Subscribe to the Newsletter</h1>
+    <p>Sign up to be notified when I upload new content.</p>
 
-    <form action="https://buttondown.email/api/emails/embed-subscribe/ellerre" method="post" target="_blank">
-      <input type="email" name="email" placeholder="La tua email" required>
-      <br>
-      <button type="submit">Iscriviti</button>
-    </form>
+<form
+  action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
+  method="post"
+  class="embeddable-buttondown-form"
+>
+  <label for="bd-email">Enter your email</label>
+  <input type="email" name="email" id="bd-email" />
+  <input type="submit" value="Subscribe" />
+  <p>
+    <a href="https://buttondown.com/refer/ellerre" target="_blank">
+    </a>
+  </p>
+</form>
 
     <div id="closeSplash">Continua senza registrarti</div>
   </div>
