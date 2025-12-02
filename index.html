@@ -4,65 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Splashscreen Newsletter</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
 
-    /* Splashscreen overlay */
-    #splash {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      z-index: 9999;
-    }
+  /* Overlay scuro */
+  #splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* overlay scuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
 
-    #splash h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+  /* Finestra centrale */
+  #splashContent {
+    background: #111; /* sfondo finestra */
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
 
-    #splash p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
+  #splashContent h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
 
-    #splash input[type="email"] {
-      padding: 10px;
-      width: 80%;
-      max-width: 300px;
-      border-radius: 5px;
-      border: none;
-      margin-bottom: 10px;
-    }
+  #splashContent p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
 
-    #splash button {
-      padding: 10px 20px;
-      border: none;
-      background: #00bcd4;
-      color: white;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+  #splashContent input[type="email"] {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+  }
 
-    #closeSplash {
-      margin-top: 20px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      text-decoration: underline;
-    }
+  #splashContent button {
+    padding: 10px 20px;
+    border: none;
+    background: #00bcd4;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #closeSplash {
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    color: #aaa;
+  }
 
   <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
   <title>Luca Renier's hub</title>
