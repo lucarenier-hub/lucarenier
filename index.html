@@ -3,6 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splashscreen Newsletter</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Splashscreen overlay */
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      z-index: 9999;
+    }
+
+    #splash h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    #splash p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    #splash input[type="email"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    #splash button {
+      padding: 10px 20px;
+      border: none;
+      background: #00bcd4;
+      color: white;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #closeSplash {
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-decoration: underline;
+    }
+
   <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
   <title>Luca Renier's hub</title>
   <style>
@@ -155,6 +216,20 @@
   </style>
 </head>
 <body>
+
+<div id="splash">
+  <h1>Iscriviti alla Newsletter</h1>
+  <p>Ricevi un avviso quando pubblico nuovi contenuti.</p>
+
+  <form action="https://buttondown.email/api/emails/embed-subscribe/ellerre" method="post" target="_blank">
+    <input type="email" name="email" placeholder="La tua email" required>
+    <br>
+    <button type="submit">Iscriviti</button>
+  </form>
+
+  <div id="closeSplash">Continua senza registrarti</div>
+</div>
+  
   <header id="banner">
     <img src="header-image.png" alt="Header Image" class="header-image">
   </header>
@@ -372,11 +447,22 @@
     </footer>
   </main><button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
   <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Back to Top</button> 
+
+
+  
   <script>
 
 
 
+  // Mostra lo splash solo se non è già stato chiuso
+  if (localStorage.getItem("splashClosed")) {
+    document.getElementById("splash").style.display = "none";
+  }
 
+  document.getElementById("closeSplash").addEventListener("click", function() {
+    document.getElementById("splash").style.display = "none";
+    localStorage.setItem("splashClosed", "yes");
+  });
 
 
 
