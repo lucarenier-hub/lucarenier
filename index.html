@@ -257,7 +257,6 @@
       action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
       method="post"
       class="embeddable-buttondown-form"
-      target="_blank"
     >
       <label for="bd-email">Your email</label>
       <input type="email" name="email" id="bd-email" required />
@@ -508,6 +507,28 @@
     document.getElementById("splash").style.display = "none";
     localStorage.setItem("splashClosed", "yes");
   });
+
+const splash = document.getElementById("splash");
+const form = document.getElementById("newsletterForm");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault(); // evita il comportamento predefinito (ricarica/apre pagina)
+  
+  // Invia i dati al server di Buttondown
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    mode: "no-cors"
+  }).then(() => {
+    // Nasconde lo splash
+    splash.style.display = "none";
+    localStorage.setItem("splashClosed", "yes");
+  }).catch(() => {
+    // Anche in caso di errore, chiude lo splash
+    splash.style.display = "none";
+    localStorage.setItem("splashClosed", "yes");
+  });
+});
 
 
 
