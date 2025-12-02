@@ -10,88 +10,7 @@
     font-family: Arial, sans-serif;
   }
 
-#splash {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* sfondo leggermente trasparente */
-  display: flex;
-  justify-content: center; /* centra orizzontalmente */
-  align-items: center;     /* centra verticalmente */
-  z-index: 9999;
-}
 
-/* Finestra centrale completamente nera */
-#splashContent {
-  background-color: #000;  /* nero pieno */
-  padding: 30px 40px;
-  border-radius: 12px;
-  border-radius: 12px;
-  border: 2px solid #fff;       /* bordo bianco */
-  text-align: center;
-  color: white;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-/* Testi */
-#splashContent h1 {
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-
-#splashContent p {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-/* Form */
-#splashContent form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-
-#splashContent input[type="email"] {
-  padding: 10px;
-  width: 100%;
-  max-width: 300px;
-  border-radius: 5px;
-  border: none;
-}
-
-/* Pulsante colorato */
-#splashContent input[type="submit"] {
-  padding: 10px 20px;
-  border: none;
-  background-color: #ef4444; /* colore pulsante */
-  color: black;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#splashContent input[type="submit"]:hover {
-  background-color: #ffffff;
-}
-
-/* Link chiudi splash */
-#closeSplash {
-  margin-top: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  text-decoration: underline;
-}
 
   <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
   <title>Luca Renier's hub</title>
@@ -246,30 +165,19 @@
 </head>
 <body>
 
-<!-- Inizio Splash Screen Newsletter -->
-<div id="splash">
-  <div id="splashContent">
-    <h1>Subscribe to the Newsletter</h1>
-    <p>Receive a notification when I publish new content</p>
-
-    <!-- Form Buttondown -->
-    <form
-      action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
-      method="post"
-      class="embeddable-buttondown-form"
-    >
-      <label for="bd-email">Your email</label>
-      <input type="email" name="email" id="bd-email" required />
-      <input type="submit" value="Iscriviti" />
-      <p>
-        <a href="https://buttondown.com/refer/ellerre" target="_blank">
-        </a>
-      </p>
-    </form>
-
-    <div id="closeSplash">Continue without registering</div>
-  </div>
-</div>
+<form
+  action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
+  method="post"
+  class="embeddable-buttondown-form"
+>
+  <label for="bd-email">Enter your email</label>
+  <input type="email" name="email" id="bd-email" />
+  <input type="submit" value="Subscribe" />
+  <p>
+    <a href="https://buttondown.com/refer/ellerre" target="_blank">
+    </a>
+  </p>
+</form>
 
 
 
@@ -498,37 +406,7 @@
 
 
 
-  // Mostra lo splash solo se non è già stato chiuso
-  if (localStorage.getItem("splashClosed")) {
-    document.getElementById("splash").style.display = "none";
-  }
 
-  document.getElementById("closeSplash").addEventListener("click", function() {
-    document.getElementById("splash").style.display = "none";
-    localStorage.setItem("splashClosed", "yes");
-  });
-
-const splash = document.getElementById("splash");
-const form = document.getElementById("newsletterForm");
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault(); // evita il comportamento predefinito (ricarica/apre pagina)
-  
-  // Invia i dati al server di Buttondown
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    mode: "no-cors"
-  }).then(() => {
-    // Nasconde lo splash
-    splash.style.display = "none";
-    localStorage.setItem("splashClosed", "yes");
-  }).catch(() => {
-    // Anche in caso di errore, chiude lo splash
-    splash.style.display = "none";
-    localStorage.setItem("splashClosed", "yes");
-  });
-});
 
 
 
