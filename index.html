@@ -6,6 +6,75 @@
   <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
   <title>Luca Renier's hub</title>
   <style>
+
+
+
+.bd-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.bd-modal-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  width: 360px;
+  max-width: 90%;
+  text-align: center;
+  font-family: sans-serif;
+
+  /* Colori personalizzabili */
+  --accent: #3b82f6;
+}
+
+.bd-modal-content h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.bd-modal-content input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.bd-modal-content button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.bd-modal-content button:hover {
+  background: #1e60c4;
+}
+
+.bd-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+
+    
   /* Reset e base */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -155,6 +224,32 @@
   </style>
 </head>
 <body>
+
+
+<div id="bd-popup" class="bd-modal">
+  <div class="bd-modal-content">
+    <span class="bd-close">&times;</span>
+
+    <h2>Iscriviti alla Newsletter</h2>
+
+    <form
+  action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
+  method="post"
+  class="embeddable-buttondown-form"
+>
+  <label for="bd-email">Enter your email</label>
+  <input type="email" name="email" id="bd-email" />
+  <input type="submit" value="Subscribe" />
+  <p>
+    <a href="https://buttondown.com/refer/ellerre" target="_blank">
+      Powered by Buttondown.
+    </a>
+  </p>
+</form>
+  </div>
+</div>
+
+  
   <header id="banner">
     <img src="header-image.png" alt="Header Image" class="header-image">
   </header>
@@ -429,6 +524,29 @@
       });
     });
   });
+
+
+const popup = document.getElementById("bd-popup");
+const closeBtn = document.querySelector(".bd-close");
+
+// Mostra il popup solo la prima volta
+if (!localStorage.getItem("bd_popup_shown")) {
+  setTimeout(() => {
+    popup.style.display = "flex";
+  }, 1500); // Attesa opzionale
+
+  localStorage.setItem("bd_popup_shown", "true");
+}
+
+// Chiudi popup
+closeBtn.onclick = () => popup.style.display = "none";
+
+// Chiudi cliccando fuori
+window.onclick = e => {
+  if (e.target === popup) popup.style.display = "none";
+};
+
+    
     
   </script>
 </body>
