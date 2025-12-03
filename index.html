@@ -508,6 +508,24 @@
       });
     });
   });
+
+
+const modal = document.getElementById("modal");
+const openButton = document.getElementById("openModal");
+const closeButton = document.getElementById("closeModal");
+
+openButton.onclick = () => {
+  modal.style.display = "flex"; // fondamentale per centrare (flexbox)
+};
+
+closeButton.onclick = () => {
+  modal.style.display = "none";
+};
+
+window.onclick = (e) => {
+  if (e.target === modal) modal.style.display = "none";
+};
+    
     
   </script>
 </body>
