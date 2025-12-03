@@ -6,58 +6,6 @@
   <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
   <title>Luca Renier's hub</title>
   <style>
-
-/* Sfondo scuro che copre l'intero schermo */
-.modal {
-  position: fixed;      /* fondamentale */
-  top: 0;               
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;        /* inizialmente nascosto */
-  align-items: center;  /* centra verticalmente */
-  justify-content: center; /* centra orizzontalmente */
-  z-index: 999999;      /* sopra a tutto */
-}
-
-/* Contenuto del popup */
-.modal-content {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  width: 400px;
-  max-width: 90%;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  position: relative;
-}
-
-/* Pulsante chiusura */
-.close {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  font-size: 32px;
-  cursor: pointer;
-}
-
-/* Stile del form */
-.modal-content input[type="email"],
-.modal-content input[type="submit"] {
-  width: 100%;
-  margin-top: 12px;
-  padding: 10px;
-  border-radius: 6px;
-}
-
-.modal-content input[type="submit"] {
-  background: #3b82f6;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-    
   /* Reset e base */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -207,33 +155,6 @@
   </style>
 </head>
 <body>
-
-
-<button id="openModal" style="margin:50px;">Apri popup newsletter</button>
-
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span id="closeModal" class="close">&times;</span>
-
-    <h2>Iscriviti alla newsletter</h2>
-
-    <!-- FORM BUTTONDOWN -->    
-<form
-  action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
-  method="post"
-  class="embeddable-buttondown-form"
->
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="submit" value="Subscribe" />
-  <p>
-    <a href="https://buttondown.com/refer/ellerre" target="_blank">
-    </a>
-  </p>
-</form>
-  </div>
-</div>
-  
   <header id="banner">
     <img src="header-image.png" alt="Header Image" class="header-image">
   </header>
@@ -508,47 +429,6 @@
       });
     });
   });
-
-
-const modal = document.getElementById("modal");
-const openButton = document.getElementById("openModal");
-const closeButton = document.getElementById("closeModal");
-
-openButton.onclick = () => {
-  modal.style.display = "flex"; // fondamentale per centrare (flexbox)
-};
-
-closeButton.onclick = () => {
-  modal.style.display = "none";
-};
-
-window.onclick = (e) => {
-  if (e.target === modal) modal.style.display = "none";
-};
-
-
-// ELEMENTI
-const modal = document.getElementById("modal");
-const closeButton = document.getElementById("closeModal");
-
-// Mostra il popup solo se l’utente non l’ha già visto
-if (!localStorage.getItem("newsletter_shown")) {
-  modal.style.display = "flex";     // Mostra il popup
-  localStorage.setItem("newsletter_shown", "true");   // Segna che è stato mostrato
-}
-
-// Chiudi con pulsante
-closeButton.onclick = () => {
-  modal.style.display = "none";
-};
-
-// Chiudi cliccando fuori dal popup
-window.onclick = (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-};    
-    
     
   </script>
 </body>
