@@ -524,7 +524,7 @@
 
   localStorage.setItem("bd_popup_shown", "true");
   }
-
+/*
   // Chiudi popup
   closeBtn.onclick = () => popup.style.display = "none";
 
@@ -532,7 +532,12 @@
   window.onclick = e => {
   if (e.target === popup) popup.style.display = "none";
   };
+*/
 
+    // Popup sempre attivo dopo un certo tempo
+setTimeout(() => {
+  popup.style.display = "flex";
+}, 7000); // cambia 3000 con il tempo che vuoi (in millisecondi)
     
     
   </script>
