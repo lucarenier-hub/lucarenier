@@ -515,7 +515,8 @@
 
   const popup = document.getElementById("bd-popup");
   const closeBtn = document.querySelector(".bd-close");
-
+    
+/*
   // Mostra il popup solo la prima volta
   if (!localStorage.getItem("bd_popup_shown")) {
   setTimeout(() => {
@@ -524,7 +525,8 @@
 
   localStorage.setItem("bd_popup_shown", "true");
   }
-/*
+  */
+    
   // Chiudi popup
   closeBtn.onclick = () => popup.style.display = "none";
 
@@ -532,7 +534,6 @@
   window.onclick = e => {
   if (e.target === popup) popup.style.display = "none";
   };
-*/
 
     // Popup sempre attivo dopo un certo tempo
 setTimeout(() => {
