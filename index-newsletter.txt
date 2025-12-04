@@ -7,7 +7,7 @@
   <title>Luca Renier's hub</title>
   <style>
 
-.bd-modal-content input[type="submit"] {
+  .bd-modal-content input[type="submit"] {
   margin-top: 12px;
   width: 100%;
   padding: 12px;
@@ -17,13 +17,13 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-}
+  }
 
-.bd-modal-content input[type="submit"]:hover {
+  .bd-modal-content input[type="submit"]:hover {
   background: #ffffff;
-}
+  }
 
-.bd-modal {
+  .bd-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -34,9 +34,9 @@
   justify-content: center;
   align-items: center;
   z-index: 99999;
-}
+  }
 
-.bd-modal-content {
+  .bd-modal-content {
   background: #000000;
   padding: 30px;
   border-radius: 14px;
@@ -48,28 +48,28 @@
 
   /* Colori personalizzabili */
   --accent: #ef4444;
-}
+  }
 
-.bd-modal-content h2 {
+  .bd-modal-content h2 {
   margin-top: 0;
   color: var(--accent);
-}
+  }
 
-.bd-modal-content input[type="email"] {
+  .bd-modal-content input[type="email"] {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
-}
+  }
 
-.bd-close {
+  .bd-close {
   position: absolute;
   right: 20px;
   top: 20px;
   font-size: 28px;
   cursor: pointer;
-}
+  }
 
 
 
@@ -223,33 +223,18 @@
   </style>
 </head>
 <body>
-
-
-<div id="bd-popup" class="bd-modal">
-  <div class="bd-modal-content">
-    <span class="bd-close">&times;</span>
-
-    <h2>Newsletter</h2>
-    <p><b>Sign up to stay updated when I upload new content</b></p>
-    
-    <form
-  action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
-  method="post"
-  class="embeddable-buttondown-form"
->
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="submit" value="Subscribe" />
-  <p>
-    <a href="https://buttondown.com/refer/ellerre" target="_blank">
-    </a>
-  </p>
-      <p>(check your spam folder if you do not receive the confirmation request)</p>
-</form>
+  <div id="bd-popup" class="bd-modal">
+    <div class="bd-modal-content">
+      <span class="bd-close">×</span>
+      <h2>Newsletter</h2>
+      <p><b>Sign up to stay updated when I upload new content</b></p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/ellerre" method="post" class="embeddable-buttondown-form">
+        <label for="bd-email">Enter your email</label> <input type="email" name="email" id="bd-email"> <input type="submit" value="Subscribe">
+        <p><a href="https://buttondown.com/refer/ellerre" target="_blank"></a></p>
+        <p>(check your spam folder if you do not receive the confirmation request)</p>
+      </form>
+    </div>
   </div>
-</div>
-
-  
   <header id="banner">
     <img src="header-image.png" alt="Header Image" class="header-image">
   </header>
@@ -476,6 +461,8 @@
 
 
 
+
+
   const banner = document.getElementById('banner');
   const nav = document.getElementById('main-nav');
   const main = document.querySelector('main');
@@ -526,29 +513,28 @@
   });
 
 
-const popup = document.getElementById("bd-popup");
-const closeBtn = document.querySelector(".bd-close");
+  const popup = document.getElementById("bd-popup");
+  const closeBtn = document.querySelector(".bd-close");
 
-// Mostra il popup solo la prima volta
-if (!localStorage.getItem("bd_popup_shown")) {
+  // Mostra il popup solo la prima volta
+  if (!localStorage.getItem("bd_popup_shown")) {
   setTimeout(() => {
     popup.style.display = "flex";
   }, 1500); // Attesa opzionale
 
   localStorage.setItem("bd_popup_shown", "true");
-}
+  }
 
-// Chiudi popup
-closeBtn.onclick = () => popup.style.display = "none";
+  // Chiudi popup
+  closeBtn.onclick = () => popup.style.display = "none";
 
-// Chiudi cliccando fuori
-window.onclick = e => {
+  // Chiudi cliccando fuori
+  window.onclick = e => {
   if (e.target === popup) popup.style.display = "none";
-};
+  };
 
     
     
   </script>
 </body>
 </html>
-
