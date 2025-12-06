@@ -345,6 +345,46 @@
       <div class="section-content">
         <h2>Mouth</h2>
         <div class="text-content">
+          <h3>Ricordo (December 6, 2025)</h3>
+          <hr>
+          <p>È una croce di strade<br>
+Una fortezza tenace<br>
+<br>
+È un saldo ricordo<br>
+Un sepolcro fiorito<br>
+<br>
+Di scorpioni una culla<br>
+Un'ondata di sangue<br>
+<br>
+È un incantesimo, dicevano<br>
+Una maledizione, gridavano<br>
+<br>
+Estate dei morti<br>
+Sui campi ormai stanchi<br>
+Tra oziosi sentieri<br>
+E alberi in pace<br>
+<br>
+È calore del sole<br>
+Che brucia le vene<br>
+È oggetto di culto<br>
+Il regalo segreto<br>
+<br>
+Quei candidi occhi<br>
+Che ti osservano freddi<br>
+Son cicatrici nel tempo<br>
+Sull'immobile corpo<br>
+<br>
+Accanto a me dorme<br>
+Quel sogno lontano<br>
+Quando voglio lo sveglio<br>
+...resta con me</p>
+          <div style="height: 50px;"></div>
+          <h3>Anatomia (sometime in 2017)</h3>
+          <hr>
+          <p>Ci sono alcuni giorni in cui l'anatomia del mio corpo è molto simile a quella delle nuvole.<br>
+          Quale sia la sua forma dovreste chiederlo agli abitanti che vivono sotto alla terra.
+            <br>La loro gravità è la chiave nel buio.</p>
+<div style="height: 50px;"></div>
           <h3>La Mente (2021?)</h3>
           <hr>
           <p>E' la folle Mente<br>
@@ -355,7 +395,7 @@
           e finalmente sento splendente<br>
           la raffinata Mente.</p>
           <div style="height: 50px;"></div>
-          <h3>Io non sono (21 maggio 2019)</h3>
+          <h3>Io non sono (May 21, 2019)</h3>
           <hr>
           <p>"Tutto quello che vi ho detto è stata una menzogna. non sono chi credete io sia, non conoscete il mio nome, le mie inclinazioni sono completamente diverse."<br>
           <br>
@@ -373,7 +413,7 @@
           <br>
           Il giorno dopo qualcuno lo uccise per strada, e le loro vite cambiarono ancora, per la seconda volta in due giorni.</p>
           <div style="height: 50px;"></div>
-          <h3>L'ultimo (31 marzo 2017)</h3>
+          <h3>L'ultimo (March 31, 2017)</h3>
           <hr>
           <p>Si girò e non vide più nessuno dietro di lui.<br>
           <br>
@@ -381,7 +421,7 @@
           <br>
           Si rese conto di essere l'ultimo, e quel momento di sollievo lo accompagnò per tutto il resto della vita.<br></p>
           <div style="height: 50px;"></div>
-          <h3>Fuorilegge (16 marzo 2015)</h3>
+          <h3>Fuorilegge (March 16, 2015)</h3>
           <hr>
           <p>Prendetelo, fermatelo, arrestatelo!<br>
           Mossa intelligente venire alla festa con i colori dell’altra fazione.<br>
