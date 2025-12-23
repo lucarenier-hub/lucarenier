@@ -220,6 +220,23 @@
   cursor: pointer;
   }
 
+
+
+/* Ridurre la dimensione del testo solo nella sezione 'news' */
+.news-section {
+    font-size: 0.85em; /* Riduce la dimensione del font al 85% della dimensione originale */
+}
+
+/* Puoi anche ridurre la dimensione dei singoli paragrafi e delle date all'interno della sezione */
+.news-section .timeline-item p,
+.news-section .timeline-item .timeline-date {
+    font-size: 0.9em; /* Imposta il font dei paragrafi e delle date leggermente più piccolo */
+}
+
+
+
+    
+
   </style>
 </head>
 <body>
@@ -255,7 +272,7 @@
 
         <section id="content-timeline">
                 <div class="section-content">
-        <div class="text-content">
+        <div class="text-content news-section">
           <h3>News</h3>
   <hr>
   <div class="timeline">
