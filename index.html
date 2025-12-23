@@ -220,37 +220,6 @@
   cursor: pointer;
   }
 
-.timeline {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.timeline-item {
-    background: #1f1f1f;
-    color: #ef4444;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.timeline-item:hover {
-    background-color: #ef4444;
-    color: white;
-}
-
-.timeline-date {
-    font-weight: bold;
-}
-
-.timeline-title {
-    font-size: 16px;
-    margin-top: 5px;
-}
-
   </style>
 </head>
 <body>
@@ -283,22 +252,22 @@
     </section>
 
 
-<div class="timeline">
-  <div class="timeline-item" onclick="scrollToSection('intro')">
-    <span class="timeline-date">Gennaio 2025</span>
-    <span class="timeline-title">Introduzione al sito</span>
+<section id="content-timeline" style="padding: 40px 20px;">
+  <h2 style="text-align:center; color: #ef4444;">Timeline dei Contenuti</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="timeline-date" style="color: #ccc;">21 Settembre 2022</span>
+      <p style="color: white;">Pubblicato "Void Dealer" - Album di Tym Frost</p>
+      <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank" style="color: #ef4444;">Ascolta ora</a>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date" style="color: #ccc;">19 Aprile 2023</span>
+      <p style="color: white;">Nuovo Video: "A Different Kind of Nothing" - Tym Frost e Return Trip Effect</p>
+      <a href="https://youtu.be/30LHX-ljT8M?si=s_0eeEorV3PW5IFh" target="_blank" style="color: #ef4444;">Guarda il video</a>
+    </div>
+    <!-- Aggiungi altre voci qui -->
   </div>
-  <div class="timeline-item" onclick="scrollToSection('ear')">
-    <span class="timeline-date">Febbraio 2025</span>
-    <span class="timeline-title">Aggiornamento Sezione "Ear"</span>
-  </div>
-  <div class="timeline-item" onclick="scrollToSection('eye')">
-    <span class="timeline-date">Marzo 2025</span>
-    <span class="timeline-title">Nuovo Contenuto "Eye"</span>
-  </div>
-  <!-- Aggiungi altri eventi come necessario -->
-</div>
-
+</section>
 
 
     
@@ -647,15 +616,10 @@ Quando voglio lo sveglio<br>
   window.addEventListener('resize', updateMenuPosition);
   window.addEventListener('scroll', updateMenuPosition);
 
-function scrollToSection(sectionId) {
+  function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-
-    
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }
 
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
