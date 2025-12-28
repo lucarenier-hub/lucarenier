@@ -239,14 +239,8 @@
     padding: 0; /* Rimuove il padding extra */
 }
 
-
-#intro {
-    margin-top: 10; /* Riduce o rimuove il margine superiore della sezione timeline */
-    margin-bottom: 0; /* Rimuove il margine inferiore della sezione intro */
-}
-
 #content-timeline {
-    margin-top: 10; /* Riduce o rimuove il margine superiore della sezione timeline */
+    margin-top: 00; /* Riduce o rimuove il margine superiore della sezione timeline */
     padding-top: 0; /* Riduce il padding in alto, se presente */
 }
 
@@ -276,18 +270,22 @@
     </div>
   </nav>
   <main>
-    <section id="intro" style="display:table; width:100%">
-      <div style="display:table-cell; vertical-align:middle; text-align:center; min-height:10vh;">
-        <p style="color: #ef4444;">Almost everything that has been created in recent years. The rest turned to dust in the past lives during this life.</p>
+
+<section id="intro" style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+  <div class="section-content">
+    <div class="text-content">
+      <p style="color: #ef4444; text-align: center;">Almost everything that has been created in recent years. The rest turned to dust in the past lives during this life.</p>
+      <p>I am not a musician, nor an artist, nor a writer. Everything I do stems from a sense of urgency, and I share it because in nature nothing is sufficient in itself, everything is connected.</p>
       </div>
-    </section>
+    </div>
+  </section>
     
     
     
     <section id="content-timeline">
       <div class="section-content">
         <div class="text-content news-section">
-          <p>Last updates:</p>
+          <p><b>Last updates:</b></p>
           <div class="timeline">
             <span class="timeline-date" style="color: #ccc;">December 21, 2025</span>
             <p><a href="#ear">ear sector</a> - A Different Kind of Nothing</p>
