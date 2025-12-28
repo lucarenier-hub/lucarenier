@@ -220,11 +220,10 @@
   cursor: pointer;
   }
 
-
-
 /* Ridurre la dimensione del testo solo nella sezione 'news' */
 .news-section {
     font-size: 0.85em; /* Riduce la dimensione del font al 85% della dimensione originale */
+    text-align: center;
 }
 
 /* Puoi anche ridurre la dimensione dei singoli paragrafi e delle date all'interno della sezione */
@@ -271,11 +270,11 @@
   </nav>
   <main>
 
-<section id="intro" style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+<section id="intro" style="display: flex; justify-content: center; align-items: center; height: 30vh;">
   <div class="section-content">
     <div class="text-content">
       <p style="color: #ef4444; text-align: center;">Almost everything that has been created in recent years. The rest turned to dust in the past lives during this life.</p>
-      <p>I am not a musician, nor an artist, nor a writer. Everything I do stems from a sense of urgency, and I share it because in nature nothing is sufficient in itself, everything is connected.</p>
+      <p style="text-align: center;">I am not a musician, nor an artist, nor a writer. Everything I do stems from a sense of urgency, and I share it because in nature nothing is sufficient in itself, everything is connected.</p>
       </div>
     </div>
   </section>
