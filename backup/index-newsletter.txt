@@ -283,6 +283,7 @@
           <p><b>Last updates:</b></p>
           <div class="timeline">
             <span class="timeline-date" style="color: #ccc;">December 21, 2025</span>
+            <p><a href="#ear">mouth sector</a> - Tra i binari</p><span class="timeline-date" style="color: #ccc;">January 9, 2026</span>
             <p><a href="#ear">ear sector</a> - A Different Kind of Nothing</p><span class="timeline-date" style="color: #ccc;">December 10, 2025</span>
             <p><a href="#mouth">mouth sector</a> - Metamorfosi</p><span class="timeline-date" style="color: #ccc;">December 6, 2025</span>
             <p><a href="#mouth">mouth sector</a> - Ricordo</p>
@@ -391,7 +392,7 @@
         <div style="height: 50px;"></div>
         <h2>Mouth</h2>
         <div class="text-content">
-          <h3>Trai i binari (9 gennaio 2026)</h3>
+          <h3>Tra i binari (9 gennaio 2026)</h3>
           <hr>
           <p>Mi aggiro al loro interno come un bambino curioso,<br>
           osservo cosa accade e memorizzo i movimenti:<br>
