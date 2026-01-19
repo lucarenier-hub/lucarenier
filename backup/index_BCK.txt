@@ -303,9 +303,9 @@
           <p><b>Last updates:</b></p>
           <div class="timeline">
             <span class="timeline-date" style="color: #ccc;">January 15, 2026</span>
-            <p><a href="#ear">mouth sector</a> - Cammino</p>
+            <p><a href="#mouth">mouth sector</a> - Cammino</p>
             <span class="timeline-date" style="color: #ccc;">January 9, 2026</span>
-            <p><a href="#ear">mouth sector</a> - Tra i binari</p>
+            <p><a href="#mouth">mouth sector</a> - Tra i binari</p>
             <span class="timeline-date" style="color: #ccc;">December 17, 2025</span>
             <p><a href="#ear">ear sector</a> - A Different Kind of Nothing</p>
             <span class="timeline-date" style="color: #ccc;">December 10, 2025</span>
