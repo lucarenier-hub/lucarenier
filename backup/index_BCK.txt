@@ -6,7 +6,8 @@
   <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
   <title>Luca Renier's hub</title>
   <style>
-
+    
+/* newsletter
   .bd-modal-content input[type="submit"] {
   margin-top: 12px;
   width: 100%;
@@ -18,7 +19,7 @@
   cursor: pointer;
   font-size: 16px;
   }
-
+ 
   .bd-modal-content input[type="submit"]:hover {
   background: #ffffff;
   }
@@ -46,7 +47,7 @@
   text-align: center;
   font-family: sans-serif;
 
-  /* Colori personalizzabili */
+  /* Colori personalizzabili
   --accent: #ef4444;
   }
 
@@ -70,7 +71,7 @@
   font-size: 28px;
   cursor: pointer;
   }
-
+*/
 
 
     
@@ -220,34 +221,51 @@
   cursor: pointer;
   }
 
-/* Ridurre la dimensione del testo solo nella sezione 'news' */
-.news-section {
+  /* Ridurre la dimensione del testo solo nella sezione 'news' */
+  .news-section {
     font-size: 0.85em; /* Riduce la dimensione del font al 85% della dimensione originale */
     text-align: center;
-}
+  }
 
-/* Puoi anche ridurre la dimensione dei singoli paragrafi e delle date all'interno della sezione */
-.news-section .timeline-item p,
-.news-section .timeline-item .timeline-date {
+  /* Puoi anche ridurre la dimensione dei singoli paragrafi e delle date all'interno della sezione */
+  .news-section .timeline-item p,
+  .news-section .timeline-item .timeline-date {
     font-size: 0.9em; /* Imposta il font dei paragrafi e delle date leggermente più piccolo */
-}
+  }
 
-/* Ridurre la distanza tra le righe di testo */
-.news-section p {
+  /* Ridurre la distanza tra le righe di testo */
+  .news-section p {
     margin: 0; /* Rimuove il margine verticale tra i paragrafi */
     padding: 0; /* Rimuove il padding extra */
-}
+  }
 
-#content-timeline {
+  #content-timeline {
     margin-top: 00; /* Riduce o rimuove il margine superiore della sezione timeline */
     padding-top: 0; /* Riduce il padding in alto, se presente */
-}
+  }
 
     
 
   </style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106293605', 'ym');
+
+    ym(106293605, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106293605" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  
 </head>
 <body>
+
+<!--
   <div id="bd-popup" class="bd-modal">
     <div class="bd-modal-content">
       <span class="bd-close">×</span>
@@ -260,6 +278,8 @@
       </form>
     </div>
   </div>
+-->
+  
   <header id="banner">
     <img src="header-image.png" alt="Header Image" class="header-image">
   </header>
@@ -269,36 +289,33 @@
     </div>
   </nav>
   <main>
-
-<section id="intro" style="display: flex; justify-content: center; align-items: center; height: 25vh;">
-  <div class="section-content">
-    <div class="text-content">
-      <p style="color: #ef4444; text-align: center;">Almost everything that has been created in recent years. The rest turned to dust in the past lives during this life.</p>
-      <p style="text-align: center;">I am not a musician, nor an artist, nor a writer. Everything I do stems from a sense of urgency, and I share it because in nature nothing is sufficient in itself, everything is connected.</p>
+    <section id="intro" style="display: flex; justify-content: center; align-items: center; height: 30vh;">
+      <div class="section-content">
+        <div class="text-content">
+          <p style="color: #ef4444; text-align: center;">Almost everything that has been created in recent years. The rest turned to dust in the past lives during this life.</p>
+          <p style="text-align: center;">I am not a musician, nor an artist, nor a writer. Everything I do stems from a sense of urgency, and I share it because in nature nothing is sufficient in itself, everything is connected.</p>
+        </div>
       </div>
-    </div>
-  </section>
-    
-    
-    
+    </section>
     <section id="content-timeline">
       <div class="section-content">
         <div class="text-content news-section">
           <p><b>Last updates:</b></p>
           <div class="timeline">
-            <span class="timeline-date" style="color: #ccc;">December 21, 2025</span>
+            <span class="timeline-date" style="color: #ccc;">January 15, 2026</span>
+            <p><a href="#ear">mouth sector</a> - Cammino</p>
+            <span class="timeline-date" style="color: #ccc;">January 9, 2026</span>
+            <p><a href="#ear">mouth sector</a> - Tra i binari</p>
+            <span class="timeline-date" style="color: #ccc;">December 17, 2025</span>
             <p><a href="#ear">ear sector</a> - A Different Kind of Nothing</p>
             <span class="timeline-date" style="color: #ccc;">December 10, 2025</span>
             <p><a href="#mouth">mouth sector</a> - Metamorfosi</p>
             <span class="timeline-date" style="color: #ccc;">December 6, 2025</span>
-            <p><a href="#mouth">mouth sector</a> - Ricordo</p>
-            </div>
+             <p><a href="#mouth">mouth sector</a> - Ricordo</p>
           </div>
         </div>
+      </div>
     </section>
-
-
-    
     <section id="ear">
       <div class="section-content">
         <h2>Ear</h2>
@@ -306,12 +323,9 @@
           <h3>Tym Frost</h3>
           <hr>
           <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank"><img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250"></a>
-          <p>Void Dealer (September 21, 2022)</p><a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank"><img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250"></a>
-          <br>
-          <p>A Square Sun (February 23, 2022) -Released by Sounds Against Humanity SAH043</p><a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank"><img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250"></a>
-          <br>
-          <p>There is no oxygen here (November 27, 2021)</p><a href="https://tymfrost.bandcamp.com/album/toot" target="_blank"><img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250"></a>
-          <br>
+          <p>Void Dealer (September 21, 2022)</p><a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank"><img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250"></a><br>
+          <p>A Square Sun (February 23, 2022) -Released by Sounds Against Humanity SAH043</p><a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank"><img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250"></a><br>
+          <p>There is no oxygen here (November 27, 2021)</p><a href="https://tymfrost.bandcamp.com/album/toot" target="_blank"><img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250"></a><br>
           <p>Toot (February 25, 2021) -Released by Casetta Records</p>
           <div style="height: 50px;"></div>
           <h3>w/ Return Trip Effect</h3>
@@ -403,102 +417,174 @@
         <div style="height: 50px;"></div>
         <h2>Mouth</h2>
         <div class="text-content">
-<h3>Metamorfosi (December 10, 2025)</h3>
-<hr>
-<p>
-Un'altra notte di nebbia stava arrivando.<br>
-<br>
-Sapeva bene cosa stava accadendo.<br>
-<br>
-Nuova fase in arrivo e la linea si sfoca.<br>
-La pupilla è un orrido e la pressione è in salita.<br>
-Nell'aria, l'odore della nuova carcassa<br>
-è un profumo di fiori che sigilla la valle.<br>
-<br>
-Non perdeva la testa, le braccia o le gambe,<br>
-ma uscendo di corsa, perdeva la chiave.<br>
-La casa crollava e con essa il domani<br>
-di una vita passata tra lamenti e passioni.<br>
-<br>
-Neonato è il serpente con la coda passata,<br>
-riesumato dal tempo nella fossa nel mezzo,<br>
-nell'imprevista metamorfosi al centro del tunnel,<br>
-la piccola creatura riposava in silenzio.<br>
-<br>
-Univa i puntini per rivelarne la forma<br>
-e nell'esito incerto s'affannava a contare,<br>
-ma agli occhi del tempo era un bianco fantasma,<br>
-che seguiva le luci senza trovare l'uscita.<br>
-<br>
-"Ascoltami" disse la voce alla radio.<br>
-Calma e distorta, la voce esclamava<br>
-all'inquieto viandante che non trovava la pace,<br>
-che del passato ormai vedeva solo le tracce.<br>
-<br>
-La voce insisteva, doveva smuovere il corpo:<br>
-"Conosci la strada, sai il da farsi, muovi le gambe, qui non puoi stare"<br>
-"Il suono è in arrivo e tu devi cambiare, partire di nuovo, in vita mutare"<br>
-"Presto! Veloce! Ora devi uscire! E' la notte perfetta, più bianca del gelo"<br>
-<br>
-E' prevista nebbia intensa fino a domani.<br>
-<br>
-Vedeva i suoi volti perduti nel tempo,<br>
-opache le forme e blandi i legami,<br>
-i lineamenti sbiaditi dei momenti passati.<br>
-Con rabbia piangendo, stringeva il bagaglio.<br>
-<br>
-Manca poco all'imbarco, è il gesto che conta.<br>
-Non evocar nostalgia o altri tranelli:<br>
-uccidono l'Ora e poi ti lasciano a terra!<br>
-Ti rifletti nel vuoto quando nasci di nuovo.<br>
-<br>
-Sarà ancora tutto diverso, come prima.<br>
-<br>
-Uguale a una volta e diverso da ieri.
-</p>
-          <div style="height: 50px;"></div>          
+          <h3>Cammino (January 15, 2026)</h3>
+          <hr>
+          <p>“Il sole sta morendo” suggerirono le acque<br>
+          “Il sole sta morendo” annunciò la foce<br>
+          Schiena alla luce e volto alla notte<br>
+          Labbra sigillate e occhi spalancati<br>
+          Il profumo della terra gli riempì le stanze del cranio<br>
+          Era giunto il momento di partire<br>
+          Un passo dopo l’altro<br>
+          In equilibrio un passo dopo l'altro<br>
+          Fù più il tempo in equilibrio<br>
+          di quello con due piedi per terra<br>
+          La chiarezza della visione<br>
+          La certezza dell’intuito<br>
+          Il lampo dell’azione<br>
+          Il meccanismo s’innescò<br>
+          La macchina si mosse<br>
+          Quella volta non stava dormendo<br>
+          Sapeva di essere sveglio<br>
+          Faceva troppo freddo per essere un sogno<br>
+          Dalla foce lungo la solitaria pianura<br>
+          Dalla palude al campo di grano<br>
+          Il miraggio della valle prima del bosco<br>
+          Fin nella foresta prima della bianca roccia<br>
+          Andamento regolare e chiaro<br>
+          Pulsazione che regolava l’espansione<br>
+          All’usignolo donò gli occhi per trovare la strada<br>
+          Alla iena versò il sangue per dissipare la violenza<br>
+          Al lupo cedette i piedi per riunirsi ai fratelli<br>
+          Al cervo lasciò la lingua per la magia del silenzio<br>
+          Alla vipera offrì le mani per aprire la porta<br>
+          Abbandonò il cuore lungo il cammino<br>
+          Sulla cima si tagliò la testa<br>
+          All’apogeo fuori dal dominio<br>
+          Alla luce della prossima fase<br>
+          L’eterna vetta diamante splendeva<br>
+          “Il buio ritornerà” suggerirono le rocce<br>
+          “Il buio ritornerà” annunciò il crinale in fiamme<br>
+          Schiena alla notte e volto alla luce<br>
+          Immobile di fronte all’alba<br>
+          Cantò ad occhi chiusi<br>
+          Non aveva più niente da donare<br>
+          Il profumo dell’aria gli riempì le stanze del cranio<br>
+          Le urla delle foci assordarono il pianeta<br>
+          Le lacrime degli animali sommersero le terre</p>
+          <div style="height: 50px;"></div>
+          <h3>Tra i binari (December 15, 2026)</h3>
+          <hr>
+          <p>Mi aggiro al loro interno come un bambino curioso,<br>
+          osservo cosa accade e memorizzo i movimenti:<br>
+          ormai conosco con precisione il moto dei loro organi.<br>
+          Come costellazioni, uniscono i cieli<br>
+          attraverso strutture sempre in ascolto sulla soglia.<br>
+          Tra strilli d'acciaio, risate e rumore,<br>
+          recidono il tempo e suturano lo spazio.<br>
+          Cammino lento e guardo due volte.<br>
+          Frasi mozzate e vani segreti, si celano<br>
+          in queste maestre di viaggio, in queste insegnanti severe.<br>
+          La frase non trova un finale e l’orchestra d’un tratto si ferma.<br>
+          Come nella frattura della vita si allevia il dolore,<br>
+          di scintille s'infuocano i loro occhi trafitti.<br>
+          Incoscienti spettatori nelle corti di confine<br>
+          si saldano e disciolgono negli umori dei corpi,<br>
+          in seducenti tremori di contorte emozioni.<br>
+          Grandi sono le fatiche che sopportano i passeggeri.<br>
+          Graffiano le porte e si lamentano come animali mortali, fin troppo coscienti.<br>
+          Dopo secoli di solitudine, benedetti sotto alla volta di cemento armato<br>
+          finalmente si ritrovano di nuovo stranieri.<br>
+          Felici di potersi strangolare ancora,<br>
+          con lo sguardo verso i gelidi fiumi dei binari nel tempo,<br>
+          così freddi e veloci da tagliar loro la testa.<br>
+          Lieti di poter camminare sui tappeti rossi,<br>
+          stringono nastri di sangue attorno alle vite.<br>
+          Così stretti e affilati da arrestare il cuore e mozzare il fiato.<br>
+          Si raccomanda di fare attenzione alla linea.</p>
+          <div style="height: 50px;"></div>
+          <h3>Metamorfosi (December 10, 2025)</h3>
+          <hr>
+          <p>Un'altra notte di nebbia stava arrivando.<br>
+          <br>
+          Sapeva bene cosa stava accadendo.<br>
+          <br>
+          Nuova fase in arrivo e la linea si sfoca.<br>
+          La pupilla è un orrido e la pressione è in salita.<br>
+          Nell'aria, l'odore della nuova carcassa<br>
+          è un profumo di fiori che sigilla la valle.<br>
+          <br>
+          Non perdeva la testa, le braccia o le gambe,<br>
+          ma uscendo di corsa, perdeva la chiave.<br>
+          La casa crollava e con essa il domani<br>
+          di una vita passata tra lamenti e passioni.<br>
+          <br>
+          Neonato è il serpente con la coda passata,<br>
+          riesumato dal tempo nella fossa nel mezzo,<br>
+          nell'imprevista metamorfosi al centro del tunnel,<br>
+          la piccola creatura riposava in silenzio.<br>
+          <br>
+          Univa i puntini per rivelarne la forma<br>
+          e nell'esito incerto s'affannava a contare,<br>
+          ma agli occhi del tempo era un bianco fantasma,<br>
+          che seguiva le luci senza trovare l'uscita.<br>
+          <br>
+          "Ascoltami" disse la voce alla radio.<br>
+          Calma e distorta, la voce esclamava<br>
+          all'inquieto viandante che non trovava la pace,<br>
+          che del passato ormai vedeva solo le tracce.<br>
+          <br>
+          La voce insisteva, doveva smuovere il corpo:<br>
+          "Conosci la strada, sai il da farsi, muovi le gambe, qui non puoi stare"<br>
+          "Il suono è in arrivo e tu devi cambiare, partire di nuovo, in vita mutare"<br>
+          "Presto! Veloce! Ora devi uscire! E' la notte perfetta, più bianca del gelo"<br>
+          <br>
+          E' prevista nebbia intensa fino a domani.<br>
+          <br>
+          Vedeva i suoi volti perduti nel tempo,<br>
+          opache le forme e blandi i legami,<br>
+          i lineamenti sbiaditi dei momenti passati.<br>
+          Con rabbia piangendo, stringeva il bagaglio.<br>
+          <br>
+          Manca poco all'imbarco, è il gesto che conta.<br>
+          Non evocar nostalgia o altri tranelli:<br>
+          uccidono l'Ora e poi ti lasciano a terra!<br>
+          Ti rifletti nel vuoto quando nasci di nuovo.<br>
+          <br>
+          Sarà ancora tutto diverso, come prima.<br>
+          <br>
+          Uguale a una volta e diverso da ieri.</p>
+          <div style="height: 50px;"></div>
           <h3>Ricordo (December 6, 2025)</h3>
           <hr>
-          <p>
-            È una croce di strade<br>
-Una fortezza tenace<br>
-<br>
-È un saldo ricordo<br>
-Un sepolcro fiorito<br>
-<br>
-Di scorpioni una culla<br>
-Un'ondata di sangue<br>
-<br>
-È un incantesimo, dicevano<br>
-Una maledizione, gridavano<br>
-<br>
-Estate dei morti<br>
-Sui campi ormai stanchi<br>
-Tra oziosi sentieri<br>
-E alberi in pace<br>
-<br>
-È calore del sole<br>
-Che brucia le vene<br>
-È oggetto di culto<br>
-Il regalo segreto<br>
-<br>
-Quei candidi occhi<br>
-Che ti osservano freddi<br>
-Son cicatrici nel tempo<br>
-Sull'immobile corpo<br>
-<br>
-Accanto a me dorme<br>
-Quel sogno lontano<br>
-Quando voglio lo sveglio<br>
-...resta con me
-          </p>
+          <p>È una croce di strade<br>
+          Una fortezza tenace<br>
+          <br>
+          È un saldo ricordo<br>
+          Un sepolcro fiorito<br>
+          <br>
+          Di scorpioni una culla<br>
+          Un'ondata di sangue<br>
+          <br>
+          È un incantesimo, dicevano<br>
+          Una maledizione, gridavano<br>
+          <br>
+          Estate dei morti<br>
+          Sui campi ormai stanchi<br>
+          Tra oziosi sentieri<br>
+          E alberi in pace<br>
+          <br>
+          È calore del sole<br>
+          Che brucia le vene<br>
+          È oggetto di culto<br>
+          Il regalo segreto<br>
+          <br>
+          Quei candidi occhi<br>
+          Che ti osservano freddi<br>
+          Son cicatrici nel tempo<br>
+          Sull'immobile corpo<br>
+          <br>
+          Accanto a me dorme<br>
+          Quel sogno lontano<br>
+          Quando voglio lo sveglio<br>
+          ...resta con me</p>
           <div style="height: 50px;"></div>
           <h3>Anatomia (sometime in 2017)</h3>
           <hr>
           <p>Ci sono alcuni giorni in cui l'anatomia del mio corpo è molto simile a quella delle nuvole.<br>
-          Quale sia la sua forma dovreste chiederlo agli abitanti che vivono sotto alla terra.
-            <br>La loro gravità è la chiave nel buio.</p>
-<div style="height: 50px;"></div>
+          Quale sia la sua forma dovreste chiederlo agli abitanti che vivono sotto alla terra.<br>
+          La loro gravità è la chiave nel buio.</p>
+          <div style="height: 50px;"></div>
           <h3>La Mente (2021?)</h3>
           <hr>
           <p>E' la folle Mente<br>
@@ -602,20 +688,14 @@ Quando voglio lo sveglio<br>
       </div>
     </section>
     <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
-      © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation.
-      <p style="text-align:center; font-size:0.9em;">20251121: <span style="display:inline-block; vertical-align:middle;"><img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&amp;color=666666&amp;background=00000000&amp;style=flat" alt="index"></span></p>
+      © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation. 20251121
+        <!--      
+        <p style="text-align:center; font-size:0.9em;">20251121: <span style="display:inline-block; vertical-align:middle;"><img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&amp;color=666666&amp;background=00000000&amp;style=flat" alt="index"></span></p>
+        -->
     </footer>
   </main><button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
   <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Back to Top</button> 
   <script>
-
-
-
-
-
-
-
-
 
 
   const banner = document.getElementById('banner');
@@ -667,11 +747,11 @@ Quando voglio lo sveglio<br>
     });
   });
 
-
+/*
   const popup = document.getElementById("bd-popup");
   const closeBtn = document.querySelector(".bd-close");
     
-/*
+  
   // Mostra il popup solo la prima volta
   if (!localStorage.getItem("bd_popup_shown")) {
   setTimeout(() => {
@@ -680,7 +760,7 @@ Quando voglio lo sveglio<br>
 
   localStorage.setItem("bd_popup_shown", "true");
   }
-  */
+  
     
   // Chiudi popup
   closeBtn.onclick = () => popup.style.display = "none";
@@ -691,9 +771,10 @@ Quando voglio lo sveglio<br>
   };
 
     // Popup sempre attivo dopo un certo tempo
-setTimeout(() => {
+  setTimeout(() => {
   popup.style.display = "flex";
-}, 3000); // cambia 3000 con il tempo che vuoi (in millisecondi)
+  }, 3000); // cambia 3000 con il tempo che vuoi (in millisecondi)
+*/
     
     
   </script>
