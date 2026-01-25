@@ -184,7 +184,7 @@
 }
 
 .newsletter-form {
-  margin-top: 0px;
+  margin-top: 16px;
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -273,18 +273,23 @@
       </p>
 
       <form
-        action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
-        method="post"
-        class="newsletter-form"
-      >
-        <input
-          type="email"
-          name="email"
-          placeholder="your@email.com"
-          required
-        >
-        <button type="submit">Subscribe</button>
-      </form>
+  action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
+  method="post"
+  target="_blank"
+  class="newsletter-form"
+>
+  <input type="hidden" name="embed" value="1">
+
+  <input
+    type="email"
+    name="email"
+    placeholder="your@email.com"
+    required
+  >
+
+  <button type="submit">Subscribe</button>
+</form>
+
     </div>
   </div>
 </section>
