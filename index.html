@@ -6,75 +6,7 @@
   <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
   <title>Luca Renier's hub</title>
   <style>
-    
-/* newsletter
-  .bd-modal-content input[type="submit"] {
-  margin-top: 12px;
-  width: 100%;
-  padding: 12px;
-  background: var(--accent);
-  border: none;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  }
- 
-  .bd-modal-content input[type="submit"]:hover {
-  background: #ffffff;
-  }
-
-  .bd-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999;
-  }
-
-  .bd-modal-content {
-  background: #000000;
-  padding: 30px;
-  border-radius: 14px;
-  border: 1px solid #ffffff;
-  width: 360px;
-  max-width: 90%;
-  text-align: center;
-  font-family: sans-serif;
-
-  /* Colori personalizzabili
-  --accent: #ef4444;
-  }
-
-  .bd-modal-content h2 {
-  margin-top: 0;
-  color: var(--accent);
-  }
-
-  .bd-modal-content input[type="email"] {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  }
-
-  .bd-close {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  font-size: 28px;
-  cursor: pointer;
-  }
-*/
-
-
-    
+   
   /* Reset e base */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -244,8 +176,51 @@
     padding-top: 0; /* Riduce il padding in alto, se presente */
   }
 
-    
+  /* Newsletter inline */
+.newsletter-inline {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
 
+.newsletter-form {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #000;
+  color: #fff;
+  min-width: 220px;
+}
+
+.newsletter-form input::placeholder {
+  color: #777;
+}
+
+.newsletter-form button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid #ef4444;
+  background: transparent;
+  color: #ef4444;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+    
   </style>
 
 <!-- Yandex.Metrika counter -->
@@ -264,21 +239,6 @@
   
 </head>
 <body>
-
-<!--
-  <div id="bd-popup" class="bd-modal">
-    <div class="bd-modal-content">
-      <span class="bd-close">×</span>
-      <h2>Newsletter</h2>
-      <p><b>Sign up to stay updated when I upload new content</b></p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/ellerre" method="post" class="embeddable-buttondown-form">
-        <label for="bd-email">Enter your email</label> <input type="email" name="email" id="bd-email"> <input type="submit" value="Subscribe">
-        <p><a href="https://buttondown.com/refer/ellerre" target="_blank"></a></p>
-        <p>(check your spam folder if you do not receive the confirmation request)</p>
-      </form>
-    </div>
-  </div>
--->
   
   <header id="banner">
     <img src="header-image.png" alt="Header Image" class="header-image">
@@ -297,6 +257,32 @@
         </div>
       </div>
     </section>
+    <section id="newsletter">
+  <div class="section-content">
+    <div class="text-content newsletter-inline">
+      <p style="color:#ef4444;"><b>Newsletter</b></p>
+      <p>
+        Sign up to stay updated when I upload new content.<br>
+        <small>(Check your spam folder if you do not receive the confirmation request)</small>
+      </p>
+
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
+        method="post"
+        class="newsletter-form"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+        >
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
     <section id="content-timeline">
       <div class="section-content">
         <div class="text-content news-section">
@@ -750,36 +736,6 @@
     });
   });
 
-/*
-  const popup = document.getElementById("bd-popup");
-  const closeBtn = document.querySelector(".bd-close");
-    
-  
-  // Mostra il popup solo la prima volta
-  if (!localStorage.getItem("bd_popup_shown")) {
-  setTimeout(() => {
-    popup.style.display = "flex";
-  }, 1500); // Attesa opzionale
-
-  localStorage.setItem("bd_popup_shown", "true");
-  }
-  
-    
-  // Chiudi popup
-  closeBtn.onclick = () => popup.style.display = "none";
-
-    // Chiudi cliccando fuori
-  window.onclick = e => {
-  if (e.target === popup) popup.style.display = "none";
-  };
-
-    // Popup sempre attivo dopo un certo tempo
-  setTimeout(() => {
-  popup.style.display = "flex";
-  }, 3000); // cambia 3000 con il tempo che vuoi (in millisecondi)
-*/
-    
-    
   </script>
 </body>
 </html>
