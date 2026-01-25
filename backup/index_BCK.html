@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
+  <title>Luca Renier's hub</title>
+  <style>
+   
+  /* Reset e base */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+
+  a {
+    color: #ef4444; /* colore link */
+    text-decoration: none; /* opzionale: rimuove la sottolineatura */
+  }
+
+  a:hover {
+    color: #ffffff; /* colore al passaggio del mouse */
+    text-decoration: none; /* opzionale */
+  }
+    
+  /* Banner */
+  header#banner {
+    width: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.6s ease;
+  }
+
+  .header-image {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin-left: 0;
+  }
+
+  /* Menu */
+  nav#main-nav {
+    width: 100%;
+    background-color: #1f1f1f;
+    padding: 10px 0;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    z-index: 999;
+    transition: top 0.6s ease;
+    display: flex;
+    justify-content: center; /* menu centrato */
+  }
+
+  nav .nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+  }
+  nav button:hover { color: #ffffff; transform: scale(1.05); }
+
+  /* Main e sezioni */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 440px; /* spazio per banner + menu */
+  }
+
+  section { padding: 20px 32px; border-bottom: 0px solid rgba(207,207,207,1); }
+  .section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; }
+  h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 16px; }
+  h3 { font-size: 24px; font-weight: 600; color: #ffffff; text-align: left; margin-bottom: 16px; }
+  .text-content { font-size: 18px; line-height: 1.7; }
+  .text-content p { margin-bottom: 16px; }
+  hr { border: none; border-top: 1px solid #dc2626; margin: 18px 0; }
+
+  /* Back to top */
+  #back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #0a0a0a;
+    border: 2px solid #ef4444;
+    color: #ef4444;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+  #back-to-top:hover { background-color: #ef4444; color: #ffffff; transform: translateY(-2px); }
+  .arrow-up { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-image { height: 150px; }
+    nav button { font-size: 16px; padding: 6px 12px; }
+    main { padding-top: 350px; }
+    section { min-height: auto; padding: 60px 20px; }
+    h2 { font-size: 32px; margin-bottom: 24px; }
+    .text-content { font-size: 16px; }
+    #back-to-top { bottom: 20px; right: 20px; padding: 10px 16px; font-size: 14px; }
+    .arrow-up { width: 16px; height: 16px; }
+  }
+
+  @media (max-width: 480px) {
+    .header-image { height: 120px; }
+    nav button { font-size: 14px; padding: 5px 10px; }
+    main { padding-top: 320px; }
+    h2 { font-size: 28px; margin-bottom: 20px; }
+    .text-content { font-size: 15px; }
+    #back-to-top span { display: none; }
+    #back-to-top { padding: 12px; bottom: 16px; right: 16px; }
+  }
+
+  .contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  }
+
+  .contact-form button {
+  padding: 10px;
+  cursor: pointer;
+  }
+
+  /* Ridurre la dimensione del testo solo nella sezione 'news' */
+  .news-section {
+    font-size: 0.85em; /* Riduce la dimensione del font al 85% della dimensione originale */
+    text-align: center;
+  }
+
+  /* Puoi anche ridurre la dimensione dei singoli paragrafi e delle date all'interno della sezione */
+  .news-section .timeline-item p,
+  .news-section .timeline-item .timeline-date {
+    font-size: 0.9em; /* Imposta il font dei paragrafi e delle date leggermente più piccolo */
+  }
+
+  /* Ridurre la distanza tra le righe di testo */
+  .news-section p {
+    margin: 0; /* Rimuove il margine verticale tra i paragrafi */
+    padding: 0; /* Rimuove il padding extra */
+  }
+
+  #content-timeline {
+    margin-top: 00; /* Riduce o rimuove il margine superiore della sezione timeline */
+    padding-top: 0; /* Riduce il padding in alto, se presente */
+  }
+
+  /* Newsletter inline */
+.newsletter-inline {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #000;
+  color: #fff;
+  min-width: 220px;
+}
+
+.newsletter-form input::placeholder {
+  color: #777;
+}
+
+.newsletter-form button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid #ef4444;
+  background: transparent;
+  color: #ef4444;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+    .section-label {
+  color: #ef4444;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-align: center;
+}
+    
+  </style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106293605', 'ym');
+
+    ym(106293605, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106293605" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  
+</head>
+<body>
+  
+  <header id="banner">
+    <img src="header-image.png" alt="Header Image" class="header-image">
+  </header>
+  <nav id="main-nav">
+    <div class="nav-container">
+      <button onclick="scrollToSection('ear')">Ear</button> <button onclick="scrollToSection('eye')">Eye</button> <button onclick="scrollToSection('mouth')">Mouth</button> <button onclick="scrollToSection('synapse')">Synapse</button>
+    </div>
+  </nav>
+  <main>
+    <section id="intro" style="display: flex; justify-content: center; align-items: center; height: 30vh;">
+      <div class="section-content">
+        <div class="text-content">
+          <p style="color: #ef4444; text-align: center;">Almost everything that has been created in recent years. The rest turned to dust in the past lives during this life.</p>
+          <p style="text-align: center;">I am not a musician, nor an artist, nor a writer. Everything I do stems from a sense of urgency, and I share it because in nature nothing is sufficient in itself, everything is connected.</p>
+        </div>
+      </div>
+    </section>
+    <section id="newsletter">
+  <div class="section-content">
+    <div class="text-content newsletter-inline">
+      <p class="section-label">Newsletter</p>
+      <p>
+        Sign up to stay updated when I upload new content.<br>
+      </p>
+
+      <form
+  action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
+  method="post"
+  target="_blank"
+  class="newsletter-form"
+>
+  <input type="hidden" name="embed" value="1">
+
+  <input
+    type="email"
+    name="email"
+    placeholder="your@email.com"
+    required
+  >
+
+  <button type="submit">Subscribe</button>
+</form>
+
+    </div>
+  </div>
+</section>
+    <section id="content-timeline">
+      <div class="section-content">
+        <div class="text-content news-section">
+          <p class="section-label">Last updates:</p>
+          <div class="timeline">
+            <span class="timeline-date" style="color: #ccc;">January 15, 2026</span>
+            <p><a href="#mouth">mouth sector</a> - Cammino</p>
+            <span class="timeline-date" style="color: #ccc;">January 9, 2026</span>
+            <p><a href="#mouth">mouth sector</a> - Tra i binari</p>
+            <span class="timeline-date" style="color: #ccc;">December 17, 2025</span>
+            <p><a href="#ear">ear sector</a> - A Different Kind of Nothing</p>
+            <span class="timeline-date" style="color: #ccc;">December 10, 2025</span>
+            <p><a href="#mouth">mouth sector</a> - Metamorfosi</p>
+            <span class="timeline-date" style="color: #ccc;">December 6, 2025</span>
+             <p><a href="#mouth">mouth sector</a> - Ricordo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="ear">
+      <div class="section-content">
+        <h2>Ear</h2>
+        <div class="text-content">
+          <h3>Tym Frost</h3>
+          <hr>
+          <a href="https://tymfrost.bandcamp.com/album/void-dealer" target="_blank"><img src="https://f4.bcbits.com/img/a3776584638_16.jpg" alt="Void Dealer Tym Frost" width="250" height="250"></a>
+          <p>Void Dealer (September 21, 2022)</p><a href="https://tymfrost.bandcamp.com/album/a-square-sun" target="_blank"><img src="https://f4.bcbits.com/img/a1695063956_10.jpg" alt="A Square Sun Tym Frost" width="250" height="250"></a><br>
+          <p>A Square Sun (February 23, 2022) -Released by Sounds Against Humanity SAH043</p><a href="https://tymfrost.bandcamp.com/album/there-is-no-oxygen-here" target="_blank"><img src="https://f4.bcbits.com/img/a2945751657_10.jpg" alt="There is No Oxygen Here Tym Frost" width="250" height="250"></a><br>
+          <p>There is no oxygen here (November 27, 2021)</p><a href="https://tymfrost.bandcamp.com/album/toot" target="_blank"><img src="https://f4.bcbits.com/img/a2125463151_10.jpg" alt="Toot Tym Frost" width="250" height="250"></a><br>
+          <p>Toot (February 25, 2021) -Released by Casetta Records</p>
+          <div style="height: 50px;"></div>
+          <h3>w/ Return Trip Effect</h3>
+          <hr>
+          <a href="https://youtu.be/30LHX-ljT8M?si=s_0eeEorV3PW5IFh" target="_blank"><img src="images/230419_tym-returntripeffect.png" alt="A Different Kind of Nothing" width="250" height="250"></a>
+          <p>A Different Kind of Nothing (April 19, 2023)</p>
+          <div style="height: 50px;"></div>
+          <h3>w/ Koney DJ</h3>
+          <hr>
+          <a href="https://soundcloud.com/user-244664940-536961134/a3-koney-tym-frost-lesbi?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank"><img src="images/230115_lpg.jpg" alt="L.P.G. - Koney DJ - Tym Frost" width="250" height="250"></a>
+          <p>L.P.G. (January 15, 2023)</p>
+          <div style="height: 50px;"></div>
+          <h3>w/ Megasole</h3>
+          <hr>
+          <a href="https://megasole.bandcamp.com/track/elementa-feat-tym-frost" target="_blank"><img src="https://f4.bcbits.com/img/a1516571521_16.jpg" alt="Elementa Feat. Tym Frost" width="250" height="250"></a>
+          <p>Elementa -Feat. Tym Frost (December 28, 2022)</p>
+          <div style="height: 50px;"></div>
+          <h3>Caustica</h3>
+          <hr>
+          <a href="https://atthemountainsofmadnessproduction.bandcamp.com/album/caustica-desert-procession" target="_blank"><img src="https://f4.bcbits.com/img/a2106256468_16.jpg" alt="Desert Procession CAUSTICA" width="250" height="250"></a>
+          <p>Desert Procession (May 6, 2022)</p><a href="https://soundcloud.com/causticaband/event-case?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Event Case (2019)</a><br>
+          <a href="https://soundcloud.com/causticaband/low-oxygen-level?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Low Oxygen Level (2018)</a><br>
+          <a href="https://soundcloud.com/causticaband/dark-tale?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Dark Tale (2017)</a><br>
+          <a href="https://soundcloud.com/causticaband/snakes?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Snakes (2017)</a><br>
+          <a href="https://soundcloud.com/causticaband/uranus-equinox-hike?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Uranus Equinox Hike (2016)</a><br>
+          <a href="https://soundcloud.com/causticaband/skeletal-omen?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Skeletal Omen (2016)</a><br>
+          <a href="https://soundcloud.com/causticaband/transindustrial-hungher?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Transindustrial Hungher (2016)</a><br>
+          <a href="https://soundcloud.com/causticaband/approaching-dusk?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Approaching Dusk (2015)</a><br>
+          <a href="https://soundcloud.com/causticaband/notturno?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Notturno (2015)</a><br>
+          <a href="https://soundcloud.com/causticaband/artificial-constellation?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank">Artificial Constellation (2015)</a>
+          <div style="height: 50px;"></div>
+          <h3>NeroBOT</h3>
+          <hr>
+          <a href="https://nerobot.bandcamp.com/album/psychic-rehab" target="_blank"><img src="https://f4.bcbits.com/img/a0369965722_16.jpg" alt="Psychic Rehab NeroBOT" width="250" height="250"></a>
+          <p>Psychic Rehab (November 27, 2017)</p><a href="https://nerobot.bandcamp.com/album/electricks" target="_blank"><img src="https://f4.bcbits.com/img/a0392164183_10.jpg" alt="Electricks NeroBOT" width="250" height="250"></a>
+          <p>Electricks (September 23, 2014)</p><a href="https://nerobot.bandcamp.com/album/apparatus-early-tracks-2005-2008" target="_blank"><img src="https://f4.bcbits.com/img/a2057250344_10.jpg" alt="Apparatus (early tracks 2005-2008) NeroBOT" width="250" height="250"></a>
+          <p>Apparatus -early tracks 2005-2008 (December 17, 2013)</p>
+          <div style="height: 50px;"></div>
+          <h3>Remix</h3>
+          <hr>
+          <a href="https://erikstrauss.bandcamp.com/track/empty-feeling-erik-strauss-empty-space-remix" target="_blank"><img src="https://f4.bcbits.com/img/a4260171460_16.jpg" alt="Erik Strauss Empty Space NeroBOT Remix" width="250" height="250"></a>
+          <p>Erik Strauss Empty Space Remix (October 7, 2019)</p>
+          <div style="height: 50px;"></div>
+          <h3>One Step In The Pit</h3>
+          <hr>
+          <a href="https://onestepinthepit.bandcamp.com/album/daemonds" target="_blank"><img src="https://f4.bcbits.com/img/a1914624224_16.jpg" alt="Daemonds One Step In The Pit" width="250" height="250"></a>
+          <p>Daemonds (November 2, 2012)</p>
+          <div style="height: 50px;"></div>
+          <h3>Maelstrom</h3>
+          <hr>
+          <a href="maelstrom_november-lodge/Maelstrom%20-%20November%20Lodge.jpg" target="_blank"><img src="maelstrom_november-lodge/Maelstrom%20-%20November%20Lodge_front.jpg" alt="Maelstrom November Lodge" width="250" height="250"></a>
+          <p>November Lodge (2002)</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/01%20-%20Dancing%20Thy%20Silence.mp3" type="audio/mpeg"></audio>
+          <p>Dancing Thy Silence</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/02%20-%20Unrest.mp3" type="audio/mpeg"></audio>
+          <p>Unrest</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/03%20-%20No%20More%20Tears.mp3" type="audio/mpeg"></audio>
+          <p>No More Tears</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/04%20-%20Asteroids.mp3" type="audio/mpeg"></audio>
+          <p>Asteroids</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/05%20-%20Last%20Lustful%20Vow.mp3" type="audio/mpeg"></audio>
+          <p>Last Lustful Vow</p><audio controls="" controlslist="nodownload noplaybackrate"><source src="maelstrom_november-lodge/06%20-%20The%20Whirled%20n-trance.mp3" type="audio/mpeg"></audio>
+          <p>The Whirled n-trance</p>
+        </div>
+      </div>
+    </section>
+    <section id="eye">
+      <div class="section-content">
+        <h2>Eye</h2>
+        <div class="text-content">
+          <h3>Audiovisuals</h3>
+          <hr>
+          <a href="https://youtu.be/62T3d49F_uo?si=Zzvs221F-TZGeOVr" target="_blank"><img src="https://img.youtube.com/vi/62T3d49F_uo/maxresdefault.jpg" alt="Al Azif urban view Tym Frost" width="250" height="141"></a>
+          <p>Al Azif [urban view] (July 27, 2022)</p><a href="https://youtu.be/lyskbyT3ltM?si=4io9dJ2eXHRQN47o" target="_blank"><img src="https://img.youtube.com/vi/lyskbyT3ltM/maxresdefault.jpg" alt="Aitheria v.ext Tym Frost" width="250" height="141"></a>
+          <p>Aitheria [v.ext] (July 22, 2022)</p><a href="https://youtu.be/KsZgxqCB5_A?si=dgvHiBq1Mx_xsRAV" target="_blank"><img src="https://img.youtube.com/vi/KsZgxqCB5_A/maxresdefault.jpg" alt="A Square Sun Tym Frost" width="250" height="141"></a>
+          <p>A Square Sun (April 20, 2022)</p><a href="https://youtu.be/zf9YXZ62xCQ?si=HA6hzR4MZ3uwLmne" target="_blank"><img src="https://img.youtube.com/vi/zf9YXZ62xCQ/maxresdefault.jpg" alt="Complex Tym Frost" width="250" height="141"></a>
+          <p>Complex -glitches by Massimiliano Crosera (March 23, 2022)</p><a href="https://youtu.be/qNWpcoYswUk?si=FpgFjzZJWhrJvZ2i" target="_blank"><img src="https://img.youtube.com/vi/qNWpcoYswUk/maxresdefault.jpg" alt="Talking Box NeroBOT" width="250" height="141"></a>
+          <p>Talking Box (November 27, 2017)</p>
+          <div style="height: 50px;"></div>
+          <h3>Paintings</h3>
+          <hr>
+          <a href="images/2017_fabio.png" target="_blank"><img src="images/2017_fabio.png" alt="Fabio Todeschini" height="250"></a>
+          <p>Fabio Todeschini (2017)</p><br>
+          <a href="images/170309_erik.png" target="_blank"><img src="images/170309_erik.png" alt="Erik Strauss" height="250"></a>
+          <p>Erik Strauss (March 09, 2017)</p><br>
+          <a href="images/170416_dal-passato.jpg" target="_blank"><img src="images/170416_dal-passato.jpg" alt="From the past self-portrait" height="250"></a>
+          <p>From the past -self-portrait (April 16, 2017)</p><br>
+          <a href="images/170416_il-pensiero.jpg" target="_blank"><img src="images/170416_il-pensiero.jpg" alt="The thought self-portrait" height="250"></a>
+          <p>The Thought -self-portrait (April 16, 2017)</p><br>
+          <a href="images/170312_la-soglia.jpg" target="_blank"><img src="images/170312_la-soglia.jpg" alt="The Threshold (Fumegai)" height="250"></a>
+          <p>The Threshold -Fumegai (March 12, 2017)</p><br>
+          <a href="images/1998_silentium.jpg" target="_blank"><img src="images/1998_silentium.jpg" alt="Silentium self-portrait" height="250"></a>
+          <p>Silentium -self-portrait (1998)</p>
+        </div>
+      </div>
+    </section>
+    <section id="mouth">
+      <div class="section-content">
+        <div style="height: 50px;"></div>
+        <h2>Mouth</h2>
+        <div class="text-content">
+          <h3>Cammino (December 21, 2026)</h3>
+          <hr>
+          <p>“Il sole sta morendo” suggerirono le acque<br>
+          “Il sole sta morendo” annunciò la foce<br>
+          Schiena alla luce e volto alla notte<br>
+          Immobile di fronte al buio<br>
+          Labbra sigillate e occhi spalancati<br>
+          Il profumo della terra gli riempì le stanze del cranio<br>
+          <br>
+          Nel lampo dell’azione<br>
+          Il meccanismo s’innescò<br>
+          La macchina si mosse<br>
+          Quella volta non stava dormendo<br>
+          Sapeva di essere sveglio<br>
+          Faceva troppo freddo per essere un sogno<br>
+          <br>
+          Dalla foce lungo la benevola palude<br>
+          Dalla pianura al campo di grano<br>
+          Il miraggio della valle prima del bosco<br>
+          Fin nella foresta prima delle bianche vette<br>
+          Andamento regolare e chiaro<br>
+          Pulsazione che regola l’espansione<br>
+          <br>
+          All’usignolo donò gli occhi per trovare la strada<br>
+          Alla iena versò il sangue per dissipare la violenza<br>
+          Al lupo cedette le gambe per riunirsi ai fratelli<br>
+          Al cervo lasciò la lingua per acquisire il silenzio<br>
+          Alla vipera offrì le mani per aprire la porta<br>
+          Abbandonò il cuore lungo il cammino<br>
+          <br>
+          Sulla cima si decapitò<br>
+          All’apogeo al di fuori del dominio<br>
+          Alla luce della prossima fase<br>
+          L’eterna vetta mutò in diamante<br>
+          “Il buio ritornerà” suggerirono le rocce<br>
+          “Il buio ritornerà” annunciò il crinale in fiamme<br>
+          <br>
+          Schiena alla notte e volto alla luce<br>
+          Immobile di fronte all’alba<br>
+          Cantò ad occhi chiusi<br>
+          Il profumo dell’aria gli riempì le stanze del cranio<br>
+          Le urla delle foci assordarono il pianeta<br>
+          Le lacrime degli animali sommersero le terre</p>
+          <div style="height: 50px;"></div>
+          <h3>Tra i binari (December 15, 2026)</h3>
+          <hr>
+          <p>Mi aggiro al loro interno come un bambino curioso,<br>
+          osservo cosa accade e memorizzo i movimenti:<br>
+          ormai conosco con precisione il moto dei loro organi.<br>
+          Come costellazioni, uniscono i cieli<br>
+          attraverso strutture sempre in ascolto sulla soglia.<br>
+          Tra strilli d'acciaio, risate e rumore,<br>
+          recidono il tempo e suturano lo spazio.<br>
+          Cammino lento e guardo due volte.<br>
+          Frasi mozzate e vani segreti si celano,<br>
+          in queste maestre di viaggio, in queste insegnanti severe.<br>
+          La frase non trova un finale e l’orchestra d’un tratto si ferma.<br>
+          Come nella frattura della vita si allevia il dolore,<br>
+          di scintille s'infuocano i loro occhi trafitti.<br>
+          Incoscienti spettatori nelle corti di confine<br>
+          si saldano e disciolgono negli umori dei corpi,<br>
+          in seducenti tremori di contorte emozioni.<br>
+          Grandi sono le fatiche che sopportano i passeggeri.<br>
+          Graffiano le porte e si lamentano come animali mortali, fin troppo coscienti.<br>
+          Dopo secoli di solitudine, benedetti sotto alla volta di cemento armato<br>
+          finalmente si ritrovano di nuovo stranieri.<br>
+          Felici di potersi strangolare ancora,<br>
+          con lo sguardo verso i gelidi fiumi dei binari nel tempo,<br>
+          così freddi e veloci da tagliar loro la testa.<br>
+          Lieti di poter camminare sui tappeti rossi,<br>
+          stringono nastri di sangue attorno alle vite.<br>
+          Così stretti e affilati da arrestare il cuore e mozzare il fiato.<br>
+          Si raccomanda di fare attenzione alla linea.</p>          
+          <div style="height: 50px;"></div>
+          <h3>Metamorfosi (December 10, 2025)</h3>
+          <hr>
+          <p>Un'altra notte di nebbia stava arrivando.<br>
+          <br>
+          Sapeva bene cosa stava accadendo.<br>
+          <br>
+          Nuova fase in arrivo e la linea si sfoca.<br>
+          La pupilla è un orrido e la pressione è in salita.<br>
+          Nell'aria, l'odore della nuova carcassa<br>
+          è un profumo di fiori che sigilla la valle.<br>
+          <br>
+          Non perdeva la testa, le braccia o le gambe,<br>
+          ma uscendo di corsa, perdeva la chiave.<br>
+          La casa crollava e con essa il domani<br>
+          di una vita passata tra lamenti e passioni.<br>
+          <br>
+          Neonato è il serpente con la coda passata,<br>
+          riesumato dal tempo nella fossa nel mezzo,<br>
+          nell'imprevista metamorfosi al centro del tunnel,<br>
+          la piccola creatura riposava in silenzio.<br>
+          <br>
+          Univa i puntini per rivelarne la forma<br>
+          e nell'esito incerto s'affannava a contare,<br>
+          ma agli occhi del tempo era un bianco fantasma,<br>
+          che seguiva le luci senza trovare l'uscita.<br>
+          <br>
+          "Ascoltami" disse la voce alla radio.<br>
+          Calma e distorta, la voce esclamava<br>
+          all'inquieto viandante che non trovava la pace,<br>
+          che del passato ormai vedeva solo le tracce.<br>
+          <br>
+          La voce insisteva, doveva smuovere il corpo:<br>
+          "Conosci la strada, sai il da farsi, muovi le gambe, qui non puoi stare"<br>
+          "Il suono è in arrivo e tu devi cambiare, partire di nuovo, in vita mutare"<br>
+          "Presto! Veloce! Ora devi uscire! E' la notte perfetta, più bianca del gelo"<br>
+          <br>
+          E' prevista nebbia intensa fino a domani.<br>
+          <br>
+          Vedeva i suoi volti perduti nel tempo,<br>
+          opache le forme e blandi i legami,<br>
+          i lineamenti sbiaditi dei momenti passati.<br>
+          Con rabbia piangendo, stringeva il bagaglio.<br>
+          <br>
+          Manca poco all'imbarco, è il gesto che conta.<br>
+          Non evocar nostalgia o altri tranelli:<br>
+          uccidono l'Ora e poi ti lasciano a terra!<br>
+          Ti rifletti nel vuoto quando nasci di nuovo.<br>
+          <br>
+          Sarà ancora tutto diverso, come prima.<br>
+          <br>
+          Uguale a una volta e diverso da ieri.</p>
+          <div style="height: 50px;"></div>
+          <h3>Ricordo (December 6, 2025)</h3>
+          <hr>
+          <p>È una croce di strade<br>
+          Una fortezza tenace<br>
+          <br>
+          È un saldo ricordo<br>
+          Un sepolcro fiorito<br>
+          <br>
+          Di scorpioni una culla<br>
+          Un'ondata di sangue<br>
+          <br>
+          È un incantesimo, dicevano<br>
+          Una maledizione, gridavano<br>
+          <br>
+          Estate dei morti<br>
+          Sui campi ormai stanchi<br>
+          Tra oziosi sentieri<br>
+          E alberi in pace<br>
+          <br>
+          È calore del sole<br>
+          Che brucia le vene<br>
+          È oggetto di culto<br>
+          Il regalo segreto<br>
+          <br>
+          Quei candidi occhi<br>
+          Che ti osservano freddi<br>
+          Son cicatrici nel tempo<br>
+          Sull'immobile corpo<br>
+          <br>
+          Accanto a me dorme<br>
+          Quel sogno lontano<br>
+          Quando voglio lo sveglio<br>
+          ...resta con me</p>
+          <div style="height: 50px;"></div>
+          <h3>Anatomia (sometime in 2017)</h3>
+          <hr>
+          <p>Ci sono alcuni giorni in cui l'anatomia del mio corpo è molto simile a quella delle nuvole.<br>
+          Quale sia la sua forma dovreste chiederlo agli abitanti che vivono sotto alla terra.<br>
+          La loro gravità è la chiave nel buio.</p>
+          <div style="height: 50px;"></div>
+          <h3>La Mente (2021?)</h3>
+          <hr>
+          <p>E' la folle Mente<br>
+          che, decisa, mente<br>
+          dicendomi che è la lente<br>
+          che mi fa sembrar dormiente,<br>
+          ma io non ho più sonno<br>
+          e finalmente sento splendente<br>
+          la raffinata Mente.</p>
+          <div style="height: 50px;"></div>
+          <h3>Io non sono (May 21, 2019)</h3>
+          <hr>
+          <p>"Tutto quello che vi ho detto è stata una menzogna. non sono chi credete io sia, non conoscete il mio nome, le mie inclinazioni sono completamente diverse."<br>
+          <br>
+          "Non riusciamo a capire. Ci hai mentito per tutto questo tempo, su tutto?"<br>
+          <br>
+          "Si, esattamente. E vi dirò di più: tutto ciò che ora vi sto dicendo, questa volta. potrebbe essere vero."<br>
+          <br>
+          "Ma ti rendi conto della gravità delle tue affermazioni?"<br>
+          <br>
+          "Si, assolutamente, ma io vi chiedo: non siete felici per ciò che avete compreso?"<br>
+          <br>
+          "Come puoi anche solo pensare una cosa del genere? Certo che no! Sinceramente (e penso di parlare a nome di tutti) siamo abbastanza increduli, sconvolti, incazzati."<br>
+          <br>
+          "Ma io invece vi dico: io vi ho appena liberati. Vi ho liberati dalle vostre idee nei miei confronti, vi ho liberati dall'amore che alcuni di voi provavvano nei miei confronti, chi mi odiava può finalmente liberarsi da questo peso, chi non mi trovava interessante potrà finalmente conoscermi e potrò forse regalare loro nuovi ricordi in mia compagnia. Domani, potrete conoscere una nuova persona, se mi incontrerete, ma oggi io vi dico: io non sono qui, io non sono, ma sopratutto io non ero, e con me se ne va una parte della vostra vita che potrà essere nuovamente vissuta."<br>
+          <br>
+          Il giorno dopo qualcuno lo uccise per strada, e le loro vite cambiarono ancora, per la seconda volta in due giorni.</p>
+          <div style="height: 50px;"></div>
+          <h3>L'ultimo (March 31, 2017)</h3>
+          <hr>
+          <p>Si girò e non vide più nessuno dietro di lui.<br>
+          <br>
+          Da quel giorno non vide più nessuna macchina dietro di lui nelle strade, nessuna persona dietro di lui a passeggio nelle città, nessun cliente seduto ai tavoli dietro di lui nei locali, nessuno dietro di lui nelle file alle tavole calde, negli uffici o a teatro.<br>
+          <br>
+          Si rese conto di essere l'ultimo, e quel momento di sollievo lo accompagnò per tutto il resto della vita.<br></p>
+          <div style="height: 50px;"></div>
+          <h3>Fuorilegge (March 16, 2015)</h3>
+          <hr>
+          <p>Prendetelo, fermatelo, arrestatelo!<br>
+          Mossa intelligente venire alla festa con i colori dell’altra fazione.<br>
+          Quali colori? Quale fazione?<br>
+          Non capiva cosa stesse accadendo<br>
+          e per questo non si stava arrendendo.<br>
+          <br>
+          I colori che porti, i vestiti che indossi<br>
+          vedrai che del cranio ti romperem gli ossi,<br>
+          amici, fratelli, non comprendo l’offesa<br>
+          politica o sport su di me non fan presa<br>
+          <br>
+          Non comprendo per niente di quel che parlate,<br>
+          tra aule e spalti v'affannate e gridate,<br>
+          perché della vita credete far parte<br>
+          parlando di passione, d’amore e poi d’arte<br>
+          <br>
+          Non state mai zitti e volete ordinare<br>
+          e invece siete schiavi del vostro ciarlare.<br>
+          Parli di silenzio, lurido verme?!?!<br>
+          Ragazzi tenetelo! Le braccia ben ferme!<br>
+          <br>
+          In ginocchio e in un angolo si sentiva il ragazzo,<br>
+          ma dopo le botte capì chi era il pazzo,<br>
+          lo schiavo del Caos disciolto nel Vuoto<br>
+          inerte alla luce, in fondo al suo porto.<br>
+          <br>
+          Ragazzi siete morti, perché credete in qualcosa.<br>
+          Il suono del ferro e la canna si posa.<br>
+          Nel negozio credete di vivere in pace<br>
+          Invece io lotto e mi faccio tenace.<br>
+          <br>
+          Se voi combattete per ciò che credete<br>
+          io invece passeggio e soddisfo la sete.<br>
+          non penso, non vivo, io sono un’essenza<br>
+          controllate sul fondo la vostra scadenza.<br>
+          <br>
+          Se credete nel tempo<br>
+          vi sembrerà prematuro,<br>
+          ma il momento è arrivato<br>
+          per il graffito sul muro.<br>
+          <br>
+          L’angelo di piombo<br>
+          attraversò le cervella<br>
+          ed il ragazzo si volse<br>
+          all’ultima stella.<br></p>
+        </div>
+      </div>
+    </section>
+    <section id="synapse">
+      <div class="section-content">
+        <h2>Synapse</h2>
+        <div class="text-content">
+          <form action="https://formspree.io/f/xangodzz" method="post" class="contact-form">
+            <label>Your message: 
+            <textarea name="message"></textarea></label> <label>Your email: <input type="email" name="email"></label> <button type="submit">Send</button>
+          </form><br>
+          <div style="text-align:center;">
+            <a href="https://tymfrost.bandcamp.com/" target="_blank">bandcamp</a><br>
+            <a href="https://www.instagram.com/tymfrost.music?utm_source=qr&amp;igsh=MXF4YzgyajlkdHNuMg==" target="_blank">instagram</a><br>
+            <a href="https://www.youtube.com/@tymfrost" target="_blank">youtube</a><br>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
+      © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation. 20251121
+        <!--      
+        <p style="text-align:center; font-size:0.9em;">20251121: <span style="display:inline-block; vertical-align:middle;"><img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&amp;color=666666&amp;background=00000000&amp;style=flat" alt="index"></span></p>
+        -->
+    </footer>
+  </main><button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
+  <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Back to Top</button> 
+  <script>
+
+
+  const banner = document.getElementById('banner');
+  const nav = document.getElementById('main-nav');
+  const main = document.querySelector('main');
+
+  function updateMenuPosition() {
+    const bannerHeight = banner.offsetHeight;
+    const scroll = window.pageYOffset;
+
+    if (scroll < bannerHeight) {
+        // Banner visibile: menu subito sotto
+        nav.style.top = bannerHeight + 'px';
+        banner.style.transform = 'translateY(0)';
+    } else {
+        // Banner nascosto: menu fisso in cima
+        nav.style.top = '0';
+        banner.style.transform = `translateY(-${bannerHeight}px)`;
+    }
+
+    // Aggiorna padding-top del main per evitare sovrapposizioni
+    main.style.paddingTop = (banner.offsetHeight + nav.offsetHeight) + 'px';
+  }
+
+  window.addEventListener('load', updateMenuPosition);
+  window.addEventListener('resize', updateMenuPosition);
+  window.addEventListener('scroll', updateMenuPosition);
+
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Prende tutti gli elementi audio
+  const audios = document.querySelectorAll('audio');
+
+  audios.forEach(audio => {
+    audio.addEventListener('play', () => {
+      // Metti in pausa tutti gli altri
+      audios.forEach(other => {
+        if (other !== audio) {
+          other.pause();
+        }
+      });
+    });
+  });
+
+  </script>
+</body>
+</html>
