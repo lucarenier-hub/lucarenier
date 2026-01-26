@@ -726,6 +726,15 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function scrollToSection(sectionId) {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+    // Rimuove hash dall'URL
+    history.replaceState(null, null, ' ');
+  }
+}
+
 // Gestione audio: un solo audio alla volta
 const audios = document.querySelectorAll('audio');
 audios.forEach(audio => {
