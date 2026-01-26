@@ -199,82 +199,6 @@ footer p {
     display: none;
   }
 }
-
-/* Sezione Synapse */
-#synapse {
-  padding: 60px 20px;
-  color: #fff;
-  text-align: center;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-
-#synapse h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  font-weight: 400; /* uguale agli altri titoli */
-  color: #fff;
-}
-
-/* Form stile newsletter */
-#synapse form {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 480px;
-  margin: 0 auto;
-  gap: 10px;
-}
-
-#synapse input[type="text"],
-#synapse input[type="email"] {
-  flex: 1 1 250px;
-  padding: 12px 16px;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  background: transparent;
-  color: #fff;
-  font-size: 1em;
-  transition: border-color 0.3s, background 0.3s;
-}
-
-#synapse input::placeholder {
-  color: #ccc;
-}
-
-#synapse input:focus {
-  outline: none;
-  border-color: #fff;
-  background: rgba(255,255,255,0.05);
-}
-
-#synapse button {
-  padding: 12px 24px;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  background: #fff;
-  color: #111;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s, transform 0.2s;
-}
-
-#synapse button:hover {
-  background: #eee;
-  transform: translateY(-1px);
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  #synapse form {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  #synapse input,
-  #synapse button {
-    width: 100%;
-  }
-}
   
 </style>
 
@@ -320,7 +244,12 @@ footer p {
         Sign up to stay updated when I upload new content.<br>
       </p>
 
-      <form action="https://buttondown.com/api/emails/embed-subscribe/ellerre" method="post" target="_blank" class="newsletter-form">
+      <form
+  action="https://buttondown.com/api/emails/embed-subscribe/ellerre"
+  method="post"
+  target="_blank"
+  class="newsletter-form"
+>
   <input type="hidden" name="embed" value="1">
 
   <input
@@ -714,14 +643,13 @@ footer p {
       </div>
     </section>
     <section id="synapse">
+      <div class="section-content">
         <h2>Synapse</h2>
         <div class="text-content">
-            <form action="https://formspree.io/f/xangodzz" method="post" target="_blank">
-            <label>Your message: <textarea name="message"></textarea></label>
-              <label>Your email: <input type="email" name="email"></label>
-              <button type="submit">Send</button>
-          </form>
-          <br>
+          <form action="https://formspree.io/f/xangodzz" method="post" class="contact-form">
+            <label>Your message: 
+            <textarea name="message"></textarea></label> <label>Your email: <input type="email" name="email"></label> <button type="submit">Send</button>
+          </form><br>
           <div style="text-align:center;">
             <a href="https://tymfrost.bandcamp.com/" target="_blank">bandcamp</a><br>
             <a href="https://www.instagram.com/tymfrost.music?utm_source=qr&amp;igsh=MXF4YzgyajlkdHNuMg==" target="_blank">instagram</a><br>
