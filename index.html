@@ -100,9 +100,6 @@
     nav button:focus {
       color: #ffffff;
       transform: scale(1.05);
-      outline: 2px solid #ef4444;
-      outline-offset: 2px;
-      border-radius: 4px;
     }
 
     /* Main content */
@@ -416,6 +413,39 @@
       }
     }
 
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      margin-top: 60px;
+      border-top: 1px solid #333;
+      color: #666;
+      font-size: 0.9em;
+      line-height: 1.8;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    .footer-version {
+      font-size: 0.85em;
+      color: #555;
+      font-weight: 300;
+    }
+
+    .hit-counter {
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: 8px;
+    }
+
+    .hit-counter img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
     /* Accessibilità - riduci movimento per chi lo preferisce */
     @media (prefers-reduced-motion: reduce) {
       * {
@@ -451,6 +481,99 @@
     <div><img src="https://mc.yandex.ru/watch/106293605" style="position:absolute; left:-9999px;" alt="" /></div>
   </noscript>
   <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  
+  <header id="banner">
+    <img src="your-image.png" alt="Luca Renier's Hub" class="header-image">
+  </header>
+
+  <nav id="main-nav">
+    <div class="nav-container">
+      <button onclick="scrollToSection('intro')" aria-label="Navigate to intro">Intro</button>
+      <button onclick="scrollToSection('about')" aria-label="Navigate to about">About</button>
+      <button onclick="scrollToSection('projects')" aria-label="Navigate to projects">Projects</button>
+      <button onclick="scrollToSection('contact')" aria-label="Navigate to contact">Contact</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Le tue sezioni qui -->
+    
+    <footer>
+      <p>© 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation.</p>
+      <p class="footer-version">Version: 20251121</p>
+      <!--      
+      <p><span class="hit-counter"><img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&amp;color=666666&amp;background=00000000&amp;style=flat" alt="Page hits counter"></span></p>
+      -->
+    </footer>
+  </main>
+
+  <button id="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+    <svg class="arrow-up" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Back to Top</span>
+  </button>
+
+  <script>
+    const banner = document.getElementById('banner');
+    const nav = document.getElementById('main-nav');
+    const main = document.querySelector('main');
+
+    function updateMenuPosition() {
+      const bannerHeight = banner.offsetHeight;
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollY < bannerHeight) {
+        // Banner visibile: menu subito sotto
+        nav.style.top = bannerHeight + 'px';
+        banner.style.transform = 'translateY(0)';
+      } else {
+        // Banner nascosto: menu fisso in cima
+        nav.style.top = '0';
+        banner.style.transform = `translateY(-${bannerHeight}px)`;
+      }
+      
+      // Aggiorna padding-top del main per evitare sovrapposizioni
+      main.style.paddingTop = (bannerHeight + nav.offsetHeight + 20) + 'px';
+    }
+
+    // Event listeners con debounce per scroll
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = window.requestAnimationFrame(updateMenuPosition);
+    });
+
+    window.addEventListener('load', updateMenuPosition);
+    window.addEventListener('resize', updateMenuPosition);
+
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Gestione audio: solo uno in play alla volta
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(audio => {
+      audio.addEventListener('play', function() {
+        audios.forEach(other => {
+          if (other !== this) {
+            other.pause();
+          }
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   
