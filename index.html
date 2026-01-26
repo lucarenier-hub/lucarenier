@@ -294,7 +294,6 @@ footer p {
       </div>
     </div>
   </div>
-</section>
     <section id="ear">
       <div class="section-content">
         <h2>Ear</h2>
@@ -722,31 +721,28 @@ window.addEventListener('scroll', () => {
 window.addEventListener('load', updateMenuPosition);
 window.addEventListener('resize', updateMenuPosition);
 
-// Scroll to section con offset per menu fisso
+// Scroll to top
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Funzione unica per scroll smooth senza modificare l'URL
 function scrollToSection(sectionId) {
   const element = document.getElementById(sectionId);
   if (element) {
-    const offset = banner.offsetHeight + nav.offsetHeight + 10;
+    const offset = nav.offsetHeight + 10; // altezza menu + margine
     const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top, behavior: 'smooth' });
   }
 }
 
-// Scroll smooth senza cambiare l'URL
-document.querySelectorAll('.timeline-link').forEach(link => {
+// Applichiamo a tutti i link interni del sito che hanno 'data-target'
+document.querySelectorAll('[data-target]').forEach(link => {
   link.addEventListener('click', () => {
     const targetId = link.getAttribute('data-target');
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToSection(targetId);
   });
 });
-
-// Scroll to top
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
 // Gestione audio: un solo audio alla volta
 const audios = document.querySelectorAll('audio');
