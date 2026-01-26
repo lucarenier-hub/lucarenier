@@ -206,6 +206,17 @@ footer p {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.site-link {
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.site-link:hover {
+  color: #ff9900;
+  text-decoration: none;
+}
   
 </style>
 
@@ -277,26 +288,24 @@ footer p {
     <div class="text-content news-section">
       <p class="section-label">Latest updates</p>
       <div class="timeline">
-        
         <span class="timeline-date" style="color: #ccc;">January 15, 2026</span>
-        <p><a href="#mouth">mouth sector</a> - Cammino</p>
-
+        <p><span class="timeline-link" data-target="mouth">mouth sector</span> - Cammino</p>
 
         <span class="timeline-date" style="color: #ccc;">January 9, 2026</span>
-        <p><a href="mouth">mouth sector</a> - Tra i binari</p>
+        <p><span class="timeline-link" data-target="mouth">mouth sector</span> - Tra i binari</p>
 
         <span class="timeline-date" style="color: #ccc;">December 17, 2025</span>
-        <p><a href="ear">ear sector</a> - A Different Kind of Nothing</p>
+        <p><span class="timeline-link" data-target="ear">ear sector</span> - A Different Kind of Nothing</p>
 
         <span class="timeline-date" style="color: #ccc;">December 10, 2025</span>
-        <p><a href="mouth">mouth sector</a> - Metamorfosi</p>
+        <p><span class="timeline-link" data-target="mouth">mouth sector</span> - Metamorfosi</p>
 
         <span class="timeline-date" style="color: #ccc;">December 6, 2025</span>
-        <p><a href="mouth">mouth sector</a> - Ricordo</p>
-        
+        <p><span class="timeline-link" data-target="mouth">mouth sector</span> - Ricordo</p>
       </div>
     </div>
   </div>
+</section>
     <section id="ear">
       <div class="section-content">
         <h2>Ear</h2>
