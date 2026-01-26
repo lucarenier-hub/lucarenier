@@ -1,569 +1,257 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
   <title>Luca Renier's hub</title>
   <style>
-    /* Reset e base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+   
+  /* Reset e base */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  a {
+    color: #ef4444; /* colore link */
+    text-decoration: none; /* opzionale: rimuove la sottolineatura */
+  }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background-color: #0a0a0a;
-      color: #e0e0e0;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+  a:hover {
+    color: #ffffff; /* colore al passaggio del mouse */
+    text-decoration: none; /* opzionale */
+  }
+    
+  /* Banner */
+  header#banner {
+    width: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.6s ease;
+  }
 
-    /* Link */
-    a {
-      color: #ef4444;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+  .header-image {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin-left: 0;
+  }
 
-    a:hover,
-    a:focus {
-      color: #ffffff;
-      outline: 2px solid transparent;
-    }
+  /* Menu */
+  nav#main-nav {
+    width: 100%;
+    background-color: #1f1f1f;
+    padding: 10px 0;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    z-index: 999;
+    transition: top 0.6s ease;
+    display: flex;
+    justify-content: center; /* menu centrato */
+  }
 
-    /* Header fisso */
-    header#banner {
-      width: 100%;
-      background-color: #eeeeee;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      transition: transform 0.6s ease;
-    }
+  nav .nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
 
-    .header-image {
-      height: 200px;
-      width: auto;
-      max-width: 100%;
-      object-fit: contain;
-      display: block;
-    }
+  nav button {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+  }
+  nav button:hover { color: #ffffff; transform: scale(1.05); }
 
-    /* Navigazione */
-    nav#main-nav {
-      width: 100%;
-      background-color: #1f1f1f;
-      padding: 10px 20px;
-      position: fixed;
-      top: 200px;
-      left: 0;
-      z-index: 999;
-      transition: top 0.6s ease;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
+  /* Main e sezioni */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 440px; /* spazio per banner + menu */
+  }
 
-    nav .nav-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+  section { padding: 20px 32px; border-bottom: 0px solid rgba(207,207,207,1); }
+  .section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; }
+  h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 16px; }
+  h3 { font-size: 24px; font-weight: 600; color: #ffffff; text-align: left; margin-bottom: 16px; }
+  .text-content { font-size: 18px; line-height: 1.7; }
+  .text-content p { margin-bottom: 16px; }
+  hr { border: none; border-top: 1px solid #dc2626; margin: 18px 0; }
 
-    nav button {
-      background: none;
-      border: none;
-      color: #ef4444;
-      font-size: clamp(16px, 2.5vw, 20px);
-      font-weight: 600;
-      cursor: pointer;
-      padding: 8px 16px;
-      transition: all 0.3s ease;
-      white-space: nowrap;
-    }
+  /* Back to top */
+  #back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #0a0a0a;
+    border: 2px solid #ef4444;
+    color: #ef4444;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+  #back-to-top:hover { background-color: #ef4444; color: #ffffff; transform: translateY(-2px); }
+  .arrow-up { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 
-    nav button:hover,
-    nav button:focus {
-      color: #ffffff;
-      transform: scale(1.05);
-    }
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-image { height: 150px; }
+    nav button { font-size: 16px; padding: 6px 12px; }
+    main { padding-top: 350px; }
+    section { min-height: auto; padding: 60px 20px; }
+    h2 { font-size: 32px; margin-bottom: 24px; }
+    .text-content { font-size: 16px; }
+    #back-to-top { bottom: 20px; right: 20px; padding: 10px 16px; font-size: 14px; }
+    .arrow-up { width: 16px; height: 16px; }
+  }
 
-    /* Main content */
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 250px 20px 60px;
-    }
+  @media (max-width: 480px) {
+    .header-image { height: 120px; }
+    nav button { font-size: 14px; padding: 5px 10px; }
+    main { padding-top: 320px; }
+    h2 { font-size: 28px; margin-bottom: 20px; }
+    .text-content { font-size: 15px; }
+    #back-to-top span { display: none; }
+    #back-to-top { padding: 12px; bottom: 16px; right: 16px; }
+  }
 
-    section {
-      padding: 40px 0;
-      scroll-margin-top: 220px;
-    }
+  .contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  }
 
-    .section-content {
-      max-width: 1024px;
-      width: 100%;
-      margin: 0 auto;
-    }
+  .contact-form input,
+  .contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  }
+
+  .contact-form button {
+  padding: 10px;
+  cursor: pointer;
+  }
+
+  /* Ridurre la dimensione del testo solo nella sezione 'news' */
+ .news-section {
+    font-size: 0.85em; /* Riduce la dimensione del font al 85% della dimensione originale */
+    text-align: center;
+  }/*
+
+  /* Puoi anche ridurre la dimensione dei singoli paragrafi e delle date all'interno della sezione */
+  .news-section .timeline-item p,
+  .news-section .timeline-item .timeline-date {
+    font-size: 0.9em; /* Imposta il font dei paragrafi e delle date leggermente più piccolo */
+  }
+
+  /* Ridurre la distanza tra le righe di testo */
+  .news-section p {
+    margin: 0; /* Rimuove il margine verticale tra i paragrafi */
+    padding: 0; /* Rimuove il padding extra */
+  }
+
+  #content-timeline {
+    margin-top: 00; /* Riduce o rimuove il margine superiore della sezione timeline */
+    padding-top: 20; /* Riduce il padding in alto, se presente */
+  }
+
+  /* Newsletter inline */
+.newsletter-inline {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #000;
+  color: #fff;
+  min-width: 220px;
+}
+
+.newsletter-form input::placeholder {
+  color: #777;
+}
+
+.newsletter-form button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid #ef4444;
+  background: transparent;
+  color: #ef4444;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #ef4444;
+  color: #fff;
+}
 
     .section-label {
-      color: #ef4444;
-      font-weight: 700;
-      text-align: center;
-      font-size: clamp(16px, 2vw, 18px);
-      margin-bottom: 8px;
-    }
+  color: #ef4444;
+  font-weight: 700;
+  text-align: center;
+  font-size: 18px; /* ← scegli tu il valore */
+}
 
-    h2 {
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 700;
-      color: #ef4444;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    h3 {
-      font-size: clamp(20px, 3vw, 24px);
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 16px;
-    }
-
-    .text-content {
-      font-size: clamp(16px, 2vw, 18px);
-      line-height: 1.7;
-    }
-
-    .text-content p {
-      margin-bottom: 16px;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #dc2626;
-      margin: 24px 0;
-    }
-
-    /* Sezione intro */
     #intro {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 0 20px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    /* Sezione news */
-    .news-section {
-      font-size: 0.9em;
-      text-align: center;
-    }
+  padding: 30px 0 5px; /* sopra | sotto */
+}
 
-    .news-section p {
-      margin-bottom: 8px;
-    }
-
-    #content-timeline {
-      margin-top: 0;
-      padding-top: 20px;
-    }
-
-    /* Newsletter */
-    .newsletter-inline {
-      text-align: center;
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px 0;
-    }
-
-    .newsletter-form {
-      margin-top: 16px;
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .newsletter-form input[type="email"] {
-      padding: 12px;
-      border-radius: 6px;
-      border: 1px solid #444;
-      background: #1a1a1a;
-      color: #fff;
-      min-width: 220px;
-      flex: 1;
-      max-width: 300px;
-      font-size: 16px;
-    }
-
-    .newsletter-form input[type="email"]:focus {
-      outline: 2px solid #ef4444;
-      border-color: #ef4444;
-    }
-
-    .newsletter-form input::placeholder {
-      color: #777;
-    }
-
-    .newsletter-form button {
-      padding: 12px 20px;
-      border-radius: 6px;
-      border: 2px solid #ef4444;
-      background: transparent;
-      color: #ef4444;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      white-space: nowrap;
-    }
-
-    .newsletter-form button:hover,
-    .newsletter-form button:focus {
-      background: #ef4444;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    /* Contact form */
-    .contact-form {
-      max-width: 500px;
-      margin: 24px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      border-radius: 6px;
-      border: 1px solid #444;
-      background: #1a1a1a;
-      color: #fff;
-      font-size: 16px;
-      font-family: inherit;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: 2px solid #ef4444;
-      border-color: #ef4444;
-    }
-
-    .contact-form textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .contact-form button {
-      padding: 12px 24px;
-      border-radius: 6px;
-      border: 2px solid #ef4444;
-      background: transparent;
-      color: #ef4444;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
-
-    .contact-form button:hover,
-    .contact-form button:focus {
-      background: #ef4444;
-      color: #fff;
-    }
-
-    /* Back to top */
-    #back-to-top {
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      background-color: #0a0a0a;
-      border: 2px solid #ef4444;
-      color: #ef4444;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      z-index: 9999;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
-
-    #back-to-top:hover,
-    #back-to-top:focus {
-      background-color: #ef4444;
-      color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
-    }
-
-    .arrow-up {
-      width: 20px;
-      height: 20px;
-      stroke: currentColor;
-      stroke-width: 2;
-      fill: none;
-    }
-
-    /* Tablet */
-    @media (max-width: 768px) {
-      .header-image {
-        height: 150px;
-      }
-
-      nav#main-nav {
-        top: 150px;
-        padding: 8px 16px;
-      }
-
-      nav .nav-container {
-        gap: 16px;
-      }
-
-      main {
-        padding: 200px 16px 40px;
-      }
-
-      section {
-        padding: 32px 0;
-        scroll-margin-top: 170px;
-      }
-
-      #back-to-top {
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 16px;
-      }
-
-      .arrow-up {
-        width: 18px;
-        height: 18px;
-      }
-    }
-
-    /* Mobile */
-    @media (max-width: 480px) {
-      .header-image {
-        height: 120px;
-      }
-
-      nav#main-nav {
-        top: 120px;
-        padding: 8px 12px;
-      }
-
-      nav .nav-container {
-        gap: 12px;
-      }
-
-      nav button {
-        padding: 6px 12px;
-      }
-
-      main {
-        padding: 170px 16px 40px;
-      }
-
-      section {
-        padding: 24px 0;
-        scroll-margin-top: 140px;
-      }
-
-      .newsletter-form {
-        flex-direction: column;
-      }
-
-      .newsletter-form input[type="email"] {
-        max-width: 100%;
-      }
-
-      #back-to-top span {
-        display: none;
-      }
-
-      #back-to-top {
-        padding: 12px;
-        bottom: 16px;
-        right: 16px;
-      }
-
-      .arrow-up {
-        width: 16px;
-        height: 16px;
-      }
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 20px 20px;
-      margin-top: 60px;
-      border-top: 1px solid #333;
-      color: #666;
-      font-size: 0.9em;
-      line-height: 1.8;
-    }
-
-    footer p {
-      margin-bottom: 8px;
-    }
-
-    .footer-version {
-      font-size: 0.85em;
-      color: #555;
-      font-weight: 300;
-    }
-
-    .hit-counter {
-      display: inline-block;
-      vertical-align: middle;
-      margin-top: 8px;
-    }
-
-    .hit-counter img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Accessibilità - riduci movimento per chi lo preferisce */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
+    
   </style>
 
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
     (function(m,e,t,r,i,k,a){
-      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();
-      for (var j = 0; j < document.scripts.length; j++) {
-        if (document.scripts[j].src === r) { return; }
-      }
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106293605', 'ym');
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106293605', 'ym');
 
-    ym(106293605, 'init', {
-      ssr: true,
-      webvisor: true,
-      clickmap: true,
-      ecommerce: "dataLayer",
-      accurateTrackBounce: true,
-      trackLinks: true
-    });
-  </script>
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/106293605" style="position:absolute; left:-9999px;" alt="" /></div>
-  </noscript>
-  <!-- /Yandex.Metrika counter -->
-</head>
-<body>
+    ym(106293605, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106293605" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
   
-  <header id="banner">
-    <img src="your-image.png" alt="Luca Renier's Hub" class="header-image">
-  </header>
-
-  <nav id="main-nav">
-    <div class="nav-container">
-      <button onclick="scrollToSection('intro')" aria-label="Navigate to intro">Intro</button>
-      <button onclick="scrollToSection('about')" aria-label="Navigate to about">About</button>
-      <button onclick="scrollToSection('projects')" aria-label="Navigate to projects">Projects</button>
-      <button onclick="scrollToSection('contact')" aria-label="Navigate to contact">Contact</button>
-    </div>
-  </nav>
-
-  <main>
-
-  <button id="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
-    <svg class="arrow-up" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path>
-    </svg>
-    <span>Back to Top</span>
-  </button>
-
-  <script>
-    const banner = document.getElementById('banner');
-    const nav = document.getElementById('main-nav');
-    const main = document.querySelector('main');
-
-    function updateMenuPosition() {
-      const bannerHeight = banner.offsetHeight;
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (scrollY < bannerHeight) {
-        // Banner visibile: menu subito sotto
-        nav.style.top = bannerHeight + 'px';
-        banner.style.transform = 'translateY(0)';
-      } else {
-        // Banner nascosto: menu fisso in cima
-        nav.style.top = '0';
-        banner.style.transform = `translateY(-${bannerHeight}px)`;
-      }
-      
-      // Aggiorna padding-top del main per evitare sovrapposizioni
-      main.style.paddingTop = (bannerHeight + nav.offsetHeight + 20) + 'px';
-    }
-
-    // Event listeners con debounce per scroll
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-      if (scrollTimeout) {
-        window.cancelAnimationFrame(scrollTimeout);
-      }
-      scrollTimeout = window.requestAnimationFrame(updateMenuPosition);
-    });
-
-    window.addEventListener('load', updateMenuPosition);
-    window.addEventListener('resize', updateMenuPosition);
-
-    function scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Gestione audio: solo uno in play alla volta
-    const audios = document.querySelectorAll('audio');
-    audios.forEach(audio => {
-      audio.addEventListener('play', function() {
-        audios.forEach(other => {
-          if (other !== this) {
-            other.pause();
-          }
-        });
-      });
-    });
-  </script>
 </head>
 <body>
   
@@ -1006,78 +694,66 @@
         </div>
       </div>
     </section>
-    <footer>
-      <p>© 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation. 20251121</p>
-      <!--      
-      <p><span class="hit-counter"><img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&amp;color=666666&amp;background=00000000&amp;style=flat" alt="Page hits counter"></span></p>
-      -->
+    <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
+      © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation. 20251121
+        <!--      
+        <p style="text-align:center; font-size:0.9em;">20251121: <span style="display:inline-block; vertical-align:middle;"><img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&amp;color=666666&amp;background=00000000&amp;style=flat" alt="index"></span></p>
+        -->
     </footer>
-  </main>
-
-  <button id="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
-    <svg class="arrow-up" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path>
-    </svg>
-    <span>Back to Top</span>
-  </button>
-
+  </main><button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
+  <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Back to Top</button> 
   <script>
-    const banner = document.getElementById('banner');
-    const nav = document.getElementById('main-nav');
-    const main = document.querySelector('main');
 
-    function updateMenuPosition() {
-      const bannerHeight = banner.offsetHeight;
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (scrollY < bannerHeight) {
+
+  const banner = document.getElementById('banner');
+  const nav = document.getElementById('main-nav');
+  const main = document.querySelector('main');
+
+  function updateMenuPosition() {
+    const bannerHeight = banner.offsetHeight;
+    const scroll = window.pageYOffset;
+
+    if (scroll < bannerHeight) {
         // Banner visibile: menu subito sotto
         nav.style.top = bannerHeight + 'px';
         banner.style.transform = 'translateY(0)';
-      } else {
+    } else {
         // Banner nascosto: menu fisso in cima
         nav.style.top = '0';
         banner.style.transform = `translateY(-${bannerHeight}px)`;
-      }
-      
-      // Aggiorna padding-top del main per evitare sovrapposizioni
-      main.style.paddingTop = (bannerHeight + nav.offsetHeight + 20) + 'px';
     }
 
-    // Event listeners con debounce per scroll
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-      if (scrollTimeout) {
-        window.cancelAnimationFrame(scrollTimeout);
-      }
-      scrollTimeout = window.requestAnimationFrame(updateMenuPosition);
-    });
+    // Aggiorna padding-top del main per evitare sovrapposizioni
+    main.style.paddingTop = (banner.offsetHeight + nav.offsetHeight) + 'px';
+  }
 
-    window.addEventListener('load', updateMenuPosition);
-    window.addEventListener('resize', updateMenuPosition);
+  window.addEventListener('load', updateMenuPosition);
+  window.addEventListener('resize', updateMenuPosition);
+  window.addEventListener('scroll', updateMenuPosition);
 
-    function scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-    // Gestione audio: solo uno in play alla volta
-    const audios = document.querySelectorAll('audio');
-    audios.forEach(audio => {
-      audio.addEventListener('play', function() {
-        audios.forEach(other => {
-          if (other !== this) {
-            other.pause();
-          }
-        });
+  // Prende tutti gli elementi audio
+  const audios = document.querySelectorAll('audio');
+
+  audios.forEach(audio => {
+    audio.addEventListener('play', () => {
+      // Metti in pausa tutti gli altri
+      audios.forEach(other => {
+        if (other !== audio) {
+          other.pause();
+        }
       });
     });
-  </script>
+  });
 
+  </script>
 </body>
+</html>
