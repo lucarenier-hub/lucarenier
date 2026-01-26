@@ -199,6 +199,13 @@ footer p {
     display: none;
   }
 }
+
+/* Mantieni lo stile "link" */
+.timeline-link {
+  color: #06c;
+  text-decoration: underline;
+  cursor: pointer;
+}
   
 </style>
 
@@ -724,6 +731,17 @@ function scrollToSection(sectionId) {
     window.scrollTo({ top, behavior: 'smooth' });
   }
 }
+
+// Scroll smooth senza cambiare l'URL
+document.querySelectorAll('.timeline-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const targetId = link.getAttribute('data-target');
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
 
 // Scroll to top
 function scrollToTop() {
