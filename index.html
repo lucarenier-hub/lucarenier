@@ -4,155 +4,266 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="(Almost) everything that has been created in recent years. The rest has gone to dust in the past life during this life.">
-
   <title>Luca Renier's hub</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="path-to-your-favicon.ico" type="image/x-icon">
-
-  <!-- Google Fonts (puoi sostituire con la tua scelta) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- CSS principale -->
   <style>
-    /* =======================
-       RESET BASE
-    ======================= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+   
+  /* Reset e base */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
 
-    html {
-      font-size: 16px;
-      scroll-behavior: smooth;
-    }
+  a {
+    color: #ef4444; /* colore link */
+    text-decoration: none; /* opzionale: rimuove la sottolineatura */
+  }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      background-color: #ffffff;
-      color: #222222;
-    }
+  a:hover {
+    color: #ffffff; /* colore al passaggio del mouse */
+    text-decoration: none; /* opzionale */
+  }
+    
+  /* Banner */
+  header#banner {
+    width: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.6s ease;
+  }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+  .header-image {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin-left: 0;
+  }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+  /* Menu */
+  nav#main-nav {
+    width: 100%;
+    background-color: #1f1f1f;
+    padding: 10px 0;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    z-index: 999;
+    transition: top 0.6s ease;
+    display: flex;
+    justify-content: center; /* menu centrato */
+  }
 
-    button {
-      font-family: inherit;
-    }
+  nav .nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
 
-    /* =======================
-       HEADER
-    ======================= */
-    header#banner {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      background-color: #eeeeee;
-    }
+  nav button {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+  }
+  nav button:hover { color: #ffffff; transform: scale(1.05); }
 
-    .header-left {
-      display: flex;
-      justify-content: flex-start;
-      padding: 10px 20px;
-    }
+  /* Main e sezioni */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 440px; /* spazio per banner + menu */
+  }
 
-    .header-image {
-      height: 200px;
-      width: auto;
-      object-fit: contain;
-    }
+  section { padding: 20px 32px; border-bottom: 0px solid rgba(207,207,207,1); }
+  .section-content { max-width: 1024px; width: 100%; text-align: left; margin: 0 auto; }
+  h2 { font-size: 48px; font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 16px; }
+  h3 { font-size: 24px; font-weight: 600; color: #ffffff; text-align: left; margin-bottom: 16px; }
+  .text-content { font-size: 18px; line-height: 1.7; }
+  .text-content p { margin-bottom: 16px; }
+  hr { border: none; border-top: 1px solid #dc2626; margin: 18px 0; }
 
-    nav#main-nav {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      background-color: #1f1f1f;
-      padding: 15px 0;
-      transition: top 0.6s ease;
-    }
+  /* Back to top */
+  #back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #0a0a0a;
+    border: 2px solid #ef4444;
+    color: #ef4444;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+  #back-to-top:hover { background-color: #ef4444; color: #ffffff; transform: translateY(-2px); }
+  .arrow-up { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 
-    nav#main-nav button {
-      padding: 10px 20px;
-      font-size: 20px;
-      background: none;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-image { height: 150px; }
+    nav button { font-size: 16px; padding: 6px 12px; }
+    main { padding-top: 350px; }
+    section { min-height: auto; padding: 60px 20px; }
+    h2 { font-size: 32px; margin-bottom: 24px; }
+    .text-content { font-size: 16px; }
+    #back-to-top { bottom: 20px; right: 20px; padding: 10px 16px; font-size: 14px; }
+    .arrow-up { width: 16px; height: 16px; }
+  }
 
-    /* =======================
-       RESPONSIVE HEADER
-    ======================= */
-    @media (max-width: 1024px) {
-      .header-image {
-        height: 150px;
-      }
+  @media (max-width: 480px) {
+    .header-image { height: 120px; }
+    nav button { font-size: 14px; padding: 5px 10px; }
+    main { padding-top: 320px; }
+    h2 { font-size: 28px; margin-bottom: 20px; }
+    .text-content { font-size: 15px; }
+    #back-to-top span { display: none; }
+    #back-to-top { padding: 12px; bottom: 16px; right: 16px; }
+  }
 
-      nav#main-nav button {
-        font-size: 18px;
-        padding: 8px 16px;
-      }
-    }
+  .contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  }
 
-    @media (max-width: 768px) {
-      .header-image {
-        height: 120px;
-      }
+  .contact-form input,
+  .contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  }
 
-      nav#main-nav {
-        flex-direction: column;
-        padding: 10px 0;
-      }
+  .contact-form button {
+  padding: 10px;
+  cursor: pointer;
+  }
 
-      nav#main-nav button {
-        font-size: 16px;
-        padding: 10px;
-      }
-    }
+  /* Ridurre la dimensione del testo solo nella sezione 'news' */
+ .news-section {
+    font-size: 0.85em; /* Riduce la dimensione del font al 85% della dimensione originale */
+    text-align: center;
+  }/*
 
-    @media (max-width: 480px) {
-      .header-image {
-        height: 100px;
-      }
+  /* Puoi anche ridurre la dimensione dei singoli paragrafi e delle date all'interno della sezione */
+  .news-section .timeline-item p,
+  .news-section .timeline-item .timeline-date {
+    font-size: 0.9em; /* Imposta il font dei paragrafi e delle date leggermente più piccolo */
+  }
 
-      nav#main-nav button {
-        font-size: 14px;
-        padding: 8px;
-      }
-    }
+  /* Ridurre la distanza tra le righe di testo */
+  .news-section p {
+    margin: 0; /* Rimuove il margine verticale tra i paragrafi */
+    padding: 0; /* Rimuove il padding extra */
+  }
+
+  #content-timeline {
+    margin-top: 00; /* Riduce o rimuove il margine superiore della sezione timeline */
+    padding-top: 20; /* Riduce il padding in alto, se presente */
+  }
+
+  /* Newsletter inline */
+.newsletter-inline {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #000;
+  color: #fff;
+  min-width: 220px;
+}
+
+.newsletter-form input::placeholder {
+  color: #777;
+}
+
+.newsletter-form button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid #ef4444;
+  background: transparent;
+  color: #ef4444;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+    .section-label {
+  color: #ef4444;
+  font-weight: 700;
+  text-align: center;
+  font-size: 18px; /* ← scegli tu il valore */
+}
+
+    #intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px 0 5px; /* sopra | sotto */
+}
+
+    
   </style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106293605', 'ym');
+
+    ym(106293605, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106293605" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  
 </head>
-
-
-
-<nav id="main-nav">
-  <div class="container nav-container">
-    <button onclick="scrollToSection('ear')">Ear</button>
-    <button onclick="scrollToSection('eye')">Eye</button>
-    <button onclick="scrollToSection('mouth')">Mouth</button>
-    <button onclick="scrollToSection('synapse')">Synapse</button>
-  </div>
-</nav>
-
-<main id="main">
+<body>
+  
+  <header id="banner">
+    <img src="header-image.png" alt="Header Image" class="header-image">
+  </header>
+  <nav id="main-nav">
+    <div class="nav-container">
+      <button onclick="scrollToSection('ear')">Ear</button> <button onclick="scrollToSection('eye')">Eye</button> <button onclick="scrollToSection('mouth')">Mouth</button> <button onclick="scrollToSection('synapse')">Synapse</button>
+    </div>
+  </nav>
+  <main>
     <section id="intro" style="display: flex; justify-content: center; align-items: center;">
       <div class="section-content">
         <div class="text-content">
@@ -571,20 +682,10 @@
       <div class="section-content">
         <h2>Synapse</h2>
         <div class="text-content">
-<form action="https://formspree.io/f/xangodzz" method="post" class="contact-form">
-  <label>
-    Your message:
-    <textarea name="message" rows="6"></textarea>
-  </label>
-
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-
-  <button type="submit">Send</button>
-</form>
-<br>
+          <form action="https://formspree.io/f/xangodzz" method="post" class="contact-form">
+            <label>Your message: 
+            <textarea name="message"></textarea></label> <label>Your email: <input type="email" name="email"></label> <button type="submit">Send</button>
+          </form><br>
           <div style="text-align:center;">
             <a href="https://tymfrost.bandcamp.com/" target="_blank">bandcamp</a><br>
             <a href="https://www.instagram.com/tymfrost.music?utm_source=qr&amp;igsh=MXF4YzgyajlkdHNuMg==" target="_blank">instagram</a><br>
@@ -593,58 +694,66 @@
         </div>
       </div>
     </section>
-<footer>
-  <div class="container">
-  © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation. 20251121
-</footer>
+    <footer style="text-align:center; padding:20px 0; font-size:0.9em; color:#666;">
+      © 2025 Luca Renier. All content on this site is the original work of the author. Reproduction, modification or distribution is not permitted without authorisation. 20251121
+        <!--      
+        <p style="text-align:center; font-size:0.9em;">20251121: <span style="display:inline-block; vertical-align:middle;"><img src="https://hits.sh/lucarenier-hub.github.io/lucarenier/index.html.svg?label=%20&amp;color=666666&amp;background=00000000&amp;style=flat" alt="index"></span></p>
+        -->
+    </footer>
+  </main><button id="back-to-top" onclick="scrollToTop()"><svg class="arrow-up" viewbox="0 0 24 24">
+  <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Back to Top</button> 
+  <script>
 
-</main>
 
-<button id="back-to-top" onclick="scrollToTop()">↑ <span>Back to top</span></button>
+  const banner = document.getElementById('banner');
+  const nav = document.getElementById('main-nav');
+  const main = document.querySelector('main');
 
-<script>
-const banner = document.getElementById('banner');
-const nav = document.getElementById('main-nav');
-const main = document.getElementById('main');
+  function updateMenuPosition() {
+    const bannerHeight = banner.offsetHeight;
+    const scroll = window.pageYOffset;
 
-function updateLayout() {
-  const bannerH = banner.offsetHeight;
-  const navH = nav.offsetHeight;
-  const scroll = window.scrollY;
+    if (scroll < bannerHeight) {
+        // Banner visibile: menu subito sotto
+        nav.style.top = bannerHeight + 'px';
+        banner.style.transform = 'translateY(0)';
+    } else {
+        // Banner nascosto: menu fisso in cima
+        nav.style.top = '0';
+        banner.style.transform = `translateY(-${bannerHeight}px)`;
+    }
 
-  if (scroll < bannerH) {
-    nav.style.top = bannerH + 'px';
-    banner.style.transform = 'translateY(0)';
-  } else {
-    nav.style.top = '0';
-    banner.style.transform = `translateY(-${bannerH}px)`;
+    // Aggiorna padding-top del main per evitare sovrapposizioni
+    main.style.paddingTop = (banner.offsetHeight + nav.offsetHeight) + 'px';
   }
 
-  main.style.paddingTop = (bannerH + navH) + 'px';
-}
+  window.addEventListener('load', updateMenuPosition);
+  window.addEventListener('resize', updateMenuPosition);
+  window.addEventListener('scroll', updateMenuPosition);
 
-window.addEventListener('load', updateLayout);
-window.addEventListener('resize', updateLayout);
-window.addEventListener('scroll', updateLayout);
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }
 
-/* Scroll helpers */
-function scrollToSection(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-}
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+  // Prende tutti gli elementi audio
+  const audios = document.querySelectorAll('audio');
 
-/* Audio: uno alla volta */
-document.querySelectorAll('audio').forEach(audio => {
-  audio.addEventListener('play', () => {
-    document.querySelectorAll('audio').forEach(other => {
-      if (other !== audio) other.pause();
+  audios.forEach(audio => {
+    audio.addEventListener('play', () => {
+      // Metti in pausa tutti gli altri
+      audios.forEach(other => {
+        if (other !== audio) {
+          other.pause();
+        }
+      });
     });
   });
-});
-</script>
 
+  </script>
 </body>
 </html>
