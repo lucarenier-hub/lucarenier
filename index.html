@@ -265,25 +265,29 @@ footer p {
     </div>
   </div>
 </section>
-    <section id="content-timeline">
-      <div class="section-content">
-        <div class="text-content news-section">
-          <p class="section-label">Latest updates</p>
-          <div class="timeline">
-            <span class="timeline-date" style="color: #ccc;">January 15, 2026</span>
-            <p><a href="#mouth">mouth sector</a> - Cammino</p>
-            <span class="timeline-date" style="color: #ccc;">January 9, 2026</span>
-            <p><a href="#mouth">mouth sector</a> - Tra i binari</p>
-            <span class="timeline-date" style="color: #ccc;">December 17, 2025</span>
-            <p><a href="#ear">ear sector</a> - A Different Kind of Nothing</p>
-            <span class="timeline-date" style="color: #ccc;">December 10, 2025</span>
-            <p><a href="#mouth">mouth sector</a> - Metamorfosi</p>
-            <span class="timeline-date" style="color: #ccc;">December 6, 2025</span>
-             <p><a href="#mouth">mouth sector</a> - Ricordo</p>
-          </div>
-        </div>
+<section id="content-timeline">
+  <div class="section-content">
+    <div class="text-content news-section">
+      <p class="section-label">Latest updates</p>
+      <div class="timeline">
+        <span class="timeline-date" style="color: #ccc;">January 15, 2026</span>
+        <p><span class="timeline-link" data-target="mouth">mouth sector</span> - Cammino</p>
+
+        <span class="timeline-date" style="color: #ccc;">January 9, 2026</span>
+        <p><span class="timeline-link" data-target="mouth">mouth sector</span> - Tra i binari</p>
+
+        <span class="timeline-date" style="color: #ccc;">December 17, 2025</span>
+        <p><span class="timeline-link" data-target="ear">ear sector</span> - A Different Kind of Nothing</p>
+
+        <span class="timeline-date" style="color: #ccc;">December 10, 2025</span>
+        <p><span class="timeline-link" data-target="mouth">mouth sector</span> - Metamorfosi</p>
+
+        <span class="timeline-date" style="color: #ccc;">December 6, 2025</span>
+        <p><span class="timeline-link" data-target="mouth">mouth sector</span> - Ricordo</p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     <section id="ear">
       <div class="section-content">
         <h2>Ear</h2>
@@ -724,15 +728,6 @@ function scrollToSection(sectionId) {
 // Scroll to top
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function scrollToSection(sectionId) {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-    // Rimuove hash dall'URL
-    history.replaceState(null, null, ' ');
-  }
 }
 
 // Gestione audio: un solo audio alla volta
