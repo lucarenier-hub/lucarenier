@@ -199,6 +199,89 @@ footer p {
     display: none;
   }
 }
+
+/* Sezione Synapse */
+#synapse {
+  padding: 60px 20px;
+  background-color: #0d0d0d; /* leggermente più scuro per contrasto */
+  color: #fff;
+  text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+#synapse h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+#synapse p {
+  color: #bbb;
+  margin-bottom: 40px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* Form Synapse */
+#synapse form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#synapse input[type="text"],
+#synapse input[type="email"] {
+  flex: 1 1 250px;
+  padding: 12px 16px;
+  border-radius: 30px;
+  border: 1px solid #333;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#synapse input::placeholder {
+  color: #888;
+}
+
+#synapse input:focus {
+  border-color: #fff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+#synapse button {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background-color: #fff;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#synapse button:hover {
+  background-color: #ddd;
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  #synapse form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #synapse input,
+  #synapse button {
+    width: 100%;
+  }
+}
   
 </style>
 
